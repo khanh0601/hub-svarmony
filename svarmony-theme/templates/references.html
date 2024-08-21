@@ -1,0 +1,14 @@
+<!--
+    templateType: page
+    isAvailableForNewContent: true
+    label: References
+    screenshotPath: ../images/template-previews/homepage.png
+-->
+{% extends "./layouts/base.html" %}
+
+{% set page_theme = "light" %}
+{% block body %}
+    <div class="body-container body-container--works">
+        {% module "works-listing" path="../modules/work-listing.module", label="works-listing" %}
+    </div>
+{% endblock body %}

@@ -1,0 +1,43 @@
+<!-- module html  -->
+<section class="vps-aplication">
+    <div class="container">
+        <div class="vps-aplication-head">
+            <h2 class=" h2 vps-aplication-head-title">{{module.heading.title}}</h2>
+            <p class="vps-aplication-head-description">{{module.heading.description}}</p>
+        </div>
+        <div class="vps-aplication-body">
+            {% for item in module.aplication_body %}
+            {% set index = loop.index0 %}
+            {%if index%2==0%}
+            <div class="vps-aplication-item grid">
+                <div class="vps-aplication-item-img">
+                    <img src={{item.image_field.src}} alt="">
+                </div>
+                <div class="vps-aplication-item-content">
+                    <h3 class="vps-aplication-item-title">{{item.content.title}}</h3>
+                    <div class="vps-aplication-item-img-mb">
+                    <img src={{item.image_field.src}} alt="">
+                </div>
+                    <div class="vps-aplication-item-description">{{item.content.description}}</div>
+                    <a href={{item.content.button.link_button.href}} class="vps-aplication-btn">{{item.content.button.text_button}}</a>
+                </div>
+            </div>
+            {%else%}
+            <div class="vps-aplication-item grid">
+                <div class="vps-aplication-item-content revert">
+                    <h3 class="vps-aplication-item-title">{{item.content.title}}</h3>
+                    <div class="vps-aplication-item-img-mb">
+                    <img src={{item.image_field.src}} alt="">
+                </div>
+                    <div class="vps-aplication-item-description">{{item.content.description}}</div>
+                    <a href={{item.content.button.link_button.href}} class="vps-aplication-btn">{{item.content.button.text_button}}</a>
+                </div>
+                <div class="vps-aplication-item-img revert">
+                    <img src={{item.image_field.src}} alt="">
+                </div> 
+            </div>
+            {%endif%}
+            {%endfor%}
+        </div>
+    </div>
+</section>

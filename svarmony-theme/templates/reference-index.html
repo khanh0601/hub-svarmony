@@ -1,0 +1,46 @@
+<!--
+    templateType: page
+    isAvailableForNewContent: true
+    label: Reference Detail
+-->
+
+{% set template_css = "../../css/templates/work-landing.css" %}
+{% extends "./layouts/base.html" %}
+
+{% set page_theme = "light" %}
+{% block body %}
+    {% set page_slug = request.path|split('/')|last %}
+    {% if is_in_page_editor %}
+        {% set page_slug = content.absolute_url|split('/')|last %}
+    {% endif %}
+    <div class="body-container body-container--work-landing">
+        {% module "work-detail-hero" path="../modules/work-detail-hero", label="work-detail-hero" %}
+        <div class="work-landing-main">
+            <div class="container grid">
+                <div class="work-landing-info">
+                    {% module "work-detail-infor" path="../modules/work-detail-infor", label="work-detail-infor" %}
+                </div>
+                <div class="work-landing-richtext">
+                    {% module
+                        'work-detail-richtext'
+                        path="@hubspot/rich_text",
+                        html='',
+                        label="work-detail-richtext"
+                    %}
+                    {% module "work-detail-achievement" path="../modules/work-detail-achievement", label="work-detail-achievement" %}
+                </div>
+            </div>
+        </div>
+        {% module "work-cta" path="../modules/work-cta", label="work-cta" %}
+        {% module "work-detail-explore" path="../modules/work-detail-explore", label="work-detail-explore" %}
+    </div>
+    {%require_js %}
+        <script>
+            let heightHeader = $('.event-header__container').height();
+            let heightInfo = $('.work-landing-info').height();
+            let position = (($(window).height() - heightHeader - heightInfo) / 2) + heightHeader;
+            $('.work-landing-info').css('top', position > heightHeader ? position - (heightHeader * .5) : heightHeader * 1.5);
+        </script>
+    {%end_require_js %}
+{% endblock body %}
+

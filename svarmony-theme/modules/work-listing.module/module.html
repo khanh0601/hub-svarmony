@@ -1,0 +1,272 @@
+{% import '../../templates/marco/card.html' as card %}
+
+<!-- module html  -->
+{# {% set solutions = hubdb_table_rows(module.hubdbtable)|map("solution", "")|unique|reject("none")|sort(False, False, "id") %} #}
+{# {% set categories = hubdb_table_rows(module.hubdbtable)|map("category", "")|unique|reject("none")|sort(False, False, "id") %} #}
+{% set unique = {'solution':'', 'category': ''} %}
+{% set solutions = [] %}
+{% set categories = [] %}
+{% for column in hubdb_table_rows(module.hubdbtable) %}
+    {% for solution in column["solution"]|reject("none") %}
+        {% unless solution in solutions %}
+            {# if statement to check solution name against that in our array #}
+            {% if unique.solution.id != solution.id %}
+                {# update array with current loops solution name #}
+                {% do unique.update({'solution' : solution }) %}
+            {% endif %}
+            {% do solutions.append(solution) %}
+        {% endunless %}
+    {% endfor %}
+    {% for category in column["category"]|reject("none") %}
+        {% unless category in categories %}
+            {# if statement to check category name against that in our array #}
+            {% if unique.category.id != category.id %}
+                {# update array with current loops category name #}
+                {% do unique.update({'category' : category }) %}
+            {% endif %}
+            {% do categories.append(category) %}
+        {% endunless %}
+    {% endfor %}
+{% endfor %}
+
+{% set work_filter = [
+    {
+        id: 'work-filter-solution',
+        name: 'solution',
+        form: "work-filter",
+        label: 'Solution',
+        placeholder: 'All',
+        options: solutions|sort(False, False, "name")
+    },
+    {
+        id: 'work-filter-category',
+        name: 'category',
+        form: "work-filter",
+        placeholder: 'All',
+        label: 'Category',
+        options: categories|sort(False, False, "name")
+    }
+]%}
+
+{% macro dropdown_ic() %}
+    <svg width="100%" viewBox="0 0 16 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M1.33325 5.83325L7.99992 11.1666L14.6666 5.83325" stroke="black" stroke-opacity="0.6" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round"/>
+    </svg>
+{% endmacro %}
+
+{% macro select(data) %}
+    {% macro defaultValue_init(data) %}
+        {% if data.options %}
+            {% if request.query_dict[data.name] %}
+                {% for option in data.options %}
+                    {% if (option.id == request.query_dict[data.name]) %}
+                        {{ option.name }}
+                    {% endif %}
+                {% endfor %}
+            {% else %} {{ data.placeholder }}
+            {% endif %}
+        {% endif %}
+    {% endmacro %}
+    <div class="dropdown-field" id="{{ data.id }}">
+        <div class="dropdown-toggle">
+            <input
+                type="text"
+                class="fs-20 text-field dropdown-field"
+                autocomplete="off"
+                maxlength="256"
+                name="{{ data.name }}"
+                data-name="{{ data.name }}"
+                placeholder="{{ data.placeholder }}"
+                value="{{ data.defaultValue ? data.defaultValue : defaultValue_init(data)|trim }}"
+                readonly=""
+            >
+            <div class="dropdown-icon">{{ dropdown_ic() }}</div>
+        </div>
+        <div class="dropdown-select" data-select-type="single">
+            <div data-lenis-prevent class="dropdown-list custome-scroll">
+            {% set queryLink = request.query %}
+            {% if request.query_dict.page %}
+                {% set queryLink = request.query|split('page='~request.query_dict.page)|last %}
+            {% endif %}
+            {% macro filter_link(id) %}
+                {% if id %}
+                    {% if not request.query_dict[data.name] %}
+                        {% set queryLink = queryLink ~ "&"~data.name~"="~id|urldecode %}
+                    {% else %}
+                        {% set queryLink = queryLink|split(data.name~"="~request.query_dict[data.name])|last ~ "&"~data.name~"="~id|urldecode %}
+                    {% endif%}
+                {% else %}
+                    {% set queryLink = queryLink|split(data.name~"="~request.query_dict[data.name])|last|urldecode  %}
+                {% endif %}
+                {# {% if queryLink|truncate(1, True, '') == '&' %}
+                    {% set queryLink = queryLink|split('&')|last %}
+                {% endif %}  #}
+
+                {{ content.absolute_url }}{%if queryLink %}?{%endif%}{{ queryLink }}
+            {% endmacro%}
+
+            <a class="fs-20 dropdown-link{{ !request.query_dict[data.name] ? ' active' : '' }}"
+                href="{{ filter_link() }}">
+                {{ data.placeholder }}
+            </a>
+            {% for option in data.options %}
+                {% set option_list = option_list~choice.id|list %}
+                    {% if request.query_dict[data.name] %}
+                        <a class="fs-20 dropdown-link{{ option.id == request.query_dict[data.name] ? ' active' : '' }}"
+                            href="{{ filter_link(option.id) }}">
+                            {{ option.name }}
+                        </a>
+                        {% else %}
+                            <a class="fs-20 dropdown-link"
+                                href="{{ filter_link(option.id) }}">
+                                {{ option.name }}
+                            </a>
+                    {% endif %}
+            {% endfor %}
+            </div>
+        </div>
+    </div>
+{% endmacro %}
+
+{% macro field(data) %}
+    <div class="form-field-wrap">
+        {% if data.label %}
+            <label class="fw-reg" for="{{ data.name }}">{{ data.label }}{% if data.required %} <span>*</span> {% endif %}<span class="label-colon">:</span></label>
+        {% endif %}
+        <div class="form-field">
+            {{ select(data) }}
+        </div>
+    </div>
+{% endmacro %}
+
+<section class="work-listing">
+    <div class="container">
+        <div class="work-listing-head">
+            <h1 class="h1 work-listing-title">References</h1>
+            <div class="work-listing-filter-wrap">
+                <div class="work-listing-popup-open">
+                    <span class="h4 fw-medium">Filter</span>
+                    <div class="dropdown-icon">{{ dropdown_ic() }}</div>
+                </div>
+                <div class="work-listing-filter-main">
+                    <div class="work-listing-popup-close">
+                        <svg width="100%" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M19 5L5 19" stroke="white" stroke-opacity="0.6" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round"/>
+                            <path d="M19 19L5 5" stroke="white" stroke-opacity="0.6" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round"/>
+                        </svg>
+                    </div>
+                    <form method="get" id="work-filter" class="work-listing-filter" data-lenis-prevent>
+                        {% for field in work_filter %}
+                            {{ field(field) }}
+                        {% endfor %}
+                    </form>
+                </div>
+                <div class="popup-overlay"></div>
+            </div>
+        </div>
+        {% set queryFilter = "" %}
+        {% if request.query_dict.solution in solutions|map('id', '') %}
+            {% set queryFilter = queryFilter ~ "&solution__contains="~request.query_dict.solution|urldecode %}
+        {% endif %}
+        {% if request.query_dict.category in categories|map('id', '') %}
+            {% set queryFilter = queryFilter ~ "&category__contains="~request.query_dict.category|urldecode %}
+        {% endif %}
+
+        {% set batch_num = module.post_per_page %}
+        {% if not request.query_dict.page %}
+            {% set page = 1 %}
+            {% set offset_num = 0 %}
+            {% elif request.query_dict.page %}
+            {% set page = request.query_dict.page %}
+            {% set offset_num = page|add(-1) * batch_num %}
+        {% endif %}
+
+        {% set queryPagination = "&limit=" ~ batch_num ~ "&offset=" ~ offset_num %}
+
+        {# set the number of items per batch #}
+        {% set table_works_total = hubdb_table_rows(module.hubdbtable, "is_ready=1" ~ queryFilter) %}
+
+        {# {% set total_pages = table_works_total|length|divide(batch_num) %} #}
+        {% if (table_works_total|length % batch_num) == 0 %}
+            {% set total_pages = (table_works_total|length / batch_num) %}
+        {% else %}
+            {% set total_pages = (table_works_total|length / batch_num)|round(0, 'floor') + 1 %}
+        {% endif %}
+
+        {% set more_pages = total_pages - page %}
+        {% set table_works = hubdb_table_rows(module.hubdbtable, "is_ready=1" ~ queryPagination ~ queryFilter) %}
+        {% if table_works %}
+            <div class="work-listing-main">
+                {% for row in table_works %}
+                    {{ card.work(row) }}
+                {% endfor %}
+            </div>
+        {% else %}
+            <div class="work-listing-empty">
+                <div class="work-listing-empty-ic">
+                    <svg width="100%" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M51.6091 5.52389C50.9659 2.95081 48.6645 1.15381 46.0121 1.15381H13.9885C11.3364 1.15381 9.03471 2.95081 8.39156 5.52389C0.710518 36.2522 1.15417 34.403 1.15417 34.6153V53.0769C1.15417 56.258 3.74225 58.8461 6.9234 58.8461H53.0773C56.2584 58.8461 58.8465 56.258 58.8465 53.0769V34.6153C58.8466 34.407 59.2697 36.1755 51.6091 5.52389ZM10.6304 6.0835C11.0163 4.53977 12.3972 3.4615 13.9885 3.4615H46.0121C47.6035 3.4615 48.9844 4.53965 49.3703 6.0835L56.2149 33.4615H46.3286C43.4002 33.4615 40.7725 35.3215 39.7898 38.0899C38.3229 42.2231 34.3887 45 30.0004 45C25.612 45 21.678 42.2231 20.211 38.0899C19.2284 35.3215 16.6006 33.4615 13.6721 33.4615H3.78598L10.6304 6.0835ZM56.5389 53.0769C56.5389 54.9856 54.9861 56.5384 53.0774 56.5384H6.92352C5.01483 56.5384 3.46198 54.9856 3.46198 53.0769V35.7692H13.6721C15.6258 35.7692 17.3797 37.012 18.0362 38.8618C19.8293 43.9135 24.6372 47.3077 30.0004 47.3077C35.3636 47.3077 40.1715 43.9135 41.9646 38.8618C42.6211 37.0121 44.3751 35.7692 46.3286 35.7692H56.5388L56.5389 53.0769Z" fill="white" fill-opacity="0.8"/>
+                    </svg>
+                </div>
+                <span class="fs-20">Ooops... No works found.</span>
+            </div>
+        {% endif %}
+
+        {%macro page_link(num) %} {{ content.absolute_url }}?page={{ page|add(num) }}{{ queryFilter }} {% endmacro %}
+        {%macro page_num(num) %}
+            <a class="{%if num == 0%}active{%endif%}" href="{{ page_link(num) }}">
+                <div class="work-listing-pagination-item">
+                    <span class="fs-20 fw-medium">{{ page|add(num) }}</span>
+                </div>
+            </a>
+        {% endmacro %}
+
+        {% if total_pages > 1 %}
+            <div class="work-listing-pagination">
+                <a class="{% if page <= 1 %}disable{% endif %}"
+                    href="{{ page_link(-1) }}" title="Next">
+                    <div class="work-listing-pagination-btn work-listing-pagination-btn--next">
+                        <svg width="100%" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M9.99984 1.33334L4.6665 8L9.99984 14.6667" stroke="black" stroke-opacity="0.8" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round"/>
+                        </svg>
+                    </div>
+                </a>
+
+                {% if more_pages == 0 %}
+                    {% if page|add(-4) >= 1 %} {{ page_num(-4) }} {% endif %}
+                {% endif %}
+
+                {% if more_pages <= 1 %}
+                    {% if page|add(-3) >= 1 %} {{ page_num(-3) }}{% endif %}
+                {% endif %}
+
+                {% if page|add(-2) >= 1 %} {{ page_num(-2) }} {% endif %}
+
+                {% if page|add(-1) >= 1 %} {{ page_num(-1) }} {% endif %}
+
+                {{ page_num(0) }}
+
+                {% if page|add(1) <= total_pages %} {{ page_num(1) }} {% endif %}
+
+                {% if page|add(2) <= total_pages %} {{ page_num(2) }} {% endif %}
+
+                {% if page <= 2 %}
+                    {% if page|add(3) <= total_pages %} {{ page_num(3) }}{% endif %}
+                {% endif %}
+
+                {% if page == 1 %}
+                    {% if page|add(4) <= total_pages %} {{ page_num(4) }} {% endif %}
+                {% endif %}
+
+                <a class="{% if page >= total_pages %}disable{% endif %}"
+                    href="{{ page_link(1) }}" title="Previous">
+                    <div class="work-listing-pagination-btn work-listing-pagination-btn--prev">
+                        <svg width="100%" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M6 14.6667L11.3333 8L6 1.33334" stroke="black" stroke-opacity="0.8" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round"/>
+                        </svg>
+                    </div>
+                </a>
+            </div>
+        {% endif %}
+    </div>
+</section>

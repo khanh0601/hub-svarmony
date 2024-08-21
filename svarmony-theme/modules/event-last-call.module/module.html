@@ -1,0 +1,10 @@
+<h2 class="h1 event__last-call-title">{{ module.title }}</h2>
+{% if module.subtitle %}
+    <div class="fs-20 event__last-call-sub">{{ module.subtitle }}</div>
+{% endif %}
+{# <a class="event-btn {{ module.button.button_styles }}" href="{{ module.button.link.url.href }}"
+    {% if module.button.link.no_follow %} rel="nofollow" {% endif %}
+    {% if module.button.link.open_in_new_tab %} target="_blank" {% endif %}
+    >
+    {{ module.button.text }}
+</a> #}

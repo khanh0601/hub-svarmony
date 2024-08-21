@@ -1,0 +1,9 @@
+<!-- module html  -->
+{% if module.is_show is truthy %}
+    <div class="event-additional">
+        <div class="event-additional-wrap">
+            <h2 class="h3 fw-reg event__h2-title">{{ module.heading }}</h2>
+            <div class="fs-20 event__subtitle">{{ module.desc }}</div>
+        </div>
+    </div>
+{% endif %}

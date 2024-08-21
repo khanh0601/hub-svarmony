@@ -1,0 +1,252 @@
+@font-face {
+    font-family: 'Favorit Mono';
+    src: url('https://25147791.fs1.hubspotusercontent-eu1.net/hubfs/25147791/Fonts/ABCFavoritMono-Light.woff2') format('woff2'),
+        url('https://25147791.fs1.hubspotusercontent-eu1.net/hubfs/25147791/Fonts/ABCFavoritMono-Light.woff') format('woff'),
+        url('{{ get_asset_url('/svarmony-theme/fonts/abcfavorit/abcfavorit-mono-light-webfont.ttf') }}') format('truetype');
+    font-weight: 300;
+    font-style: normal;
+    font-display: fallback;
+}
+@font-face {
+    font-family: 'Favorit';
+    src: url('https://25147791.fs1.hubspotusercontent-eu1.net/hubfs/25147791/Fonts/ABCFavorit-Light.woff2') format('woff2'),
+        url('https://25147791.fs1.hubspotusercontent-eu1.net/hubfs/25147791/Fonts/ABCFavorit-Light.woff') format('woff'),
+        url('{{ get_asset_url('/svarmony-theme/fonts/abcfavorit/abcfavorit-light-webfont.ttf') }}') format('truetype');
+    font-weight: 300;
+    font-style: normal;
+    font-display: fallback;
+}
+@font-face {
+    font-family: 'Favorit';
+    src: url(' https://25147791.fs1.hubspotusercontent-eu1.net/hubfs/25147791/Fonts/ABCFavorit-Medium.woff2') format('woff2'),
+        url('https://25147791.fs1.hubspotusercontent-eu1.net/hubfs/25147791/Fonts/ABCFavorit-Medium.woff') format('woff'),
+        url('{{ get_asset_url('/svarmony-theme/fonts/abcfavorit/abcfavorit-medium-webfont.ttf') }}') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+    font-display: fallback;
+}
+
+@font-face {
+    font-family: 'Favorit';
+    src: url('https://25147791.fs1.hubspotusercontent-eu1.net/hubfs/25147791/Fonts/ABCFavorit-Book.woff2') format('woff2'),
+        url('https://25147791.fs1.hubspotusercontent-eu1.net/hubfs/25147791/Fonts/ABCFavorit-Book.woff') format('woff'),
+        url('{{ get_asset_url('/svarmony-theme/fonts/abcfavorit/abcfavorit-book-webfont.ttf') }}') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: fallback;
+}
+
+@font-face {
+    font-family: 'Favorit';
+    src: url('https://25147791.fs1.hubspotusercontent-eu1.net/hubfs/25147791/Fonts/ABCFavorit-Book.woff') format('woff2'),
+        url('https://25147791.fs1.hubspotusercontent-eu1.net/hubfs/25147791/Fonts/ABCFavorit-Bold.woff') format('woff'),
+        url('{{ get_asset_url('/svarmony-theme/fonts/abcfavorit/abcfavorit-bold-webfont.ttf') }}') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+    font-display: fallback;
+}
+
+:root {
+  --fs-h1: 8.8rem;
+	--lh-h1: 1.2em;
+  --lsp-h1: -0.01em;
+
+  --fs-h2: 4.4rem;
+  --lh-h2: 1.2em;
+
+	--fs-h3: 3.2rem;
+  --lh-h3: 1.3em;
+
+  --fs-h4: 2.4rem;
+  --lh-h4: 1.2em;
+
+	--fs-h5: 2.4rem;
+  --lh-h5: 1.3em;
+
+	--fs-h6: 2rem;
+  --lh-h6: 1.3em;
+
+  --fs-12: 1.2rem;
+  --lh-12: 1.6em;
+
+  --fs-14: 1.4rem;
+  --lh-14: 1.5em;
+
+  --fs-16: 1.6rem;
+  --lh-16: 1.5em;
+
+  --fs-18: 1.8rem;
+  --lh-18: 1.5em;
+
+  --fs-20: 2rem;
+  --lh-20: 1.5em;
+
+  --fs-24: 2.4rem;
+  --lh-24: 1.3em;
+}
+
+body[page-theme="light"] {
+  --fs-h1: 8.4rem;
+	--lh-h1: 1.1em;
+	--lsp-h1: -0.016em;
+
+  --fs-h2: 6.4rem;
+	--lh-h2: 1.1em;
+	--lsp-h2: -0.0128em;
+
+	--fs-h3: 4rem;
+  --lh-h3: 1.1em;
+	--lsp-h3: -0.04em;
+
+  --fs-h4: 2.8rem;
+	--lh-h4: 1.2em;
+	--lsp-h4: -0.028em;
+
+  --lh-16: 1.4em;
+  --lsp-16: -0.016em;
+
+  --lh-20: 1.4em;
+  --lsp-20: -0.02em;
+}
+
+@media only screen and (max-width: 991px) {
+  :root {
+    --fs-h1: 5.452rem;
+
+    --fs-h2: 3.2rem;
+
+    --fs-h3: 1.982rem;
+  }
+}
+@media only screen and (max-width: 767px) {
+  :root {
+    --fs-h1: 5.2rem;
+
+    --fs-h3: 2.8rem;
+  }
+
+  body[page-theme="light"] {
+    --fs-h1: 5.6rem;
+    --lh-h1: 1.1em;
+    --lsp-h1: -0.0112em;
+
+    --fs-h2: 4.4rem;
+    --lh-h2: 1.1em;
+    --lsp-h2: -0.088em;
+
+    --fs-h3: 3.2rem;
+    --lh-h3: 1.2em;
+
+    --fs-h4: 2.4rem;
+    --lh-h4: 1.2em;
+    --lsp-h4: -0.024em;
+
+    --fs-20: 1.8rem;
+    --lh-20: 1.4em;
+  }
+}
+@media only screen and (max-width: 476px) {
+  :root {
+    --fs-h1: 4.2rem;
+
+    --fs-h3: 3.2rem;
+  }
+}
+
+
+html[lang^="ja"] body,
+html[lang^="zh"] body,
+html[lang^="ko"] body {
+  line-break: strict;
+  overflow-wrap: normal;
+  word-break: break-all;
+}
+
+body {
+  line-height: 1.4;
+  overflow-wrap: break-word;
+}
+h1, .h1,
+h2, .h2,
+h3, .h3,
+h4, .h4,
+h5, .h5,
+h6, .h6 {
+  color: var(--color-heading);
+}
+
+h1, .h1 {
+	font-size: var(--fs-h1);
+  line-height: var(--lh-h1);
+  letter-spacing: var(--lsp-h1);
+}
+
+h2, .h2 {
+  font-size: var(--fs-h2);
+  line-height: var(--lh-h2);
+  letter-spacing: var(--lsp-h2);
+}
+
+h3, .h3 {
+	font-size: var(--fs-h3);
+  line-height: var(--lh-h3);
+  letter-spacing: var(--lsp-h3);
+}
+
+h4, .h4 {
+	font-size: var(--fs-h4);
+  line-height: var(--lh-h4);
+  letter-spacing: var(--lsp-h4);
+}
+
+h5, .h5 {
+	font-size: var(--fs-h5);
+  line-height: var(--lh-h5);
+}
+
+h6, .h6 {
+	font-size: var(--fs-h6);
+  line-height: var(--lh-h6);
+}
+
+.fs-12 {
+  font-size: var(--fs-12);
+  line-height: var(--lh-12);
+}
+
+.fs-14 {
+  font-size: var(--fs-14);
+  line-height: var(--lh-14);
+}
+
+.fs-16 {
+  font-size: var(--fs-16);
+  line-height: var(--lh-16);
+  letter-spacing: var(--lsp-16);
+}
+
+.fs-18 {
+  font-size: var(--fs-18);
+  line-height: var(--lh-18);
+}
+
+.fs-20 {
+  font-size: var(--fs-20);
+  line-height: var(--lh-20);
+  letter-spacing: var(--lsp-20);
+}
+
+.fs-24 {
+  font-size: var(--fs-24);
+  line-height: var(--lh-24);
+  letter-spacing: var(--lsp-24);
+}
+.fw-reg {
+  font-weight: 400 !important;
+}
+.fw-medium {
+  font-weight: 500 !important;
+}
+.fw-bold {
+  font-weight: 700 !important;
+}

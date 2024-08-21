@@ -1,0 +1,194 @@
+.popup-wrapper {
+    position: fixed;
+    z-index: 100;
+    width: 100%;
+    height: 100vh;
+    max-height: 100vh;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.70);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.35s ease-out;
+}
+.popup-wrapper .container {
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+.popup-wrapper.active {
+    opacity: 1;
+    pointer-events: auto;
+    transition: opacity 0.35s ease-out;
+}
+.popup-inner {
+    height: auto;
+    max-height: 100%;
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+}
+.popup-header {
+    /* display: flex; */
+    /* justify-content: space-between; */
+}
+.popup-title {
+    color: #1C1C1C;
+    margin-left: 4rem;
+    margin-top: .8rem;
+    padding-bottom: 1.6rem;
+}
+.popup-close {
+    margin-left: auto;
+    margin-top: 2.8rem;
+    margin-right: 2.8rem;
+    width: 4.4rem;
+    height: 4.4rem;
+    position: relative;
+    z-index: 3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+    border: 1px solid rgba(45, 45, 45, 0.20);
+    border-radius: 50%;
+}
+.popup-close-ic {
+    width: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.agenda_popup {
+    width: 102.1rem;
+    padding: .8rem 4rem;
+}
+.agenda_popup-timeline {
+    display: flex;
+    flex-direction: column;
+    gap: 1.6rem 0;
+}
+.agenda_popup-day {
+    color: #1C1C1C;
+    font-weight: 500;
+    padding: 2rem 0;
+}
+.agenda_popup-item {
+    color: #1C1C1C;
+}
+.popup-inner-content {
+    width: 101%;
+}
+.agenda_popup-item-time {
+    width: 15%;
+    align-self: baseline;
+    flex: none;
+}
+.agenda_popup-item-title {
+    flex-grow: 1;
+}
+.agenda_popup-item-content {
+    padding-left: calc(15% + 3.2rem);
+    display: flex;
+    align-items: start;
+}
+.agenda_popup-item-content .richtext-global {
+    padding-right: 3.2rem;
+}
+.agenda_popup-item-image {
+    flex-shrink: 0;
+    width: 20rem;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    gap: .8rem 0;
+    margin: 1rem 0;
+}
+
+.agenda_popup-timeline-item .accordion:last-child {
+    padding-bottom: 0;
+}
+.event__agenda {
+    color: var(--color-primary);
+}
+body[page-theme="light"] .event__agenda {
+    color: var(--color-black);
+}
+
+@media only screen and (max-width: 991px) {
+    .popup-inner {
+        margin: 0 calc(var(--container-padding) * -1);
+    }
+}
+@media only screen and (max-width: 767px) {
+    .popup-inner {
+        margin: 0;
+    }
+    .agenda_popup {
+        width: 100%;
+        padding: .8rem 2rem;
+    }
+    .popup-close {
+        margin-top: 2rem;
+        margin-right: 2rem;
+    }
+    .popup-title {
+        margin-top: -.4rem;
+        margin-left: 2rem;
+    }
+    .agenda_popup-item-time {
+        width: 8rem;
+    }
+    .agenda_popup-item-content {
+        padding-left: 10rem;
+    }
+}
+
+@media only screen and (max-width: 476px) {
+    .popup-inner {
+        margin: 0 calc(var(--container-padding) * -1);
+    }
+    .event__agenda {
+        display: flex;
+        justify-content: center;
+    }
+    .popup-close-ic {
+        width: 1.6rem;
+    }
+    .agenda_popup {
+        padding: .8rem 1.2rem;
+    }
+    .popup-title {
+        margin-left: 1.2rem;
+    }
+    .agenda_popup-item-content {
+        flex-direction: column-reverse;
+        gap: 1.8rem 0;
+    }
+    .agenda_popup-item-content .richtext-global {
+        padding-right: 0;
+    }
+    .agenda_popup-item-content {
+        padding-left: 0;
+    }
+    .agenda_popup-item-image {
+        width: 100%;
+    }
+    .agenda_popup-item-image .fs-12 {
+        font-size: var(--fs-16);
+        line-height: var(--lh-16);
+    }
+    .agenda_popup-item-time {
+        font-size: var(--fs-18);
+        line-height: var(--lh-18);
+    }
+    .agenda_popup-item-title {
+        font-size: var(--fs-18);
+        line-height: var(--lh-18);
+    }
+}

@@ -1,0 +1,255 @@
+[ {
+  "id" : "d983b564-7716-88d3-afec-f8cc37bbd02a",
+  "name" : "title",
+  "display_width" : null,
+  "label" : "Title",
+  "required" : false,
+  "locked" : true,
+  "validation_regex" : "",
+  "allow_new_line" : false,
+  "show_emoji_picker" : false,
+  "type" : "text",
+  "default" : "About svarmony"
+}, {
+  "id" : "9523d1cf-9252-e49f-492a-d33fbf1c7029",
+  "name" : "subtitle",
+  "display_width" : null,
+  "label" : "Subtitle",
+  "required" : false,
+  "locked" : true,
+  "validation_regex" : "",
+  "allow_new_line" : false,
+  "show_emoji_picker" : false,
+  "type" : "text",
+  "default" : "We offer a wide range of immersive technology (XR) applications and services to help you create unique and engaging brand experiences. Our solutions are perfect for businesses of all sizes, from global brands to startups, across a variety of industries, including industrial, retail, cultural, and marketing."
+}, {
+  "id" : "video_type",
+  "name" : "video_type",
+  "display_width" : null,
+  "label" : "Video type",
+  "required" : false,
+  "locked" : true,
+  "visibility_rules" : "ADVANCED",
+  "advanced_visibility" : {
+    "boolean_operator" : "OR",
+    "criteria" : [ {
+      "controlling_field" : null,
+      "controlling_field_path" : null,
+      "controlling_value_regex" : null,
+      "property" : null,
+      "operator" : null,
+      "access" : {
+        "operator" : "HAS_ALL",
+        "scopes" : [ "marketing-video" ]
+      }
+    }, {
+      "controlling_field" : "video_type",
+      "controlling_field_path" : null,
+      "controlling_value_regex" : "hubspot_video",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    } ],
+    "children" : [ ]
+  },
+  "display" : "radio",
+  "choices" : [ [ "embed", "Embed" ], [ "hubspot_video", "HubSpot video" ] ],
+  "multiple" : false,
+  "reordering_enabled" : true,
+  "preset" : null,
+  "type" : "choice",
+  "default" : "embed"
+}, {
+  "id" : "hubspot_video",
+  "name" : "hubspot_video",
+  "display_width" : null,
+  "label" : "HubSpot video",
+  "required" : false,
+  "locked" : true,
+  "visibility" : {
+    "controlling_field" : "video_type",
+    "controlling_field_path" : null,
+    "controlling_value_regex" : "hubspot_video",
+    "property" : null,
+    "operator" : "EQUAL",
+    "access" : null
+  },
+  "resizable" : true,
+  "show_preview" : true,
+  "show_advanced_options" : true,
+  "type" : "videoplayer"
+}, {
+  "id" : "embed_field",
+  "name" : "embed_field",
+  "display_width" : null,
+  "label" : "Embed",
+  "required" : false,
+  "locked" : true,
+  "visibility" : {
+    "controlling_field" : "video_type",
+    "controlling_field_path" : null,
+    "controlling_value_regex" : "embed",
+    "property" : null,
+    "operator" : "EQUAL",
+    "access" : null
+  },
+  "supported_source_types" : [ "oembed", "html" ],
+  "supported_oembed_types" : [ "video" ],
+  "resizable" : true,
+  "show_preview" : true,
+  "supported_media_bridge_providers" : [ ],
+  "type" : "embed",
+  "default" : {
+    "source_type" : "oembed"
+  }
+}, {
+  "id" : "oembed_thumbnail",
+  "name" : "oembed_thumbnail",
+  "display_width" : null,
+  "label" : "Custom thumbnail",
+  "required" : false,
+  "locked" : true,
+  "visibility_rules" : "ADVANCED",
+  "advanced_visibility" : {
+    "boolean_operator" : "AND",
+    "criteria" : [ {
+      "controlling_field" : "video_type",
+      "controlling_field_path" : null,
+      "controlling_value_regex" : "embed",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    }, {
+      "controlling_field" : "embed_field",
+      "controlling_field_path" : null,
+      "controlling_value_regex" : "(?=.*\"source_type\":\"oembed\")",
+      "property" : null,
+      "operator" : "MATCHES_REGEX",
+      "access" : null
+    }, {
+      "controlling_field" : "embed_field",
+      "controlling_field_path" : null,
+      "controlling_value_regex" : "(?=.*\"oembed_url\":\"(?!\")+)",
+      "property" : null,
+      "operator" : "MATCHES_REGEX",
+      "access" : null
+    } ],
+    "children" : [ ]
+  },
+  "responsive" : true,
+  "resizable" : false,
+  "show_loading" : false,
+  "type" : "image",
+  "default" : {
+    "src" : "",
+    "alt" : null,
+    "size_type" : null,
+    "width" : null,
+    "height" : null,
+    "max_width" : null,
+    "max_height" : null,
+    "loading" : "disabled"
+  }
+}, {
+  "id" : "placeholder_fields",
+  "name" : "placeholder_fields",
+  "display_width" : null,
+  "label" : "Placeholder text",
+  "required" : false,
+  "locked" : true,
+  "children" : [ {
+    "id" : "placeholder_fields.placeholder_title",
+    "name" : "placeholder_title",
+    "display_width" : null,
+    "label" : "Video placeholder title",
+    "required" : false,
+    "locked" : true,
+    "validation_regex" : "",
+    "allow_new_line" : false,
+    "show_emoji_picker" : false,
+    "type" : "text",
+    "default" : "No video selected"
+  }, {
+    "id" : "placeholder_fields.placeholder_description",
+    "name" : "placeholder_description",
+    "display_width" : null,
+    "label" : "Video placeholder description",
+    "required" : false,
+    "locked" : true,
+    "validation_regex" : "",
+    "allow_new_line" : false,
+    "show_emoji_picker" : false,
+    "type" : "text",
+    "default" : "Select a video type in the sidebar."
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "default" : {
+    "placeholder_title" : "No video selected",
+    "placeholder_description" : "Select a video type in the sidebar."
+  }
+}, {
+  "id" : "b3248b97-1f50-68ff-e43e-aee2eff663cf",
+  "name" : "trust_by",
+  "display_width" : null,
+  "label" : "Trust by listing",
+  "required" : false,
+  "locked" : true,
+  "children" : [ {
+    "id" : "47a87140-745b-72d6-af95-2ddd6361533a",
+    "name" : "brand",
+    "display_width" : null,
+    "label" : "Brand",
+    "required" : false,
+    "locked" : false,
+    "occurrence" : {
+      "min" : null,
+      "max" : null,
+      "sorting_label_field" : null,
+      "default" : null
+    },
+    "children" : [ {
+      "id" : "0fef8664-52e3-2857-1b72-29f6e307ae78",
+      "name" : "brand_name",
+      "display_width" : null,
+      "label" : "Name",
+      "required" : false,
+      "locked" : false,
+      "validation_regex" : "",
+      "allow_new_line" : false,
+      "show_emoji_picker" : false,
+      "type" : "text"
+    }, {
+      "id" : "f8df4df0-3a20-e98f-f2ab-a17d36314750",
+      "name" : "brand_logo",
+      "display_width" : null,
+      "label" : "Logo",
+      "required" : false,
+      "locked" : false,
+      "responsive" : true,
+      "resizable" : true,
+      "show_loading" : false,
+      "type" : "image",
+      "default" : {
+        "size_type" : "auto",
+        "src" : "",
+        "alt" : null,
+        "loading" : "lazy"
+      }
+    } ],
+    "tab" : "CONTENT",
+    "expanded" : false,
+    "group_occurrence_meta" : null,
+    "type" : "group",
+    "default" : [ ]
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "default" : {
+    "brand" : [ ]
+  }
+} ]

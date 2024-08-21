@@ -1,0 +1,42 @@
+<!--
+  templateType: "none"
+  isAvailableForNewContent: false
+-->
+{{ require_css(get_asset_url("../../css/elements/_card.css")) }}
+
+{% macro event(data) %}
+    <a class="event__card" href="{{ data.absolute_url }}" aria-label="Event post summary: {{ post.name }}">
+        <div class="event__card-img" aria-label="{% if data.featured_image_alt_text %} Featured image: {{ data.featured_image_alt_text }} - {% endif %}Read full post: {{ data.name }}">
+            <img class="img-default" loading="lazy" src="{{ data.featured_image }}" alt="{{ data.featured_image_alt_text }}"/>
+        </div>
+        <div class="event__card-info">
+            <div class="h4 fw-medium event__card-name">{{ data.name }}</div>
+            <div class="news__card-regions">
+                {% for tag in data.tag_list|slice(1, " ") %}
+                    {% if loop.first %}
+                        {% for item in tag %}
+                            {% if item != " " %}
+                                <div class="fs-20 news__card-region">{{ item|trim }}</div>
+                            {% endif %}
+                        {% endfor %}
+                    {% endif %}
+                {% endfor %}
+            </div>
+        </div>
+    </a>
+{% endmacro %}
+
+{% macro work(data) %}
+    <a
+        id="{{ data.hs_id }}"
+        href="/references/{{ data.hs_path }}"
+        class="work__card">
+        <div class="work__card-img">
+            <img class="img-default" loading="lazy" src="{{ data.cover_image.url }}" alt="{{ data.cover_image.altText }}"/>
+        </div>
+        <div class="work__card-content">
+            <div class="h3 work__card-name">{{ data.name }}</div>
+            <div class="fs-20 work__card-client">{{ data.client[0].name }}</div>
+        </div>
+    </a>
+{% endmacro %}

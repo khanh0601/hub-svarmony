@@ -1,0 +1,20 @@
+.content-wrapper {
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+@media screen and (min-width: 1380px) {
+  .content-wrapper {
+    padding: 0;
+  }
+}
+
+.dnd-section > .row-fluid {
+  margin: 0 auto;
+}
+
+@media (max-width: 767px) {
+  .dnd-section .dnd-column {
+    padding: 0;
+  }
+}

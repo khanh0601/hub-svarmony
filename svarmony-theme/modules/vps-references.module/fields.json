@@ -1,0 +1,33 @@
+[ {
+  "id" : "7ab550a3-2347-49b8-5bcb-958ee4ef5e68",
+  "name" : "title",
+  "display_width" : null,
+  "label" : "Title",
+  "required" : false,
+  "locked" : false,
+  "validation_regex" : "",
+  "allow_new_line" : false,
+  "show_emoji_picker" : false,
+  "type" : "text",
+  "default" : "VPS for every industry: explore svarmony's real-world solutions"
+}, {
+  "id" : "5ec2353a-983e-b440-cac6-b8308153acab",
+  "name" : "solution_name",
+  "display_width" : null,
+  "label" : "Relevant references",
+  "required" : false,
+  "locked" : false,
+  "occurrence" : {
+    "min" : null,
+    "max" : null,
+    "sorting_label_field" : null,
+    "default" : null
+  },
+  "table_name_or_id" : "42932464",
+  "columns_to_fetch" : [ "name" ],
+  "display_columns" : [ "name" ],
+  "type" : "hubdbrow",
+  "default" : {
+    "id" : 105403828967
+  }
+} ]

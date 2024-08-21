@@ -1,0 +1,40 @@
+[ {
+  "id" : "5f029098-544e-914c-98b1-616ec0596060",
+  "name" : "label_logo",
+  "display_width" : null,
+  "label" : "Title",
+  "required" : false,
+  "locked" : false,
+  "validation_regex" : "",
+  "allow_new_line" : false,
+  "show_emoji_picker" : false,
+  "type" : "text",
+  "default" : "Trusted by"
+}, {
+  "id" : "9b526809-f55f-1354-d46d-8629115b51b3",
+  "name" : "logo_img",
+  "display_width" : null,
+  "label" : "Logo list",
+  "required" : false,
+  "locked" : false,
+  "occurrence" : {
+    "min" : null,
+    "max" : null,
+    "sorting_label_field" : null,
+    "default" : null
+  },
+  "responsive" : true,
+  "resizable" : true,
+  "show_loading" : false,
+  "type" : "image",
+  "default" : {
+    "size_type" : "auto",
+    "src" : "https://25147791.fs1.hubspotusercontent-eu1.net/hubfs/25147791/Logo1.svg",
+    "alt" : "Logo1",
+    "loading" : "lazy",
+    "width" : 123,
+    "height" : 82,
+    "max_width" : 123,
+    "max_height" : 82
+  }
+} ]

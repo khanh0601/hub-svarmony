@@ -1,0 +1,149 @@
+.work-landing-info {
+    grid-column: 2/6;
+    align-self: start;
+    position: sticky;
+    top: 0;
+}
+.work-landing-main {
+    padding-bottom: 12rem;
+}
+.work-landing-richtext {
+    grid-column: 6/12;
+}
+.work-landing-richtext .hs_cos_wrapper_type_rich_text > *:first-child {
+    margin-top: 0;
+}
+.work-landing-richtext .hs_cos_wrapper_type_rich_text > *:last-child {
+    margin-bottom: 0;
+}
+.work-landing-richtext .hs_cos_wrapper_type_rich_text p,
+.work-landing-richtext .hs_cos_wrapper_type_rich_text ul {
+    margin-block: 2.8rem;
+}
+
+.work-landing-richtext .hs_cos_wrapper_type_rich_text h2 {
+    margin-top: 6.8rem;
+    margin-bottom: 2.8rem;
+    font-size: var(--fs-h3);
+    line-height: var(--lh-h3);
+    letter-spacing: var(--lsp-h3);
+    font-weight: bold !important;
+}
+.work-landing-richtext .hs_cos_wrapper_type_rich_text h3 {
+    margin-block: 2.8rem;
+    font-size: var(--fs-h4);
+    line-height: var(--lh-h4);
+    letter-spacing: var(--lsp-h4);
+}
+.work-landing-richtext .hs_cos_wrapper_type_rich_text h4 {
+    margin-block: 2.8rem;
+    font-size: var(--fs-h5);
+    line-height: var(--lh-h5);
+    letter-spacing: var(--lsp-h5);
+}
+.work-landing-richtext .hs_cos_wrapper_type_rich_text ul {
+    margin-left: 0px;
+    list-style: none;
+    padding-left: 1.8rem;
+}
+.work-landing-richtext .hs_cos_wrapper_type_rich_text li {
+    position: relative;
+    margin-block: 1.4rem;
+}
+.work-landing-richtext .hs_cos_wrapper_type_rich_text li:after {
+    content: '';
+    position: absolute;
+    display: block;
+    width: .8rem;
+    height: .8rem;
+    top: .5em;
+    left: -1.8rem;
+    border-radius: 50%;
+    background-color: white;
+}
+.work-landing-richtext .hs_cos_wrapper_type_rich_text li:first-child {
+    margin-top: 0;
+}
+.work-landing-richtext .hs_cos_wrapper_type_rich_text li:last-child {
+    margin-bottom: 0;
+}
+
+@media only screen and (max-width: 991px) {
+    .work-landing-info {
+        grid-column: span 5;
+    }
+    .work-landing-richtext {
+        grid-column: span 7;
+    }
+    .work-landing-richtext .hs_cos_wrapper_type_rich_text h2 {
+        margin-top: 5rem;
+        margin-bottom: 2.4rem;
+    }
+    .work-landing-richtext .hs_cos_wrapper_type_rich_text h3,
+    .work-landing-richtext .hs_cos_wrapper_type_rich_text h4 {
+        margin-block: 2.4rem;
+    }
+    .work-landing-richtext .hs_cos_wrapper_type_rich_text p,
+    .work-landing-richtext .hs_cos_wrapper_type_rich_text ul {
+        margin-block: 2.4rem;
+    }
+    .work-landing-richtext .hs_cos_wrapper_type_rich_text li {
+        margin-block: 1.2rem;
+    }
+}
+
+@media only screen and (max-width: 767px) {
+    .work-landing-main {
+        position: relative;
+        padding-bottom: 5rem;
+    }
+    .work-landing-main:after {
+        content: '';
+        position: absolute;
+        height: 1px;
+        bottom: 0;
+        right: 0;
+        left: 0;
+        background-color: rgba(255, 255, 255, 0.20);
+    }
+    .work-landing-info {
+        position: relative;
+        top: 0 !important;
+        grid-column: 1/-1;
+        padding-bottom: 4rem;
+    }
+    .work-landing-info:after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: -3rem;
+        right: -3rem;
+        height: 1px;
+        background-color: rgba(255, 255, 255, 0.20);
+    }
+    .work-landing-richtext {
+        grid-column: 1/-1;
+        padding-top: 4rem;
+    }
+    .work-landing-richtext .hs_cos_wrapper_type_rich_text h2 {
+        margin-top: 4rem;
+        margin-bottom: 1.8rem;
+    }
+    .work-landing-richtext .hs_cos_wrapper_type_rich_text h3,
+    .work-landing-richtext .hs_cos_wrapper_type_rich_text h4 {
+        margin-block: 1.8rem;
+    }
+    .work-landing-richtext .hs_cos_wrapper_type_rich_text p,
+    .work-landing-richtext .hs_cos_wrapper_type_rich_text ul {
+        margin-block: 1.8rem;
+    }
+    .work-landing-richtext .hs_cos_wrapper_type_rich_text li {
+        margin-block: .9rem;
+    }
+}
+@media only screen and (max-width: 476px) {
+    .work-landing-info:after {
+        left: -1.2rem;
+        right: -1.2rem;
+    }
+}

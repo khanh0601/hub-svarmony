@@ -1,0 +1,94 @@
+[ {
+  "id" : "8493f9ab-a2ca-728e-d988-fbc80904e08c",
+  "name" : "title",
+  "display_width" : null,
+  "label" : "Title",
+  "required" : false,
+  "locked" : false,
+  "validation_regex" : "",
+  "allow_new_line" : false,
+  "show_emoji_picker" : false,
+  "type" : "text",
+  "default" : "See you at NRF!"
+}, {
+  "id" : "6cfcd0fa-56bc-580b-1fb1-59c06b16a1a3",
+  "name" : "subtitle",
+  "display_width" : null,
+  "label" : "Subtitle",
+  "required" : false,
+  "locked" : false,
+  "validation_regex" : "",
+  "allow_new_line" : false,
+  "show_emoji_picker" : false,
+  "type" : "text"
+}, {
+  "id" : "0f2fff62-4acd-c5e4-eee8-38dec8a4df9d",
+  "name" : "button",
+  "display_width" : null,
+  "label" : "Button",
+  "required" : false,
+  "locked" : false,
+  "children" : [ {
+    "id" : "05fa4a37-27cf-7974-6572-f6089d44f7a7",
+    "name" : "text",
+    "display_width" : null,
+    "label" : "Text",
+    "required" : false,
+    "locked" : false,
+    "validation_regex" : "",
+    "allow_new_line" : false,
+    "show_emoji_picker" : false,
+    "type" : "text",
+    "default" : "Book an appointment"
+  }, {
+    "id" : "ceb247b7-0a0e-4179-2985-1bb6722ae7e4",
+    "name" : "link",
+    "display_width" : null,
+    "label" : "Link",
+    "required" : false,
+    "locked" : false,
+    "supported_types" : [ "EXTERNAL", "CONTENT", "BLOG" ],
+    "show_advanced_rel_options" : false,
+    "type" : "link",
+    "default" : {
+      "url" : {
+        "content_id" : null,
+        "type" : "EXTERNAL",
+        "href" : ""
+      },
+      "open_in_new_tab" : false,
+      "no_follow" : false
+    }
+  }, {
+    "id" : "40a822fe-e08f-fa6b-41e4-793a69e02c62",
+    "name" : "button_styles",
+    "display_width" : null,
+    "label" : "Button styles",
+    "required" : false,
+    "locked" : false,
+    "display" : "select",
+    "choices" : [ [ "gradient", "Gradient" ], [ "primary", "Primary" ], [ "white", "White" ] ],
+    "multiple" : false,
+    "reordering_enabled" : true,
+    "preset" : null,
+    "type" : "choice",
+    "default" : "gradient"
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "default" : {
+    "text" : "Book an appointment",
+    "link" : {
+      "url" : {
+        "content_id" : null,
+        "type" : "EXTERNAL",
+        "href" : ""
+      },
+      "open_in_new_tab" : false,
+      "no_follow" : false
+    },
+    "button_styles" : "gradient"
+  }
+} ]

@@ -1,0 +1,46 @@
+/* @import url('http://example.com/example_style.css'); */
+
+/***********************************************/
+/* CSS @imports must be at the top of the file */
+/* Add them above this section                 */
+/***********************************************/
+
+/*****************************************/
+/* Start your style declarations here    */
+/*****************************************/
+@font-face {
+    font-family: abcfavorit;
+    font-style: nomal;
+    font-weight: 100;
+    src: url({{ get_asset_url('/svarmony-theme/fonts/abcfavorit/abcfavorit-regular-webfont.ttf') }});
+}
+@font-face {
+    font-family: Raleway;
+    font-style: nomal;
+    font-weight: 200;
+    src: url('https://f.hubspotusercontent20.net/hubfs/3756227/raleway_fonts/Raleway-Light.ttf');
+}
+@font-face {
+    font-family: Raleway;
+    font-style: nomal;
+    font-weight: 400;
+    src: url('https://f.hubspotusercontent20.net/hubfs/3756227/raleway_fonts/Raleway-Regular.ttf');
+}
+@font-face {
+    font-family: Raleway;
+    font-style: nomal;
+    font-weight: 600;
+    src: url('https://f.hubspotusercontent20.net/hubfs/3756227/raleway_fonts/Raleway-Medium.ttf');
+}
+@font-face {
+    font-family: Raleway;
+    font-style: nomal;
+    font-weight: bold;
+    src: url('https://f.hubspotusercontent20.net/hubfs/3756227/raleway_fonts/Raleway-Bold.ttf');
+}
+@font-face {
+    font-family: Raleway;
+    font-style: nomal;
+    font-weight: black;
+    src: url('https://f.hubspotusercontent20.net/hubfs/3756227/raleway_fonts/Raleway-Black.ttf');
+}

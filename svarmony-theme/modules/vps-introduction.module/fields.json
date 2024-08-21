@@ -1,0 +1,59 @@
+[ {
+  "id" : "cbc66fb3-d762-0c84-83d7-ea92645105d3",
+  "name" : "image_define",
+  "display_width" : null,
+  "label" : "Image",
+  "required" : false,
+  "locked" : false,
+  "responsive" : true,
+  "resizable" : true,
+  "show_loading" : false,
+  "type" : "image",
+  "default" : {
+    "size_type" : "auto",
+    "src" : "https://25147791.fs1.hubspotusercontent-eu1.net/hubfs/25147791/vps-img.jpg",
+    "alt" : "vps-img",
+    "loading" : "lazy",
+    "width" : 627,
+    "height" : 605,
+    "max_width" : 627,
+    "max_height" : 605
+  }
+}, {
+  "id" : "53967797-3272-ca31-ffc1-471170516696",
+  "name" : "content",
+  "display_width" : null,
+  "label" : "Content",
+  "required" : false,
+  "locked" : false,
+  "children" : [ {
+    "id" : "6fb9ec2b-2bef-6e44-990d-99140eb7f7a7",
+    "name" : "title",
+    "display_width" : null,
+    "label" : "Title",
+    "required" : false,
+    "locked" : false,
+    "validation_regex" : "",
+    "allow_new_line" : false,
+    "show_emoji_picker" : false,
+    "type" : "text",
+    "default" : "What is VPS?"
+  }, {
+    "id" : "d538fec6-72a7-e933-75d9-3ffc75c24082",
+    "name" : "description",
+    "display_width" : null,
+    "label" : "Description",
+    "required" : false,
+    "locked" : false,
+    "type" : "richtext",
+    "default" : "VPS stands for <strong>“Visual Positioning System”</strong>. It is an innovative technology that utilises computer vision methods to determine a device's precise location and orientation."
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "default" : {
+    "title" : "What is VPS?",
+    "description" : "VPS stands for <strong>“Visual Positioning System”</strong>. It is an innovative technology that utilises computer vision methods to determine a device's precise location and orientation."
+  }
+} ]

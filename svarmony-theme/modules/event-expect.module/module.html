@@ -1,0 +1,156 @@
+
+{% require_css %}
+    <style>
+        {% scope_css %}
+            @media only screen and (max-width: 991px) {
+                .event__right-content {
+                    grid-column: span 10;
+                }
+                .event__left-content {
+                    margin-bottom: 3.2rem;
+                    grid-column: span 5;
+                }
+                .event__expect-listing {
+                    gap: 3.2rem;
+                }
+                .event__expect-item-img {
+                    aspect-ratio: 1.5;
+                }
+            }
+            @media only screen and (max-width: 767px) {
+                .event__right-content,
+                .event__left-content {
+                    grid-column: span 2;
+                }
+                .event__subtitle {
+                    max-width: none;
+                }
+            }
+        {% end_scope_css %}
+    </style>
+{% end_require_css %}
+<div class="{{ name }} event-grid">
+    <div class="event__left-content">
+        <h2 class="h3 fw-reg event__h2-title">{{ module.title }}</h2>
+        <div class="fs-20 event__subtitle">{{ module.subtitle }}</div>
+    </div>
+    <div class="event__right-content">
+        <div class="event__expect-content">
+            {% if module.video.embed_field.oembed_url or module.video.embed_field.embed_html or module.video.hubspot_video.player_id != null %}
+                <div class="event__expect-vid">
+                    {% if module.video.video_type == "embed" %}
+                        {% if module.video.embed_field.source_type == "oembed" %}
+                            <div class="oembed_container {% if module.video.embed_field.size_type == 'auto_full_width' %}oembed_container--full-size{% endif %}" id="oembed_container-{{ name }}">
+                                {% if module.video.oembed_thumbnail.src %}
+                                    <button class="oembed_custom-thumbnail" style="background-image:url({{module.video.oembed_thumbnail.src}})">
+                                        <span class="oembed-info">Video player - {{ module.video.oembed_thumbnail.alt }} - Click to play video</span>
+                                        <div class="oembed_custom-thumbnail_icon">
+                                            <svg width="100%" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <circle cx="60" cy="60" r="60" fill="url(#paint0_linear_99_5714)"/>
+                                                <path d="M79 60.5L47 79L47 42L79 60.5Z" fill="#0A0A0A"/>
+                                                <defs>
+                                                <linearGradient id="paint0_linear_99_5714" x1="120" y1="40.5" x2="0" y2="40.5" gradientUnits="userSpaceOnUse">
+                                                <stop stop-color="#67DB65"/>
+                                                <stop offset="0.526042" stop-color="#6BD2B1"/>
+                                                <stop offset="1" stop-color="#58B7D7"/>
+                                                </linearGradient>
+                                                </defs>
+                                            </svg>
+                                        </div>
+                                    </button>
+                                {% endif %}
+
+                                {% set oembedResponse = module.video.embed_field.oembed_response %}
+                                {% set isVideo = module.video.embed_field.oembed_url %}
+                                {% set isSupportedOEmbedType = module.video.embed_field.supported_oembed_types.index(module.video.embed_field.oembed_response.type) >= 0 %}
+
+                                {% if isVideo and isSupportedOEmbedType %}
+                                    <div class="iframe_wrapper"
+                                        data-embed-response-html="{{ oembedResponse.html|escape }}"
+                                        data-embed-response-width="{{ oembedResponse.width }}"
+                                        data-embed-response-height="{{ oembedResponse.height }}"
+                                        data-embed-url="{{ module.video.embed_field.oembed_url }}"
+                                        {% unless module.video.embed_field.size_type == "auto_full_width" or module.video.embed_field.size_type == "exact" %}
+                                            data-max-height="{% if module.video.embed_field.size_type == "auto_custom_max" %}{{ module.video.embed_field.max_height }}{% endif %}"
+                                            data-max-width="{% if module.video.embed_field.size_type == "auto_custom_max" %}{{ module.video.embed_field.max_width }}{% endif %}"
+                                        {% endunless %}
+                                        {% if module.video.embed_field.size_type == "exact" %}
+                                            data-height="{{ module.video.embed_field.height }}"
+                                            data-width="{{ module.video.embed_field.width }}"
+                                        {% endif %}
+                                        >
+                                    </div>
+                                {% endif %}
+                            </div>
+                        {% else %}
+                            <div id="embed_container" class="embed_container">
+                                <div class="iframe_wrapper">
+                                {{ module.video.embed_field.embed_html }}
+                                </div>
+                            </div>
+                        {% endif %}
+                    {% else %}
+                        {% if module.video.hubspot_video.player_id %}
+                            {% set max_width = module.video.hubspot_video.size_type == 'auto_custom_max' ? module.video.hubspot_video.max_width : module.video.hubspot_video.width %}
+                            {% set max_height = module.video.hubspot_video.size_type == 'auto_custom_max' ? module.video.hubspot_video.max_height : module.video.hubspot_video.height %}
+                            <div class="hubspotvideo_container">
+                                {% if module.video.oembed_thumbnail.src %}
+                                    <button class="oembed_custom-thumbnail" style="background-image:url({{module.video.oembed_thumbnail.src}})">
+                                        <span class="oembed-info">Video player - {{ module.video.oembed_thumbnail.alt }} - Click to play video</span>
+                                        <div class="oembed_custom-thumbnail_icon">
+                                            <svg width="100%" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <circle cx="60" cy="60" r="60" fill="url(#paint0_linear_99_5714)"/>
+                                                <path d="M79 60.5L47 79L47 42L79 60.5Z" fill="#0A0A0A"/>
+                                                <defs>
+                                                <linearGradient id="paint0_linear_99_5714" x1="120" y1="40.5" x2="0" y2="40.5" gradientUnits="userSpaceOnUse">
+                                                <stop stop-color="#67DB65"/>
+                                                <stop offset="0.526042" stop-color="#6BD2B1"/>
+                                                <stop offset="1" stop-color="#58B7D7"/>
+                                                </linearGradient>
+                                                </defs>
+                                            </svg>
+                                        </div>
+                                    </button>
+                                {% endif %}
+                                {% video_player "embed_player"
+                                    autoplay={{ module.video.hubspot_video.autoplay }},
+                                    conversion_asset={{ module.video.hubspot_video.conversion_asset|tojson|safe }},
+                                    full_width={{ module.video.hubspot_video.size_type == 'auto_full_width' }},
+                                    height={{ max_height }},
+                                    hidden_controls={{ module.video.hubspot_video.hide_controls }},
+                                    embed_button=True
+                                    loop={{ module.video.hubspot_video.loop_video }},
+                                    muted={{ module.video.hubspot_video.mute_by_default }},
+                                    play_button_color={{ module.style_options.oembed_thumbnail_play_button_color.color }},
+                                    player_id={{ module.video.hubspot_video.player_id }},
+                                    type={{ module.video.hubspot_video.player_type or 'scriptV4' }},
+                                    width={{ max_width }}
+                                %}
+                            </div>
+                        {% endif %}
+                    {% endif %}
+                    {% if module.video.desc %}
+                        <div class="fs-20 event__expect-item-desc">{{ module.video.desc }}</div>
+                    {% endif %}
+                </div>
+            {# {% else %}
+                <div class="hs-video-placeholder">
+                    <div class="hs-video-placeholder__inner">
+                        <p class="fs-20">{{ module.video.placeholder_fields.placeholder_title }}</p>
+                        <p class="fs-20">{{ module.video.placeholder_fields.placeholder_description }}</p>
+                    </div>
+                </div> #}
+            {% endif %}
+            <div class="event__expect-listing">
+                {% for item in module.expect_listing.expect %}
+                    <div class="event__expect-item">
+                        <div class="event__expect-item-img">
+                            <img class="img-default" src="{{ item.thumbnail.src }}" alt="{{ item.thumbnail.alt }}" />
+                        </div>
+                        <div class="fs-20 event__expect-item-desc">{{ item.description }}</div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</div>

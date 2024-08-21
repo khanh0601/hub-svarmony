@@ -1,0 +1,42 @@
+.work-achievement {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1.6rem;
+    margin-top: 2rem;
+    flex-wrap: wrap;
+}
+.work-achievement-item {
+    width: calc((100% / 3) - (3.2rem / 3));
+    flex: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 2rem;
+    background-color: #F2F2F2;
+}
+.work-achievement-item p {
+    margin-top: -.3rem;
+    color: #737373;
+}
+
+@media only screen and (max-width: 991px) {
+    .work-achievement-item {
+        width: calc(50% - (1.6rem / 2));
+    }
+    .work-achievement-item .h3 {
+        font-size: var(--fs-h2);
+        line-height: var(--lh-h2);
+    }
+}
+
+@media only screen and (max-width: 476px) {
+    .work-achievement-item {
+        width: 100%;
+    }
+    .work-achievement-item .h3 {
+        font-size: 5.2rem;
+        line-height: 1.2;
+    }
+}

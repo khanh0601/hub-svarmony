@@ -1,0 +1,153 @@
+{% import '../../templates/marco/card.html' as card %}
+
+
+{% macro post_feed(x) %}
+    {# -- if "x" isn't "contents" change it to a custom feed  -- #}
+    {% unless x == contents %}
+        {% set x = blog_recent_tag_posts('default', x, 5) %}
+    {% endunless %}
+    {% for content in x %}
+        <div class="post-item">
+            {% if not simple_list_page %}
+                {{ card.event(content) }}
+            {% else %}
+                <h2 class="post-listing-simple">
+                    <a href="{{content.absolute_url}}">{{ content.name }}</a>
+                </h2>
+            {% endif %}
+        </div>
+    {% endfor %}
+{% endmacro %}
+
+
+<section class="event-listing--wrap event-listing__past">
+    <h2 class="h3 fw-reg event-listing__past-title">Past</h2>
+    <div class="event-listing__past-list">
+        {% if topic %}
+            {% for content in contents %}
+                {% for topic in content.topic_list %}
+                    {% if loop.last %}
+                        {% if topic == 'Past' %}
+                            {{ card.event(content) }}
+                        {% endif %}
+                    {% endif %}
+                {% endfor %}
+            {% endfor %}
+        {% else %}
+            {{ post_feed('Past') }}
+        {% endif %}
+    </div>
+    {% if next_page_num %}
+        <a href="#" total-page-count={{ contents.total_page_count }} class="event-btn white event-listing__past-btn">Show more</a>
+    {% endif %}
+</section>
+
+{%require_js %}
+    <script>
+        const handlePastEvent = () => {
+            let currPage = 1;
+            let blogOutOfPosts = false;
+
+            let eventsPast = $(".event-listing__past-list");
+            let eventsPastBtn = $('.event-listing__past-btn');
+
+            const updateBtnLoad = (totalPage) => {
+                currPage += 1;
+                if (currPage <= totalPage) {
+                    eventsPastBtn.attr('href', `{{ blog_tag_url("default", "Past") }}/page/${currPage}`)
+                }
+                else {
+                    eventsPastBtn.remove();
+                }
+            };
+
+            eventsPast.html('');
+            $.get('{{ blog_tag_url("default", "Past") }}').then((data) => {
+                let totalPage = $(data).find('.event-listing__past-btn').attr('total-page-count');
+                let ajaxURL = '{{ blog_tag_url("default", "Past") }}/page/1';
+                updateBtnLoad(totalPage);
+                $.get(ajaxURL, function (data) {
+                    let page = $(data);
+                    let events = page.find('.event-listing__past-list .event__card');
+                    events.each(function() {
+                        let eventPost = $(this);
+                        eventsPast.append(eventPost);
+                    });
+                });
+
+                eventsPastBtn.on('click', function (e) {
+                    e.preventDefault();
+                    ajaxURL = $(this).attr('href');
+                    $.get(ajaxURL, function (data) {
+                        let page = $(data);
+                        let events = page.find('.event-listing__past-list .event__card');
+                        if(events.length == 0) {
+                            blogOutOfPosts = true;
+                            return;
+                        }
+                        events.each(function() {
+                            let eventPost = $(this);
+                            gsap.set(eventPost, { y: 30, autoAlpha: 0 });
+                            eventsPast.append(eventPost);
+                        });
+
+                        gsap.to(events, { y: 0, autoAlpha: 1, ease: 'power2.out', stagger: .08, duration: 1 });
+                        setTimeout(function(){
+                            updateBtnLoad(totalPage);
+                        }, 100);
+                    });
+                })
+            });
+        }
+
+        const handleTagEventPast = () => {
+            let currPage = 1;
+            let blogOutOfPosts = false;
+
+            let eventsPast = $(".event-listing__past-list");
+            let eventsPastBtn = $('.event-listing__past-btn');
+            let totalPage = {{ contents.total_page_count }};
+
+            const updateBtnLoad = (totalPage) => {
+                currPage += 1;
+                if (currPage <= totalPage) {
+                    eventsPastBtn.attr('href', `${window.location.origin}${window.location.pathname}/page/${currPage}`)
+                }
+                else {
+                    eventsPastBtn.remove();
+                }
+            };
+
+            updateBtnLoad();
+            eventsPastBtn.on('click', function (e) {
+                e.preventDefault();
+                let ajaxURL = $(this).attr('href');
+                $.get(ajaxURL, function (data) {
+                    let page = $(data);
+                    let events = page.find('.event-listing__past-list .event__card');
+                    if(events.length == 0) {
+                        blogOutOfPosts = true;
+                        return;
+                    }
+                    events.each(function() {
+                        let eventPost = $(this);
+                        gsap.set(eventPost, { y: 30, autoAlpha: 0 });
+                        eventsPast.append(eventPost);
+                    });
+
+                    gsap.to(events, { y: 0, autoAlpha: 1, ease: 'power2.out', stagger: .08, duration: 1 });
+                    setTimeout(function(){
+                        updateBtnLoad();
+                    }, 100);
+                });
+            })
+        }
+
+        if (window.location.pathname.includes('tag')) {
+            handleTagEventPast()
+        }
+        else {
+            handlePastEvent();
+        }
+    </script>
+{%end_require_js %}

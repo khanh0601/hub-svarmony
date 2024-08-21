@@ -1,0 +1,31 @@
+.event__hero-thumbnail-img {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 54rem;
+    overflow: hidden;
+}
+.event__hero-thumbnail-vid {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: auto;
+}
+.event__hero-thumbnail-img img {
+    object-fit: cover;
+}
+.event__hero-thumbnail-img .mob-ver {
+    display: none;
+}
+@media only screen and (max-width: 991px) {
+    .event__hero-thumbnail-img {
+        height: auto;
+    }
+    .event__hero-thumbnail-img .desk-ver {
+        display: none;
+    }
+    .event__hero-thumbnail-img .mob-ver {
+        display: block;
+    }
+}

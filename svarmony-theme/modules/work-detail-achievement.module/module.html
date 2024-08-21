@@ -1,0 +1,11 @@
+<!-- module html  -->
+<div class="work-achievement">
+    {% if module.achievement|length > 0 %}
+        {% for item in module.achievement %}
+            <div class="work-achievement-item">
+                <div class="h3">{{ item.statistic }}</div>
+                <p class="fs-20">{{ item.desc }}</p>
+            </div>
+        {% endfor %}
+    {% endif %}
+</div>

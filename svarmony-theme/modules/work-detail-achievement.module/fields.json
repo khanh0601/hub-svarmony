@@ -1,0 +1,42 @@
+[ {
+  "id" : "3a8772c3-a8de-4e5f-674b-172b04f26066",
+  "name" : "achievement",
+  "display_width" : null,
+  "label" : "Achievement",
+  "required" : false,
+  "locked" : false,
+  "occurrence" : {
+    "min" : null,
+    "max" : null,
+    "sorting_label_field" : "d955ac64-07ab-ac60-e98b-669c1fcd5434",
+    "default" : null
+  },
+  "children" : [ {
+    "id" : "c5c41d93-4119-d50c-0ead-ad0b0a9f4f28",
+    "name" : "statistic",
+    "display_width" : null,
+    "label" : "Statistic",
+    "required" : false,
+    "locked" : false,
+    "validation_regex" : "",
+    "allow_new_line" : false,
+    "show_emoji_picker" : false,
+    "type" : "text"
+  }, {
+    "id" : "d955ac64-07ab-ac60-e98b-669c1fcd5434",
+    "name" : "desc",
+    "display_width" : null,
+    "label" : "Description",
+    "required" : false,
+    "locked" : false,
+    "validation_regex" : "",
+    "allow_new_line" : false,
+    "show_emoji_picker" : false,
+    "type" : "text"
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "default" : [ ]
+} ]

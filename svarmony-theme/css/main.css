@@ -1,0 +1,104 @@
+/* Theme base styles */
+
+{% set primary_color = theme.global_colors.primary.color  %}
+{% set title_color = theme.global_colors.title_color.color %}
+{% set body_color = theme.global_colors.body_color.color %}
+
+:root {
+	--color-primary: {{ primary_color }};
+	--color-secondary: #303030;
+	/* --color-tertiary: #A3DA8D;  */
+	--color-white: #FFFFFF;
+	--color-black: #000;
+
+	--color-heading: {{ title_color }};
+	--color-body: {{ body_color }};
+	--color-body-bg: var(--color-black);
+}
+
+body {
+	font-family: Favorit, sans-serif;
+	color: var(--color-body);
+	font-weight: normal;
+	font-size: var(--fs-16);
+	line-height: var(--lh-16);
+
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	font-kerning: none;
+	-webkit-text-rendering: optimizeSpeed;
+	text-rendering: optimizeSpeed;
+	-webkit-text-size-adjust: 100%;
+
+	margin: 0;
+	height: auto;
+	background-color: var(--color-body-bg);
+	scroll-behavior: auto;
+}
+
+body[page-theme="light"] {
+	--color-body-bg: var(--color-white);
+	--color-body: var(--color-secondary);
+	--color-heading: var(--color-black);
+
+	font-weight: 300;
+	font-size: var(--fs-20);
+	line-height: var(--lh-20);
+	letter-spacing: var(--lsp-20);
+}
+
+@media only screen and (max-width: 767px) {
+	body[page-theme="light"] {
+		font-weight: 200;
+		font-size: var(--fs-16);
+		line-height: var(--lh-16);
+		letter-spacing: var(--lsp-16);
+	}
+}
+
+body[page-theme="light"] h1, body[page-theme="light"] .h1 {
+	font-weight: 300 !important;
+}
+body[page-theme="light"] h2, body[page-theme="light"] .h2,
+body[page-theme="light"] h3, body[page-theme="light"] .h3,
+body[page-theme="light"] h4, body[page-theme="light"] .h4,
+body[page-theme="light"] h5, body[page-theme="light"] .h5,
+body[page-theme="light"] h6, body[page-theme="light"] .h6 {
+	font-weight: 400 !important;
+}
+/* Generic
+This is where reset, normalize & box-sizing styles go.
+*/
+
+{% include './generic/_reset.css' %}
+{% include './generic/_normalize.css' %}
+{% include './generic/_common.css' %}
+
+/* Objects
+Non-cosmetic design patterns including grid and layout classes)
+*/
+
+{% include './objects/_layout.css' %}
+{% include './objects/_containers-dnd.css' %}
+
+/* Elements
+Base HMTL elements are styled in this section (<body>, <h1>, <a>, <p>, <button> etc.)
+*/
+
+{% include './elements/_typography.css' %}
+{% include './elements/_buttons.css' %}
+{% include './elements/_forms.css' %}
+{% include './elements/_tables.css' %}
+
+/* Components
+Specific pieces of UI that are stylized. Typically used for global partial styling
+*/
+
+{% include './components/_header.css' %}
+{% include './components/_default-modules.css' %}
+
+/* Utilities
+Helper classes with ability to override anything that comes before it
+*/
+
+{% include './utilities/_helper.css' %}

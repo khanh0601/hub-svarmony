@@ -1,0 +1,96 @@
+.work-infor-listing {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 4rem 2rem;
+    margin-bottom: 6rem;
+}
+.work-infor-item.dou-col {
+    grid-column: span 2;
+}
+.work-infor-item.honors .work-infor-item-label {
+    margin-bottom: 1rem;
+}
+.work-infor-item.honors .work-infor-item-content {
+    display: flex;
+    align-items: center;
+    gap: 1.6rem;
+    flex-wrap: wrap;
+}
+.work-item-content-honor {
+    width: 10rem;
+    height: 10rem;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #E5E5E5;
+}
+.work-infor-item-img {
+    width: 60%;
+}
+.work-infor-download {
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    gap: 0 2rem;
+}
+.work-infor-download-item {
+    border-radius: .8rem;
+    border: 1px solid #A6A6A6;
+    width: 21.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+}
+.work-infor-item-content {
+    color: black;
+}
+@media only screen and (max-width: 991px) {
+    .work-infor-listing {
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+        gap: 2rem 0;
+        margin-bottom: 4rem;
+    }
+    .work-infor-item.honors .work-infor-item-content {
+        gap: 1.2rem;
+    }
+    .work-item-content-honor {
+        width: 6.5rem;
+        height: 6.5rem;
+    }
+    .work-infor-download-item {
+        width: 38%;
+    }
+}
+
+@media only screen and (max-width: 767px) {
+    .work-item-content-honor {
+        width: 10rem;
+        height: 10rem;
+    }
+    .work-infor-item-img {
+        width: 62%;
+    }
+    .work-infor-item.honors .work-infor-item-content {
+        gap: 1.6rem;
+    }
+    .work-infor-download-item {
+        width: 32%;
+    }
+}
+@media only screen and (max-width: 476px)  {
+    .work-infor-item-label {
+        font-size: var(--fs-14);
+        line-height: var(--lh-14);
+    }
+    .work-infor-item-content {
+        font-size: var(--fs-18);
+        line-height: var(--lh-18);
+    }
+    .work-infor-download-item {
+        width: calc(50% - .6rem);
+    }
+}

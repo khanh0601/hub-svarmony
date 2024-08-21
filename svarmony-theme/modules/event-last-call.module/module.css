@@ -1,0 +1,18 @@
+
+.event__last-call-title {
+    text-align: center;
+    max-width: 80rem;
+}
+.event__last-call-sub {
+    margin-top: 1.2rem;
+    text-align: center;
+    max-width: 81.4rem;
+}
+@media only screen and (max-width: 476px) {
+    .event__last-call-title {
+        font-size: var(--fs-h2);
+        line-height: var(--lh-h2);
+        /* max-width: 23.5rem; */
+        max-width: unset;
+    }
+}

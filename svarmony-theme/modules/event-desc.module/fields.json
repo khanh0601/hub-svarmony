@@ -1,0 +1,10 @@
+[ {
+  "id" : "text",
+  "name" : "content",
+  "display_width" : null,
+  "label" : "Content",
+  "required" : false,
+  "locked" : false,
+  "type" : "richtext",
+  "default" : ""
+} ]

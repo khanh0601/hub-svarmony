@@ -1,0 +1,64 @@
+@font-face { font-family: 'abcfavorit';  
+  src: url('https://25147791.fs1.hubspotusercontent-eu1.net/hubfs/25147791/abcfavorit-bold-webfont.eot') 
+    format('eot'), 
+    url('https://25147791.fs1.hubspotusercontent-eu1.net/hubfs/25147791/abcfavorit-bold-webfont.woff') 
+    format('woff'), 
+    url('{{ get_asset_url('/svarmony-theme/fonts/abcfavorit/abcfavorit-bold-webfont.ttf') }}') 
+    format('truetype');
+  font-weight: 700;
+  font-display: swap;
+
+}
+
+
+@font-face { font-family: 'abcfavorit';  
+  src: url('https://25147791.fs1.hubspotusercontent-eu1.net/hubfs/25147791/abcfavorit-regular-webfont.eot') 
+    format('eot'), 
+    url('https://25147791.fs1.hubspotusercontent-eu1.net/hubfs/25147791/abcfavorit-regular-webfont.woff') 
+    format('woff'), 
+    url('{{ get_asset_url('/svarmony-theme/fonts/abcfavorit/abcfavorit-book-webfont.ttf') }}') 
+    format('truetype');
+  font-weight: 400;
+  font-display: swap;
+}
+
+
+@font-face { font-family: 'abcfavorit';  
+  src: url('https://25147791.fs1.hubspotusercontent-eu1.net/hubfs/25147791/abcfavorit-medium-webfont.eot') 
+    format('eot'), 
+    url('https://25147791.fs1.hubspotusercontent-eu1.net/hubfs/25147791/abcfavorit-medium-webfont.woff') 
+    format('woff'), 
+    url('{{ get_asset_url('/svarmony-theme/fonts/abcfavorit/abcfavorit-medium-webfont.ttf') }}') 
+    format('truetype');
+  font-weight: 400;
+  font-display: swap;
+}
+
+
+@font-face { font-family: 'abcfavorit';  
+  src: url('https://25147791.fs1.hubspotusercontent-eu1.net/hubfs/25147791/abcfavorit-book-webfont.eot') 
+    format('eot'), 
+    url('https://25147791.fs1.hubspotusercontent-eu1.net/hubfs/25147791/abcfavorit-book-webfont.woff') 
+    format('woff'), 
+    url('{{ get_asset_url('/svarmony-theme/fonts/abcfavorit/abcfavorit-regular-webfont.ttf') }}') 
+    format('truetype');
+  font-weight: 400;
+  font-display: swap;
+
+}
+
+@font-face { font-family: 'abcfavoritmono';  
+  src: url('https://25147791.fs1.hubspotusercontent-eu1.net/hubfs/25147791/abcfavoritmono-book-webfont.eot') 
+    format('eot'), 
+    url('https://25147791.fs1.hubspotusercontent-eu1.net/hubfs/25147791/abcfavoritmono-book-webfont.woff') 
+    format('woff'), 
+    url('{{ get_asset_url('/svarmony-theme/fonts/abcfavorit/abcfavoritmono-book-webfont.ttf') }}') 
+    format('truetype');
+  font-weight: 400;
+  font-display: swap;
+
+}
+
+p {
+  font-family: 'ABCfavorit';  
+  };

@@ -1,0 +1,102 @@
+[ {
+  "id" : "ea947c40-59ca-0ab9-de05-76bd10aed22b",
+  "name" : "heading",
+  "display_width" : null,
+  "label" : "Heading",
+  "required" : false,
+  "locked" : false,
+  "children" : [ {
+    "id" : "8d5f9d44-304e-2029-d52c-424a418cf63a",
+    "name" : "title",
+    "display_width" : null,
+    "label" : "Title",
+    "required" : false,
+    "locked" : false,
+    "validation_regex" : "",
+    "allow_new_line" : false,
+    "show_emoji_picker" : false,
+    "type" : "text",
+    "default" : "How it works"
+  }, {
+    "id" : "3a14f4dc-0cf3-3bdc-8799-9ce7e647c1ef",
+    "name" : "description",
+    "display_width" : null,
+    "label" : "Description",
+    "required" : false,
+    "locked" : false,
+    "validation_regex" : "",
+    "allow_new_line" : false,
+    "show_emoji_picker" : false,
+    "type" : "text",
+    "default" : "VPS leverages a three-step process to pinpointlocation and orientation with exceptional accuracy."
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "default" : {
+    "title" : "How it works",
+    "description" : "VPS leverages a three-step process to pinpointlocation and orientation with exceptional accuracy."
+  }
+}, {
+  "id" : "5fec2648-9dfa-85e6-0517-f854954d7be0",
+  "name" : "card",
+  "display_width" : null,
+  "label" : "Step",
+  "required" : false,
+  "locked" : false,
+  "occurrence" : {
+    "min" : null,
+    "max" : null,
+    "sorting_label_field" : "81170db5-793e-d8c8-cea5-635c88cfcdbf",
+    "default" : null
+  },
+  "children" : [ {
+    "id" : "1175152f-06d1-7fc6-d9ac-cb00c5f7bf7e",
+    "name" : "image_field",
+    "display_width" : null,
+    "label" : "Image",
+    "required" : false,
+    "locked" : false,
+    "responsive" : true,
+    "resizable" : true,
+    "show_loading" : false,
+    "type" : "image",
+    "default" : {
+      "src" : "https://25147791.fs1.hubspotusercontent-eu1.net/hubfs/25147791/vps-work1.jpg",
+      "alt" : "vps-work1",
+      "loading" : "lazy",
+      "width" : 400,
+      "height" : 217
+    }
+  }, {
+    "id" : "81170db5-793e-d8c8-cea5-635c88cfcdbf",
+    "name" : "title_card",
+    "display_width" : null,
+    "label" : "Title Card",
+    "required" : false,
+    "locked" : false,
+    "validation_regex" : "",
+    "allow_new_line" : false,
+    "show_emoji_picker" : false,
+    "type" : "text",
+    "default" : "Step 1: Image recognition"
+  }, {
+    "id" : "7261baa3-5a96-0e9f-f206-b7c8c14a50ca",
+    "name" : "description_card",
+    "display_width" : null,
+    "label" : "Description Card",
+    "required" : false,
+    "locked" : false,
+    "validation_regex" : "",
+    "allow_new_line" : false,
+    "show_emoji_picker" : false,
+    "type" : "text",
+    "default" : "VPS uses your device's camera to capture its surroundings. It then analyzes these images and identify unique features like walls, doorways, or specific markers."
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "default" : [ ]
+} ]

@@ -1,0 +1,10 @@
+<!--
+    label: Event booking button
+-->
+
+<a class="event-btn {{ module.button_styles }}" href="{{ module.link.url.href }}"
+    {% if module.link.no_follow %} rel="nofollow" {% endif %}
+    {% if module.link.open_in_new_tab %} target="_blank" {% endif %}
+    >
+    {{ module.text }}
+</a>

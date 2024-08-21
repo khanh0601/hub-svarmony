@@ -1,0 +1,20 @@
+:root {
+    --container-padding: 8rem !important    ;
+}
+.grid{
+    grid-column-gap: 2rem;
+    grid-template-columns: minmax(1px, 1fr) minmax(1px, 1fr) minmax(1px, 1fr) minmax(1px, 1fr) minmax(1px, 1fr) minmax(1px, 1fr) minmax(1px, 1fr) minmax(1px, 1fr) minmax(1px, 1fr) minmax(1px, 1fr) minmax(1px, 1fr) minmax(1px, 1fr) ;
+}
+.img-basic{
+    width: 100%;
+}
+ @media only screen and (max-width:991px){
+    :root {
+        --container-padding: 4rem !important    ;
+    }
+ }
+ @media only screen and (max-width:767px){
+    :root {
+        --container-padding: 1.6rem !important    ;
+    }
+ }

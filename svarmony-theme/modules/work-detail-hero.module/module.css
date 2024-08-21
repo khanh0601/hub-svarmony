@@ -1,0 +1,64 @@
+.work-hero {
+    padding-top: 12.2rem;
+    padding-bottom: 8rem;
+}
+.work-hero .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 3.2rem 0;
+}
+.work-hero-btn {
+    display: flex;
+    align-items: center;
+    gap: 0 1rem;
+}
+.work-hero-title {
+    max-width: 113.2rem;
+}
+
+.work-hero-thumbnail {
+    /* display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden; */
+}
+.work-hero-thumbnail img {
+    object-fit: cover;
+}
+
+@media only screen and (max-width: 991px) {
+    .work-hero {
+        padding-top: 15rem;
+    }
+    .work-hero-title {
+        max-width: 68.2rem;
+    }
+}
+
+@media only screen and (max-width: 767px) {
+    .work-hero {
+        padding-top: 10.8rem;
+        padding-bottom: 6rem;
+    }
+    .work-hero .container {
+        text-align: start;
+        align-items: start;
+    }
+    .work-hero-title {
+        font-size: 5.2rem;
+        line-height: 1.2;
+    }
+    .work-hero-thumbnail  {
+        margin: 0 -3rem;
+    }
+}
+@media only screen and (max-width: 476px) {
+    .work-hero {
+        padding-bottom: 4rem;
+    }
+    .work-hero-thumbnail {
+        margin: 0 -1.2rem;
+    }
+}

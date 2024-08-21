@@ -1,0 +1,18 @@
+<!-- module html  -->
+
+<section class="lastCall">
+    <div class="container">
+        <div class="lastCall-bg">
+            <img src="{{ get_asset_url('../../images/footer-decor.svg') }}"/>
+        </div>
+        <div class="lastCall-content">
+            <h2 class="h1 lastCall-title">{{ module.heading }}</h2>
+            <a class="event-btn gradient" href="{{ module.btn.link.url.href }}"
+                {% if module.link.no_follow %} rel="nofollow" {% endif %}
+                {% if module.link.open_in_new_tab %} target="_blank" {% endif %}
+                >
+                {{ module.btn.text }}
+            </a>
+        </div>
+    </div>
+</section>

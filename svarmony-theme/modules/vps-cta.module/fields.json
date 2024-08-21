@@ -1,0 +1,21 @@
+[ {
+  "id" : "d97ce854-826c-ece0-fc30-5ed7075d2d46",
+  "name" : "title",
+  "display_width" : null,
+  "label" : "Title",
+  "required" : false,
+  "locked" : false,
+  "validation_regex" : "",
+  "allow_new_line" : false,
+  "show_emoji_picker" : false,
+  "type" : "text",
+  "default" : "Power up your business with svarmony’s VPS"
+}, {
+  "id" : "0214a9b6-3441-851a-1156-5ef97b923637",
+  "name" : "cta_button",
+  "display_width" : null,
+  "label" : "CTA button",
+  "required" : false,
+  "locked" : false,
+  "type" : "richtext"
+} ]

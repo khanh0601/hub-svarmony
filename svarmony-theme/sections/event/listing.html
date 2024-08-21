@@ -1,0 +1,23 @@
+<!--
+    templateType: section
+    label: Event Listing
+    description: Event Listing Section
+    isAvailableForNewContent: true
+-->
+
+{# Event Listing #}
+
+{% dnd_section vertical_alignment='TOP'  %}
+    {% dnd_column %}
+        {% dnd_row %}
+            {% dnd_module path='../../modules/event-listing-upcoming' %}
+            {% end_dnd_module %}
+        {% end_dnd_row %}
+        {% dnd_row %}
+            {% dnd_module path='../../modules/event-listing-past' %}
+            {% end_dnd_module %}
+        {% end_dnd_row %}
+    {% end_dnd_column %}
+{% end_dnd_section %}
+
+{# End Event Listing #}

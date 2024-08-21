@@ -1,0 +1,8 @@
+<!-- module html  -->
+<div class="richtext-global event__hero-sub-richtext">
+    {% if module.content %}
+        {{ module.content }}
+    {% else %}
+        {{ content.meta_description | trim }}
+    {% endif %}
+</div>

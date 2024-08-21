@@ -1,0 +1,14 @@
+<!--
+    templateType: page
+    isAvailableForNewContent: true
+    label: References
+    screenshotPath: ../images/template-previews/homepage.png
+-->
+{% extends "./layouts/base.html" %}
+
+{% block body %}
+    <div class="body-container body-container--works">
+        {% module "works-listing" path="../modules/work-listing.module", label="works-listing" %}
+        {% module "works-last-call" path="../modules/last-call.module", label="works-last-call" %}
+    </div>
+{% endblock body %}

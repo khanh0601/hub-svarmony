@@ -1,0 +1,92 @@
+.event__about-content {
+    grid-column: span 10;
+}
+.event__about-content--wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+.event__about-content-title {
+    margin-bottom: 1.2rem;
+}
+.event__about-content-sub {
+    max-width: 81.4rem;
+}
+.event__about-content-vid {
+    width: 100%;
+    height: auto;
+    margin: 6rem 0;
+}
+.event__about-content-trustedby {
+    width: 100%;
+}
+.event__about-content-trustedby-txt {
+    position: relative;
+    display: flex;
+    align-items: center;
+    margin-bottom: 3.2rem;
+    gap: 0 1.6rem;
+    color: rgba(255, 255, 255, 0.80);
+}
+body[page-theme="light"] .event__about-content-trustedby-txt {
+    color: var(--color-secondary);
+}
+.event__about-content-trustedby-txt:before,
+.event__about-content-trustedby-txt:after {
+    content: '';
+    height: 1px;
+    flex-grow: 1;
+    background-color: rgba(255, 255, 255, 0.20);
+}
+[page-theme="light"] .event__about-content-trustedby-txt:before,
+[page-theme="light"] .event__about-content-trustedby-txt:after {
+    background-color: #CCC;
+}
+.event__about-content-trustedby-brand-listing {
+    display: grid;
+    grid-template-columns: repeat(6, minmax(1px, 1fr));
+    gap: 1rem 3.4rem;
+}
+body[page-theme="light"] .event__about-content-trustedby-brand-logo {
+    filter: invert(1);
+}
+
+@media only screen and (max-width: 991px) {
+    .event__about-content-sub {
+        max-width: 70.4rem;
+    }
+}
+
+@media only screen and (max-width: 767px) {
+    .event__about-content-vid {
+        margin: 4.8rem 0 6rem;
+    }
+    .event__about-content-title {
+        font-size: var(--fs-h2);
+        line-height: var(--lh-h2);
+    }
+    .event__about-content-sub {
+        max-width: none;
+    }
+    .event__about-content-trustedby-brand-listing {
+        grid-template-columns: repeat(3, minmax(1px, 1fr));
+    }
+    .event__about-content-trustedby-txt {
+        margin-bottom: 2.4rem;
+    }
+}
+
+@media only screen and (max-width: 476px) {
+    .event__about-content-vid {
+        margin: 3.2rem 0 4rem;
+    }
+    .event__about-content-trustedby-brand-listing {
+        gap: 1rem 1.6rem;
+    }
+    .event__about-content-trustedby-txt {
+        margin-bottom: 1.6rem;
+        font-size: var(--fs-18);
+        line-height: var(--lh-18);
+    }
+}

@@ -1,0 +1,22 @@
+<!--
+    templateType: page
+    isAvailableForNewContent: true
+    label: VPS Detail
+-->
+{% set template_css = "../../css/templates/vps.css" %}
+    
+{% extends "./layouts/base.html" %}
+
+{% set page_theme = "light" %}
+{% block body %}
+    <div class="body-container body-container--work-landing">
+        {% module "vps-hero" path="../modules/vps-hero", label="vps-hero" %}
+        {% module "vps-introduction" path='/svarmony-theme/modules/vps-introduction', label="vps-introduction" %}
+        {% module "vps-how-it-works" path="../modules/vps-how-it-works", label="vps-how-it-works" %}
+        {% module "vps-application" path="../modules/vps-application", label="vps-application" %}
+        {% module "vps-references" path="../modules/vps-references", label="vps-references" %}
+        {% module "vps-cta" path="../modules/vps-cta", label="vps-cta" %}
+        {% module "vps-logo" path="../modules/vps-customer-logo", label="vps-customer-logo" %}
+    </div>
+{% endblock body %}
+

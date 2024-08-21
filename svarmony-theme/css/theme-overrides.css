@@ -1,0 +1,153 @@
+{% set container_width = theme.spacing.maximum_content_width ~ 'rem' %}
+  {% set dnd_section_padding = theme.spacing.vertical_spacing ~ 'rem ' ~ '1rem' %}
+  {% set dnd_container_padding = theme.spacing.horizontal_spacing ~ 'rem ' %}
+
+  /* Colors */
+  {% set primary_color = theme.global_colors.primary.color  %}
+  {% set title_color = theme.global_colors.title_color.color %}
+  {% set body_color = theme.global_colors.body_color.color %}
+
+  /* Typography */
+
+  /* {% set primary_font = theme.global_fonts.primary %}
+  {% set secondary_font = theme.global_fonts.secondary %} */
+
+  :root {
+      --container-padding: {{ dnd_container_padding }};
+  }
+
+  @media only screen and (max-width: 991px) {
+    :root {
+          --container-padding: 4rem;
+      }
+  }
+
+  @media only screen and (max-width: 767px) {
+    :root {
+          --container-padding: 3rem;
+      }
+  }
+
+  @media only screen and (max-width: 476px) {
+    :root {
+          --container-padding: 1.2rem;
+      }
+  }
+
+
+  {% set h1_font = theme.text.h1.font %}
+
+  {% set h2_font = theme.text.h2.font %}
+
+  {% set h3_font = theme.text.h3.font %}
+
+  {% set h4_font = theme.text.h4.font %}
+
+  {% set h5_font = theme.text.h5.font %}
+
+  {% set h6_font = theme.text.h6.font %}
+
+
+  .content-wrapper {
+      max-width: {{ container_width }};
+  }
+
+  .dnd-section,
+  .content-wrapper--vertical-spacing {
+      padding: 0 var(--container-padding);
+  }
+
+  .dnd-section > .row-fluid {
+      max-width: {{ container_width }};
+      margin: 0 auto;
+  }
+
+  .container {
+      max-width: calc({{ container_width }} + var(--container-padding) * 2);
+      padding: 0 var(--container-padding);
+      margin: 0 auto;
+  }
+  .container-fluid {
+    padding: 0 var(--container-padding);
+    margin: 0 auto;
+  }
+
+  .grid {
+      display: grid;
+      gap: 0 2rem;
+      grid-template-columns: repeat(12, minmax(1px, 1fr));
+  }
+  .container-fluid-cus {
+      max-width: {{ container_width }};
+      margin: 0 auto;
+      width: 100%;
+  }
+
+  @media only screen and (max-width: 767px) {
+      .grid {
+          grid-template-columns: repeat(2, minmax(1px, 1fr));
+      }
+  }
+
+  body {
+      {{ body_font.style }};
+      color: {{ body_font.color }};
+      font-size: {{ body_font.size ~ body_font.size_unit }};
+  }
+
+  p {
+      {{ body_font.style }};
+  }
+
+  a {
+      {{ anchor_font.style }};
+      color: {{ anchor_font.color }};
+  }
+
+  /* Headings */
+
+  h1, .h1 {
+      {{ h1_font.style }};
+      /* color: {{ h1_font.color }}; */
+      font-size: {{ h1_mobile_font ~ 'rem'}};
+      text-transform: {{ h1_text_transform }};
+  }
+
+  h2, .h2 {
+      {{ h2_font.style }};
+      /* color: {{ h2_font.color }}; */
+      font-size: {{ h2_mobile_font ~ 'rem'}};
+      text-transform: {{ h2_text_transform }};
+  }
+
+  h3,.h3 {
+      {{ h3_font.style }};
+      /* color: {{ h3_font.color }}; */
+      font-size: {{ h3_mobile_font ~ 'rem'}};
+      text-transform: {{ h3_text_transform }};
+  }
+
+  h4, .h4 {
+      {{ h4_font.style }};
+      /* color: {{ h4_font.color }}; */
+      font-size: {{ h4_mobile_font ~ 'rem'}};
+      text-transform: {{ h4_text_transform }};
+  }
+
+  h5, .h5 {
+      {{ h5_font.style }};
+      color: {{ h5_font.color }};
+      font-size: {{ h5_mobile_font ~ 'rem'}};
+      text-transform: {{ h5_text_transform }};
+  }
+
+  h6, .h6 {
+      {{ h6_font.style }};
+      /* color: {{ h6_font.color }}; */
+      font-size: {{ h6_mobile_font ~ 'rem'}};
+      text-transform: {{ h6_text_transform }};
+  }
+
+  .primary-cl {
+      color: {{ primary_color }};
+  }

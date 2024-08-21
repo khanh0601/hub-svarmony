@@ -1,0 +1,14 @@
+<!--
+    templateType: page
+    isAvailableForNewContent: true
+    label: Partners Test
+    screenshotPath: ../images/template-previews/homepage.png
+-->
+{% extends "./layouts/base.html" %}
+
+{% set page_theme = "light" %}
+{% block body %}
+    <div class="body-container body-container--partner">
+        {% module "partner-map-test" path="../modules/partner-map-test.module", label="partner-map-test" %}
+    </div>
+{% endblock body %}

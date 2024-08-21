@@ -1,0 +1,10 @@
+[ {
+  "id" : "text",
+  "name" : "text",
+  "display_width" : null,
+  "label" : "Rich text field",
+  "required" : false,
+  "locked" : false,
+  "type" : "richtext",
+  "default" : "<h1>Hello, world!</h1>"
+} ]

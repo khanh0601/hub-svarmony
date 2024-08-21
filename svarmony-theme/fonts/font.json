@@ -1,0 +1,23 @@
+{
+  "name": "abcfavorit-webfont",
+  "default": "Regular",
+  "fallback": "sans-serif",
+  "variants": [
+    {
+      "name": "Regular",
+      "files": [
+        {
+          "file": "./ttf/abcfavorit-regular-webfont.ttf",
+          "format": "truetype"
+        },
+        {
+          "file": "./web/abcfavorit-regular-webfont.woff",
+          "format": "woff"
+        }
+     ],
+      "styles": {
+        "font-weight": 400
+      }
+    }
+  ]
+}

@@ -1,0 +1,20 @@
+<!--
+  templateType: blog_listing
+  isAvailableForNewContent: true
+  label: Svarmony - Event listing
+  screenshotPath: ../images/template-previews/blog-index.png
+-->
+{% set template_css = "../../css/templates/event-listing.css" %}
+{% extends "./layouts/base.html" %}
+
+{% set page_theme = "light" %}
+{% block body %}
+    {% dnd_area 'dnd_area'
+        label='Main section',
+        class='body-container body-container--blog-index',
+        background_color: '#F7F7F7'
+    %}
+      {% include_dnd_partial path="../sections/event/listing.html" %}
+      {% include_dnd_partial path="../sections/event/svarmony.html" %}
+    {% end_dnd_area %}
+{% endblock body %}

@@ -1,0 +1,46 @@
+.work-explore {
+    padding-bottom: 12rem;
+}
+.work-explore-title,
+.work-explore-listing {
+    grid-column: 2/12;
+}
+.work-explore-title {
+    margin-bottom: 2.8rem;
+}
+.work-explore-listing {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2.8rem 4rem;
+}
+@media only screen and (max-width: 991px) {
+    .work-explore {
+        padding-bottom: 8rem;
+    }
+    .work-explore-listing,
+    .work-explore-title {
+        grid-column: 1/-1;
+    }
+}
+
+@media only screen and (max-width: 767px) {
+    .work-explore {
+        padding-top: 4rem;
+        padding-bottom: 6rem;
+    }
+    .work-explore-title {
+        margin-bottom: 3.2rem;
+    }
+    .work-explore-listing {
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+        gap: 2.4rem 0;
+    }
+}
+
+@media only screen and (max-width: 476px) {
+    .work-explore {
+        padding-bottom: 4rem;
+    }
+}

@@ -1,0 +1,75 @@
+.vps-work{
+    background-color: #000;
+    padding: 24rem 0 12rem 0;
+}
+.vps-work-head{
+    margin-bottom: 10rem;
+}
+h2.vps-work-head-title.h2{
+    font-weight: 200 !important;
+    line-height: 1.1em;
+    margin-bottom: 2.8rem;
+    color: white;
+}
+.vps-work-head-description{
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 2rem;
+    line-height: 1.4em;
+    font-weight: 200;
+    max-width: 50rem;
+}
+.vps-work-card-wrap{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 4rem;
+}
+.vps-work-card{
+    width: calc(100%/3 - 8rem/3);
+}
+.vps-work-card-title{
+    margin: 4rem 0 1.6rem 0;
+    color: #fff;
+    font-size: 2.4rem;
+    line-height: 1.2em;
+    font-weight: 400;
+}
+.vps-work-card-description{
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 1.6rem;
+    line-height: 1.4em;
+    font-weight: 400;
+}
+ @media only screen and (max-width:991px){
+    h2.vps-work-head-title.h2{
+        margin-bottom: 1.6rem;
+    }
+    .vps-work-head {
+        margin-bottom: 7rem;
+    }
+ }
+ @media only screen and (max-width:767px){
+    .vps-work {
+        padding: 23rem 0 4.8rem 0;
+    }
+    h2.vps-work-head-title.h2 {
+        margin-bottom: 2.8rem;
+    }
+    .vps-work-head-description {
+        font-size: 1.8rem;
+    }
+    .vps-work-head {
+        margin-bottom: 3.2rem;
+    }
+    .vps-work-card-wrap{
+        flex-direction: column;
+        row-gap: 4rem;
+    }
+    .vps-work-card{
+        width: 100%;
+    }
+    .vps-work-card-description{
+        font-size: 1.8rem;
+    }
+
+ }

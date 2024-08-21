@@ -1,0 +1,72 @@
+{% macro popup(title, content) %}
+    <div class="popup-wrapper">
+        <div class="container">
+            <div class="popup-inner">
+                <div class="popup-header">
+                    <a href="#" class="popup-close" data-popup="close">
+                        <div class="popup-close-ic">
+                            <svg width="21" height="20" viewBox="0 0 21 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M16.3332 4.16675L4.6665 15.8334" stroke="#454545" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round"/>
+                                <path d="M16.3332 15.8334L4.6665 4.16675" stroke="#454545" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round"/>
+                            </svg>
+                        </div>
+                    </a>
+                    {% if title %}
+                        <h3 class="h2 popup-title">{{ title }}</h3>
+                    {% endif %}
+                </div>
+                <div class="popup-inner-content custome-scroll" data-lenis-prevent>
+                    {{ content }}
+                </div>
+            </div>
+        </div>
+    </div>
+{% endmacro %}
+{% macro agenda_popup(data) %}
+    <div class="agenda_popup">
+        <div class="agenda_popup-timeline">
+            {% for agenda in data.timeline %}
+                <div class="agenda_popup-timeline-item">
+                    <h4 class="h4 agenda_popup-day">Day {{ agenda.day }} - {{ agenda.date|datetimeformat("%b %e, %Y") }}</h4>
+                    {% for item in agenda.agenda %}
+                        <div class="accordion agenda_popup-item">
+                            <div class="accordion-title">
+                                <div class="fs-20 fw-medium agenda_popup-item-time">{{ item.time.hour }} {{ item.time.period }}</div>
+                                <div class="fs-20 fw-medium agenda_popup-item-title">{{ item.title }}</div>
+                                <div class="accordion-ic">
+                                    <div class="accordion-ic-item"></div>
+                                    <div class="accordion-ic-item hor"></div>
+                                </div>
+                            </div>
+                            <div class="accordion-content agenda_popup-item-content">
+                                <div class="richtext-global">{{ item.content }}</div>
+                                {%if item.sub_image.image.src %}
+                                    <div class="agenda_popup-item-image">
+                                        <img class="img-default" src="{{ item.sub_image.image.src }}" alt="{{ item.sub_image.image.alt }}">
+                                        <span class="fs-12">{{ item.sub_image.desc }}</span>
+                                    </div>
+                                {%endif%}
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+{% endmacro %}
+
+{% if module.is_show %}
+    <div class="event__agenda" data-popup="parent">
+        {% if module.button.action == 'popup' %}
+            <a class="fs-20 fw-reg hover-un" data-popup="open">{{ module.button.text }}</a>
+            {{ popup(module.popup.title, agenda_popup(module.popup)) }}
+        {% elif module.button.action == 'link' %}
+            <a class="fs-20 fw-reg hover-un" href="{{ module.button.link.url.href }}"
+                {% if module.button.link.no_follow %} rel="nofollow" {% endif %}
+                {% if module.button.link.open_in_new_tab %} target="_blank" {% endif %}
+                >
+                {{ module.button.text }}
+            </a>
+        {% endif %}
+    </div>
+{% endif %}

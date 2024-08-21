@@ -1,0 +1,18 @@
+<!-- module html  -->
+{% set data = hubdb_table_rows("works", "hs_path=" ~ page_slug)[0] %}
+<section class="work-hero">
+    <div class="container">
+        <a href="/{{ request.path|split('/')|first }}" class="work-hero-btn">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M0.862004 7.52863L5.52867 2.86196C5.78898 2.60165 6.21103 2.60165 6.47134 2.86196V2.86196C6.73165 3.12227 6.73165 3.54431 6.47134 3.80462L2.94267 7.33329H14.6667C15.0353 7.33329 15.3333 7.63196 15.3333 7.99996C15.3333 8.36796 15.0353 8.66662 14.6667 8.66662H2.94267L6.47134 12.1953C6.73165 12.4556 6.73165 12.8776 6.47134 13.138V13.138C6.21103 13.3983 5.78898 13.3983 5.52867 13.138L0.862004 8.47129C0.601337 8.21063 0.601337 7.78929 0.862004 7.52863Z" fill="#000"/>
+            </svg>
+            <p class="fs-20 hover-un fw-reg">Back to References</p>
+        </a>
+        <h1 class="h1 work-hero-title">{{ data.name }}</h1>
+        <div class="work-hero-thumbnail">
+            {% if data.cover_image.url %}
+                <img class="img-default" loading="eager" src="{{ data.cover_image.url }}" alt="{{ data.cover_image.altText }}">
+            {% endif %}
+        </div>
+    </div>
+</section>

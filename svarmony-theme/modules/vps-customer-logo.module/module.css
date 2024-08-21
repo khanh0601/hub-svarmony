@@ -1,0 +1,83 @@
+.vps-logo-item{
+    width: calc(100% / 6 - 50rem / 6);
+}
+.vps-logo-item img{
+   min-height: unset !important;
+}
+.vps-logo-list{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    column-gap: 10rem;
+    row-gap: 1rem;
+}
+.vps-logo-label{
+    font-size: 2rem;
+    font-weight: 200;
+    line-height: 1.4em;
+   color: rgba(48, 48, 48, 1); 
+   width: max-content;
+position: relative;
+
+
+}
+.vps-logo-label-wrap{
+margin-bottom: 3.2rem;
+display: flex;
+justify-content: center;
+overflow: hidden;
+}
+.vps-logo-label::after{
+content: "";
+width: 100vw;
+height: 1px;
+background-color: rgba(204, 204, 204, 1);
+position: absolute;
+right: calc(100% + 1.6rem);
+top: 50%;
+transform: translateY(-50%);
+}
+.vps-logo-label::before{
+    content: "";
+    width: 100vw;
+    height: 1px;
+    background-color: rgba(204, 204, 204, 1);
+    position: absolute;
+    left: calc(100% + 1.6rem);
+    top: 50%;
+    transform: translateY(-50%);
+    }
+.vps-logo{
+   padding-bottom: 11.4rem;
+}
+@media only screen and (max-width:991px) {
+    .vps-logo-list{
+        gap:4rem;
+    }
+    .vps-logo {
+        padding-bottom: 8rem;
+    }
+    .vps-logo-item{
+        width: calc(100% / 6 - 20rem / 6);
+    }
+}
+@media only screen and (max-width:767px) {
+    .vps-logo-item{
+        width: calc(100% / 3 - 3.2rem/3);
+    }
+    .vps-logo{
+        padding-bottom: 4rem;
+        border-bottom:1px solid #E5E5E5;
+    }
+    .vps-logo-list{
+        row-gap:1rem;
+        column-gap:1.6rem;
+    }
+    .vps-logo-label-wrap{
+        margin-bottom:1.6rem;
+    }
+    .vps-logo-label{
+        font-size:1.8rem;
+    }
+
+}

@@ -1,0 +1,208 @@
+<!-- module html  -->
+
+{% macro popup(header, content) %}
+    <div class="popup-wrapper">
+        <div class="container">
+            <div class="popup-inner">
+                <div class="popup-header">
+                    {{ header }}
+                    <a href="#" class="popup-close" data-popup="close">
+                        <div class="popup-close-ic">
+                            <svg width="100%" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M36.728 8.44291L24 21.1719L11.272 8.44291C10.881 8.05191 10.248 8.05191 9.85801 8.44291L8.44401 9.85691C8.05301 10.2479 8.05301 10.8809 8.44401 11.2709L21.172 23.9999L8.44401 36.7289C8.05401 37.1199 8.05401 37.7529 8.44401 38.1429L9.85801 39.5569C10.249 39.9479 10.882 39.9479 11.272 39.5569L24 26.8279L36.728 39.5569C37.119 39.9479 37.752 39.9479 38.142 39.5569L39.556 38.1429C39.947 37.7519 39.947 37.1189 39.556 36.7289L26.828 23.9999L39.556 11.2709C39.946 10.8799 39.946 10.2469 39.556 9.85691L38.142 8.44291C37.751 8.05191 37.118 8.05191 36.728 8.44291Z" fill="black"/>
+                            </svg>
+                        </div>
+                    </a>
+                </div>
+                <div class="popup-inner-content custome-scroll" data-lenis-prevent>
+                    {{ content }}
+                </div>
+            </div>
+        </div>
+    </div>
+{% endmacro %}
+
+{% macro popup_header() %}
+    <div class="partner__popup-header">
+        <div class="partner__popup-header-logo" data-popup-content="company-logo">
+            <img class="img-default" src="" alt="" loading="eager" />
+        </div>
+        <div class="partner__popup-info">
+            <div class="partner__popup-info-inner">
+                <h3 class="h2 partner__popup-info-name" data-popup-content="company-name"></h3>
+                <p class="partner__popup-info-location" data-popup-content="location-name"></p>
+            </div>
+            <a class="fs-16 btn partner__popup-info-btn" href="" target="_blank" data-popup-content="company-website">
+                Visit website
+            </a>
+        </div>
+    </div>
+{% endmacro %}
+{% macro popup_content() %}
+    <div class="partner__popup-content">
+
+        <div class="partner__popup-content-row">
+            <div class="partner__popup-content-row-sticky">
+                <div class="partner__popup-content-row-title">
+                    <span>About</span>
+                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M7.35889 11.768C7.53873 11.9182 7.76559 12.0005 7.99989 12.0005C8.23419 12.0005 8.46106 11.9182 8.64089 11.768L14.6409 6.76803C14.7417 6.68385 14.825 6.58063 14.886 6.46427C14.947 6.3479 14.9844 6.22067 14.9962 6.08983C15.008 5.95899 14.9939 5.82712 14.9547 5.70172C14.9156 5.57633 14.8521 5.45988 14.7679 5.35903C14.6837 5.25817 14.5805 5.17489 14.4641 5.11392C14.3478 5.05296 14.2205 5.01551 14.0897 5.00372C13.9589 4.99192 13.827 5.00602 13.7016 5.04519C13.5762 5.08436 13.4597 5.14785 13.3589 5.23203L7.99989 9.70003L2.64089 5.23403C2.54004 5.14985 2.42359 5.08636 2.2982 5.04719C2.17281 5.00801 2.04093 4.99392 1.91009 5.00571C1.77925 5.01751 1.65202 5.05496 1.53565 5.11592C1.41929 5.17688 1.31607 5.26017 1.23189 5.36103C1.14772 5.46188 1.08423 5.57833 1.04505 5.70372C1.00588 5.82911 0.991786 5.96099 1.00358 6.09183C1.01537 6.22267 1.05282 6.3499 1.11378 6.46627C1.17475 6.58263 1.25804 6.68585 1.35889 6.77003L7.35889 11.768Z" fill="#737373"/>
+                    </svg>
+                </div>
+                <div class="partner__popup-content-row-content">
+                    <div class="partner__popup-content-row-content-text">
+                        <div class="h4 fw-reg" data-popup-content="about-title"></div>
+                        <p data-popup-content="about-desc"></p>
+                    </div>
+                    <div data-popup-content="about-thumbnail" class="partner__popup-content-row-thumb mod-mb">
+                        <img src="" alt="" class="img-default fill-cover"/>
+                    </div>
+                </div>
+            </div>
+            <div data-popup-content="about-thumbnail" class="partner__popup-content-row-thumb">
+                <img src="" alt="" class="img-default fill-cover"/>
+            </div>
+        </div>
+
+        <div class="partner__popup-content-row">
+            <div class="partner__popup-content-row-sticky">
+                <div class="partner__popup-content-row-title">
+                    <span>Service</span>
+                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M7.35889 11.768C7.53873 11.9182 7.76559 12.0005 7.99989 12.0005C8.23419 12.0005 8.46106 11.9182 8.64089 11.768L14.6409 6.76803C14.7417 6.68385 14.825 6.58063 14.886 6.46427C14.947 6.3479 14.9844 6.22067 14.9962 6.08983C15.008 5.95899 14.9939 5.82712 14.9547 5.70172C14.9156 5.57633 14.8521 5.45988 14.7679 5.35903C14.6837 5.25817 14.5805 5.17489 14.4641 5.11392C14.3478 5.05296 14.2205 5.01551 14.0897 5.00372C13.9589 4.99192 13.827 5.00602 13.7016 5.04519C13.5762 5.08436 13.4597 5.14785 13.3589 5.23203L7.99989 9.70003L2.64089 5.23403C2.54004 5.14985 2.42359 5.08636 2.2982 5.04719C2.17281 5.00801 2.04093 4.99392 1.91009 5.00571C1.77925 5.01751 1.65202 5.05496 1.53565 5.11592C1.41929 5.17688 1.31607 5.26017 1.23189 5.36103C1.14772 5.46188 1.08423 5.57833 1.04505 5.70372C1.00588 5.82911 0.991786 5.96099 1.00358 6.09183C1.01537 6.22267 1.05282 6.3499 1.11378 6.46627C1.17475 6.58263 1.25804 6.68585 1.35889 6.77003L7.35889 11.768Z" fill="#737373"/>
+                    </svg>
+                </div>
+                <div class="partner__popup-content-row-content">
+                    <div class="partner__popup-content-row-content-text" data-popup-content="service-listing">
+                    </div>
+                    <div data-popup-content="service-thumbnail" class="partner__popup-content-row-thumb mod-mb">
+                        <img src="" alt="" class="img-default fill-cover"/>
+                    </div>
+                </div>
+            </div>
+            <div data-popup-content="service-thumbnail" class="partner__popup-content-row-thumb">
+                <img src="" alt="" class="img-default fill-cover"/>
+            </div>
+        </div>
+
+        <div class="partner__popup-content-row">
+            <div class="partner__popup-content-row-sticky">
+                <div class="partner__popup-content-row-title">
+                    <span>Contact</span>
+                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M7.35889 11.768C7.53873 11.9182 7.76559 12.0005 7.99989 12.0005C8.23419 12.0005 8.46106 11.9182 8.64089 11.768L14.6409 6.76803C14.7417 6.68385 14.825 6.58063 14.886 6.46427C14.947 6.3479 14.9844 6.22067 14.9962 6.08983C15.008 5.95899 14.9939 5.82712 14.9547 5.70172C14.9156 5.57633 14.8521 5.45988 14.7679 5.35903C14.6837 5.25817 14.5805 5.17489 14.4641 5.11392C14.3478 5.05296 14.2205 5.01551 14.0897 5.00372C13.9589 4.99192 13.827 5.00602 13.7016 5.04519C13.5762 5.08436 13.4597 5.14785 13.3589 5.23203L7.99989 9.70003L2.64089 5.23403C2.54004 5.14985 2.42359 5.08636 2.2982 5.04719C2.17281 5.00801 2.04093 4.99392 1.91009 5.00571C1.77925 5.01751 1.65202 5.05496 1.53565 5.11592C1.41929 5.17688 1.31607 5.26017 1.23189 5.36103C1.14772 5.46188 1.08423 5.57833 1.04505 5.70372C1.00588 5.82911 0.991786 5.96099 1.00358 6.09183C1.01537 6.22267 1.05282 6.3499 1.11378 6.46627C1.17475 6.58263 1.25804 6.68585 1.35889 6.77003L7.35889 11.768Z" fill="#737373"/>
+                    </svg>
+                </div>
+                <div class="partner__popup-content-row-content" data-popup-content="contact-listing">
+                </div>
+            </div>
+        </div>
+    </div>
+{% endmacro %}
+<div class="sc-partner" data-popup="parent">
+    <div class="container partner__hero-text mod-mb">
+        <h1 class="h1 partner__hero-title">{{ module.title }}</h1>
+        <div class="partner__hero-sub">{{ module.subtitle }}</div>
+    </div>
+    <div class="partner container grid">
+        <div class="partner__hero">
+            <div class="partner__hero-text">
+                <h1 class="h1 partner__hero-title">{{ module.title }}</h1>
+                <div class="fs-20 partner__hero-sub">
+                    <span class="fs-20 partner__hero-sub-inner">
+                        {{ module.subtitle }}
+                    </span>
+                </div>
+            </div>
+            <div class="partner__listing" data-swiper="swiper">
+                <div class="partner__listing-inner" data-swiper="wrapper">
+                    {% for company in module.company %}
+                        <div class="partner__listing-item" data-swiper="slide">
+                            <div class="partner__listing-item-logo"data-popup-content="company-logo">
+                                <img class="img-default" src="{{ company.company_logo.src }}" alt="{{ company.company_logo.alt }}" loading="lazy" />
+                            </div>
+                            <div class="partner__listing-item-info">
+                                <div class="partner__listing-item-info-heading">
+                                    <h3 class="h4 partner__listing-item-info-name" data-popup-content="company-name">{{ company.company_name }}</h3>
+                                    <p class="partner__listing-item-info-location" data-popup-content="location-name">{{ company.company_location.location_name }}</p>
+                                </div>
+                                <p class="partner__listing-item-info-intro">{{ company.company_intro }}</p>
+                                <div class="partner__listing-item-info-action">
+                                    <button class="btn partner__listing-item-info-btn fs-16" data-popup="open" data-popup-index={{loop.index0}}>Learn more</button>
+                                    <a class="fs-16 fw-reg hover-line partner__listing-item-info-site" href="{{ company.company_website.url.href }}"
+                                        {% if company.company_website.no_follow %} rel="nofollow" {% endif %}
+                                        {% if company.company_website.open_in_new_tab %} target="_blank" {% endif %}
+                                        data-popup-content="company-website"
+                                        >
+                                        Visit website
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="partner__listing-content-hidden">
+                                <div data-popup-content="about-title">{{ company.about.title }}</div>
+                                <div data-popup-content="about-desc">{{ company.about.desc }}</div>
+                                <div data-popup-content="about-thumbnail">{{ company.about.thumbnail.src }}</div>
+                                <div data-popup-content="service-listing">
+                                    {% for service in company.service.listing %}
+                                        <div class="partner__popup-service-item">
+                                            <div class="fs-20 fw-reg partner__popup-service-item-title">
+                                                <span>{{ loop.index }}.</span>
+                                                {{ service.title }}
+                                            </div>
+                                            <div class="partner__popup-service-item-desc">{{ service.desc }}</div>
+                                        </div>
+                                    {% endfor %}
+                                </div>
+                                <div data-popup-content="service-thumbnail">{{ company.service.thumbnail.src }}</div>
+                                <div data-popup-content="contact-listing">
+                                    {% for contact in company.contact %}
+                                        <div class="partner__popup-contact-item">
+                                            <div class="fs-20 fw-reg partner__popup-contact-item-title">{{ contact.type }}</div>
+                                            <div class="partner__popup-contact-item-desc">{{ contact.value }}</div>
+                                        </div>
+                                    {% endfor %}
+                                </div>
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+        <div class="partner__map">
+            <div class="partner__map-inner">
+                <div class="partner__map-img">
+                    <img class="img-default dp-height dp-map-bg-init" src={{ get_asset_url('../../images/partner-map.svg') }} alt='world map' loading="eager"/>
+                    <div class="partner__map-locations dp-map-location-init">
+                        {% for company in module.company %}
+                            {% require_css %}
+                                <style>
+                                    {% scope_css %}
+                                        .partner__map-pointer:nth-child({{ loop.index }}) {
+                                            left: {{ company.company_location.location_x / 1404 * 100 ~ '%' }};
+                                            top: {{ company.company_location.location_y / 780 * 100 ~ '%'  }};
+                                        }
+                                    {% end_scope_css %}
+                                </style>
+                            {% end_require_css %}
+                            <div
+                                class="fw-medium partner__map-pointer{% if loop.first %} active{%endif%}"
+                                data-company-name="{{ company.company_name }}"
+                                data-x="{{ company.company_location.location_x / 1404 * 100 }}"
+                                data-y="{{ company.company_location.location_y / 780 * 100  }}"
+                                data-popup="open"
+                                data-popup-index={{loop.index0}}>
+                                <svg width="100%" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M20.1667 1C13.2033 1 6 6.29917 6 15.1667C6 24.5708 19.0225 37.7017 19.5775 38.2558C19.7333 38.4125 19.9458 38.5 20.1667 38.5C20.3875 38.5 20.6 38.4125 20.7558 38.2558C21.3108 37.7017 34.3333 24.5708 34.3333 15.1667C34.3333 6.29917 27.13 1 20.1667 1ZM20.1667 20.1667C17.4092 20.1667 15.1667 17.9242 15.1667 15.1667C15.1667 12.4092 17.4092 10.1667 20.1667 10.1667C22.9242 10.1667 25.1667 12.4092 25.1667 15.1667C25.1667 17.9242 22.9242 20.1667 20.1667 20.1667Z" fill="#C01515"/>
+                                </svg>
+                            </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    {{ popup(popup_header(), popup_content()) }}
+</div>
+
+
+

@@ -1,0 +1,31 @@
+[ {
+  "id" : "e0ef985f-cf16-7633-ed90-7dbbe7a30f15",
+  "name" : "logo",
+  "display_width" : null,
+  "label" : "Logo",
+  "required" : false,
+  "locked" : true,
+  "responsive" : true,
+  "resizable" : true,
+  "show_loading" : false,
+  "type" : "image",
+  "default" : {
+    "size_type" : "auto",
+    "src" : "https://25147791.fs1.hubspotusercontent-eu1.net/hubfs/25147791/Logo.svg",
+    "alt" : "Logo",
+    "loading" : "lazy",
+    "width" : 268,
+    "height" : 45,
+    "max_width" : 268,
+    "max_height" : 45
+  }
+}, {
+  "id" : "24ef013c-19a3-011a-ef8d-d6a988988680",
+  "name" : "menu",
+  "display_width" : null,
+  "label" : "Menu",
+  "required" : false,
+  "locked" : true,
+  "type" : "menu",
+  "default" : 97442157808
+} ]

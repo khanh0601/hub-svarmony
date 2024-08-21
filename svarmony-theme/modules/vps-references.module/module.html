@@ -1,0 +1,83 @@
+<!-- module html  -->
+<section class="vps-solution">
+  <div class="container ">
+    <div class="vps-solution-title-wrap">
+        <h2 class="h2 vps-solution-title">{{module.title}}</h2>
+    </div>
+    <div class="swiper vps-solution-swiper">
+            <div class="vps-solution-card-wrap swiper-wrapper">
+                {%for item in module.solution_name%} 
+                {%set solution_card_data=hubdb_table_rows("works", "name=" ~ item.columns.name)%}
+                <div class="swiper-slide">
+              <div class="vps-solution-card grid">
+                  <div class="vps-solution-card-img-wrap">
+                      <img src={{solution_card_data[0]['2'].url}} alt="">
+                  </div>
+                  <div class="vps-solution-card-content"> 
+                      <p class="h4 vps-solution-card-content-name">{{solution_card_data[0]['1']}}</p>
+                     <div class="vps-solution-card-content-box-wrap">
+                      <div class="vps-solution-card-content-box">
+                          <span class="vps-solution-card-content-box-label">Client</span>
+                              {%for solution in solution_card_data[0]['10']%}
+                              <p class="vps-solution-card-content-box-title">{{solution_card_data[0]['10'][0].name}}</p>
+                              {%endfor%}
+                      </div>
+                      <div class="vps-solution-card-content-box">
+                          <span class="vps-solution-card-content-box-label">Launch date</span>
+                          <p class="vps-solution-card-content-box-title">{{solution_card_data[0]['8']}}</p>
+                      </div>
+                      <div class="vps-solution-card-content-box">
+                          <span class="vps-solution-card-content-box-label">Solution type</span>
+                              {%for solution in solution_card_data[0]['3']%}
+                              <p class="vps-solution-card-content-box-title">{{solution.name}}</p>
+                              {%endfor%}
+                      </div>
+          
+                      {%if(platform in solution_card_data[0]['6'][0].name)%}
+                      <div class="vps-solution-card-content-box">
+                          <span class="vps-solution-card-content-box-label">Platform</span>
+                              {%for platform in solution_card_data[0]['6']%}
+                              <p class="vps-solution-card-content-box-title">{{platform.name}}</p>
+                              {%endfor%}
+                      </div>
+                      {%endif%}
+                     </div>
+                     <div>
+                      {%if(platform in solution_card_data[0]['13'])%}
+                      <p class="vps-solution-card-content-desc">{{solution_card_data[0]['13']}}</p>
+                      {%endif%}
+                      <a href="/references" class="vps-solution-card-content-read hover-line">Read more</a>
+                     </div>
+                     <div class="vps-solution-control">
+                        <div class="vps-solution-control-txt">
+                            <p class="vps-solution-control-txt-number-current">1</p>/
+                            <p class="vps-solution-control-txt-number-total">5</p>
+                        </div>
+                        <div class="vps-solution-control-main">
+                            <div class="vps-solution-control-prev vps-solution-control-icon">
+                               
+                                    <svg width="100%" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <rect x="39.5" y="39.5" width="39" height="39" rx="19.5" transform="rotate(-180 39.5 39.5)" stroke="#999999"/>
+                                        <path d="M12.862 19.5286L17.5287 14.862C17.789 14.6016 18.211 14.6016 18.4713 14.862V14.862C18.7316 15.1223 18.7316 15.5443 18.4713 15.8046L14.9427 19.3333L26.6667 19.3333C27.0353 19.3333 27.3333 19.632 27.3333 20C27.3333 20.368 27.0353 20.6666 26.6667 20.6666L14.9427 20.6666L18.4713 24.1953C18.7316 24.4556 18.7316 24.8776 18.4713 25.138V25.138C18.211 25.3983 17.789 25.3983 17.5287 25.138L12.862 20.4713C12.6013 20.2106 12.6013 19.7893 12.862 19.5286Z" fill="black"/>
+                                        </svg>
+                            </div>
+                            <div class="vps-solution-control-next vps-solution-control-icon">
+                                <svg width="100%" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <rect x="0.5" y="0.5" width="39" height="39" rx="19.5" stroke="#999999"/>
+                                    <path d="M27.138 20.4714L22.4713 25.138C22.211 25.3984 21.789 25.3984 21.5287 25.138V25.138C21.2684 24.8777 21.2684 24.4557 21.5287 24.1954L25.0573 20.6667L13.3333 20.6667C12.9647 20.6667 12.6667 20.368 12.6667 20C12.6667 19.632 12.9647 19.3334 13.3333 19.3334L25.0573 19.3334L21.5287 15.8047C21.2684 15.5444 21.2684 15.1224 21.5287 14.862V14.862C21.789 14.6017 22.211 14.6017 22.4713 14.862L27.138 19.5287C27.3987 19.7894 27.3987 20.2107 27.138 20.4714Z" fill="black"/>
+                                    </svg>  
+                                    
+                                </div>
+                          
+                      </div>
+                </div>
+                  </div>
+              </div>
+              
+            </div>
+                {%endfor%}
+              </div>
+        </div>
+        
+  </div>
+</section>

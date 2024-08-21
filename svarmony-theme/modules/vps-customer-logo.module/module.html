@@ -1,0 +1,15 @@
+<!-- module html  -->
+<section class="vps-logo">
+<div class="container">
+    <div class="vps-logo-label-wrap">
+        <span class="vps-logo-label">{{module.label_logo}}</span>
+    </div>
+    <div class="vps-logo-list">
+        {%for item in module.logo_img%} 
+        <div class="vps-logo-item">
+            <img src={{item.src}} alt="" class="img-basic">
+        </div>
+        {%endfor%}
+    </div>
+</div>
+</section>

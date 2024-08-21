@@ -1,0 +1,20 @@
+<!-- module html  -->
+<section class="vps-work">
+<div class="container">
+    <div class="vps-work-head">
+        <h2 class="h2 vps-work-head-title">{{module.heading.title}}</h2>
+        <p class="vps-work-head-description">{{module.heading.description}}</p>
+    </div>
+    <div class="vps-work-card-wrap">
+        {% for item in module.card %}
+        <div class="vps-work-card">
+            <div class="vps-work-card-img">
+                <img src={{item.image_field.src}} alt="" class="img-basic">
+            </div>
+            <h3 class="vps-work-card-title">{{item.title_card}}</h3>
+            <p class="vps-work-card-description">{{item.description_card}}</p>
+        </div>
+        {%endfor%}
+    </div>
+</div>
+</section>

@@ -1,0 +1,46 @@
+[ {
+  "id" : "2d771b54-989e-234f-29a4-42c86d480051",
+  "name" : "text",
+  "display_width" : null,
+  "label" : "Text",
+  "required" : false,
+  "locked" : false,
+  "validation_regex" : "",
+  "allow_new_line" : false,
+  "show_emoji_picker" : false,
+  "type" : "text",
+  "default" : "Button"
+}, {
+  "id" : "fbf00470-620d-cb30-ece9-0165f74143b6",
+  "name" : "link",
+  "display_width" : null,
+  "label" : "Link",
+  "required" : false,
+  "locked" : false,
+  "supported_types" : [ "EXTERNAL", "CONTENT", "FILE", "BLOG" ],
+  "show_advanced_rel_options" : false,
+  "type" : "link",
+  "default" : {
+    "url" : {
+      "content_id" : null,
+      "type" : "EXTERNAL",
+      "href" : ""
+    },
+    "open_in_new_tab" : false,
+    "no_follow" : false
+  }
+}, {
+  "id" : "15ee6814-9a18-ef27-133a-e7cc5fe5f27f",
+  "name" : "button_styles",
+  "display_width" : null,
+  "label" : "Button styles",
+  "required" : false,
+  "locked" : false,
+  "display" : "select",
+  "choices" : [ [ "gradient", "Gradient" ], [ "primary", "Primary" ], [ "white", "White" ] ],
+  "multiple" : false,
+  "reordering_enabled" : true,
+  "preset" : null,
+  "type" : "choice",
+  "default" : "gradient"
+} ]

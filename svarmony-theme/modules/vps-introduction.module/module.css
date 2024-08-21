@@ -1,0 +1,67 @@
+.vps-define-img-wrap{
+    grid-column: 1/7;
+    margin-bottom: -20rem;
+}
+.vps-define-content{
+    grid-column: 8/13;
+    display: flex;
+    /* align-items: center; */
+    justify-content: center;
+    flex-direction: column;
+    row-gap: 2.8rem;
+}
+.vps-define{
+    padding:12rem 0 7.2rem 0;   
+}
+h2.vps-define-content-title.h2{
+    font-weight: 200 !important;
+    color: rgba(0, 0, 0, 1);
+    line-height: 1.1em;
+}
+.vps-define-content-description{
+    font-weight: 200;
+    line-height: 1.4em;
+    font-size: 2rem;
+    color: #303030;
+}
+.vps-define-content-description strong{
+    font-weight: 400;
+    color: #000;
+}
+ @media only screen and (max-width:991px){
+    .vps-define{
+        padding:8rem 0 5rem 0;   
+    }
+    .vps-define-img-wrap{
+        grid-column: 1/7;
+        margin-bottom: -15rem;
+    }
+    .vps-define-content{
+        grid-column: 7/13;
+        padding-left: 2rem;
+    }
+ }
+ @media only screen and (max-width:991px){
+    .vps-define{
+        padding:4rem 0 0rem 0;   
+    }
+    .vps-define-img-wrap{
+        grid-column: 1/-1;
+        margin-bottom: -15.7rem;
+        margin-top: 3.2rem;
+        grid-row: 2/2;
+    }
+    .vps-define-content{
+        grid-column: 1/-1;
+        grid-row: 1/1;
+        padding-left: 0rem;
+        row-gap: .8rem;
+    }
+    h2.vps-define-content-title.h2{
+        font-size: 3.2rem;
+        text-align: center;
+    }
+    .vps-define-content-description{
+        font-size: 1.8rem;
+    }
+ }

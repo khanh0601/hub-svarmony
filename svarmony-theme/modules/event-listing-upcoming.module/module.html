@@ -1,0 +1,206 @@
+{% import '../../templates/marco/card.html' as card %}
+
+{% set topic_name = topic|replace('-', ' ')|title %}
+{% set my_tags = blog_tags("default", 10) %}
+
+{% macro filter_options(data) %}
+<a href="{{ group.absolute_url }}" class="fs-20 events-listing-filter-item {% if not tag %}active{% endif %}">
+    <p class="fs-20">All regions</p>
+</a>
+{% for item in data %}
+    {% unless item == 'Past' || item == 'Upcoming' %}
+        <a href="{{ blog_tag_url(group.id, item.slug) }}" class="fs-20 events-listing-filter-item {% if item.slug in request.path|urldecode %}active{% endif %}">
+            <p class="fs-20">{{ item }}</p>
+        </a>
+    {% endunless %}
+{% endfor %}
+{% endmacro %}
+
+{% macro post_feed(x) %}
+    {% unless x == contents %}
+        {% set x = blog_recent_tag_posts('default', x, 5) %}
+    {% endunless %}
+    {% for content in x %}
+        <div class="post-item">
+            {% if not simple_list_page %}
+                {{ card.event(content) }}
+            {% else %}
+                <h2 class="post-listing-simple">
+                    <a href="{{content.absolute_url}}">{{ content.name }}</a>
+                </h2>
+            {% endif %}
+        </div>
+    {% endfor %}
+{% endmacro %}
+
+<section class="events-listing__hero">
+    <div class="container">
+        <div class="events-listing__hero-txt">
+            <div class="h4 fw-medium events-listing__hero-label">MAKE IT TOMORROW, SHOW THEM TODAY</div>
+            <h1 class="h1 events-listing__hero-title">Event Participations 2024</h1>
+            {# <div class="fs-20 events-listing__hero-sub">Come see us and stay ahead on the latest technology trends.</div> #}
+        </div>
+        {# <div class="event-listing__hero-bg">
+            <div class="event-listing__hero-mask mask-right"></div>
+            <div class="event-listing__hero-mask mask-left"></div>
+            <div class="event-listing__hero-mask"></div>
+            <div class="event-listing__hero-gradient"></div>
+            <!-- <div class="line-neon"></div> -->
+        </div> #}
+        <!-- <div class="event-listing__hero-graphic">
+            <div class="sun"></div>
+                <div class="grid-line--wrap hor">
+                <div class="grid-line"></div>
+            </div>
+            <div class="grid-line--wrap ver">
+                <div class="grid-line"></div>
+            </div>
+        </div>-->
+        <div class="event-listing__hero-filter--wrap">
+            <div class="fs-20 event-listing__hero-filter-val">
+                <span>{% if topic_name %}{{ topic_name }}{%else%}All regions{% endif %}</span>
+                <div class="event-listing__hero-filter-ic">
+                    <svg width="100%" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M1.6665 6.66675L9.99984 13.3334L18.3332 6.66675" stroke="currentColor" stroke-opacity="0.6" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round"/>
+                    </svg>
+                </div>
+            </div>
+            <div class="event-listing__hero-filter">
+                {{ filter_options(my_tags) }}
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="event-listing--wrap event-listing__upcoming">
+    <h2 class="h3 fw-reg event-listing__upcoming-title">Upcoming</h2>
+    <div class="event-listing__upcoming-list">
+        {% if topic %}
+            {% for content in contents %}
+                {% for topic in content.topic_list %}
+                    {% if loop.last %}
+                        {% if topic == 'Upcoming' %}
+                            {{ card.event(content) }}
+                        {% endif %}
+                    {% endif %}
+                {% endfor %}
+            {% endfor %}
+        {% else %}
+            {{ post_feed('Upcoming') }}
+        {% endif %}
+    </div>
+    {% if next_page_num %}
+        <a href="#" total-page-count={{ contents.total_page_count }} class="event-btn white event-listing__upcoming-btn">Show more</a>
+    {% endif %}
+</section>
+
+
+{%require_js %}
+    <script>
+        const handleUpcomingEvent = () => {
+            let currPage = 1;
+            let blogOutOfPosts = false;
+
+            let eventsUpcoming = $(".event-listing__upcoming-list");
+            let eventsUpcomingBtn = $('.event-listing__upcoming-btn');
+
+            const updateBtnLoad = (totalPage) => {
+                currPage += 1;
+                if (currPage <= totalPage) {
+                    eventsUpcomingBtn.attr('href', `{{ blog_tag_url("default", "Upcoming") }}/page/${currPage}`)
+                }
+                else {
+                    eventsUpcomingBtn.remove();
+                }
+            };
+
+            eventsUpcoming.html('');
+            $.get('{{ blog_tag_url("default", "Upcoming") }}').then((data) => {
+                let totalPage = $(data).find('.event-listing__upcoming-btn').attr('total-page-count');
+                let ajaxURL = '{{ blog_tag_url("default", "Upcoming") }}/page/1';
+                updateBtnLoad(totalPage);
+                $.get(ajaxURL, function (data) {
+                    let page = $(data);
+                    let events = page.find('.event-listing__upcoming-list .event__card');
+                    events.each(function() {
+                        let eventPost = $(this);
+                        eventsUpcoming.append(eventPost);
+                    });
+                });
+
+                eventsUpcomingBtn.on('click', function (e) {
+                    e.preventDefault();
+                    ajaxURL = $(this).attr('href');
+                    $.get(ajaxURL, function (data) {
+                        let page = $(data);
+                        let events = page.find('.event-listing__upcoming-list .event__card');
+                        if(events.length == 0) {
+                            blogOutOfPosts = true;
+                            return;
+                        }
+                        events.each(function() {
+                            let eventPost = $(this);
+                            gsap.set(eventPost, { y: 30, autoAlpha: 0 });
+                            eventsUpcoming.append(eventPost);
+                        });
+
+                        gsap.to(events, { y: 0, autoAlpha: 1, ease: 'power2.out', stagger: .08, duration: 1 });
+                        setTimeout(function(){
+                            updateBtnLoad(totalPage);
+                        }, 100);
+                    });
+                })
+            });
+        }
+        const handleTagEventUpcoming = () => {
+            let currPage = 1;
+            let blogOutOfPosts = false;
+
+
+            let eventsUpcoming = $(".event-listing__upcoming-list");
+            let eventsUpcomingBtn = $('.event-listing__upcoming-btn');
+            let totalPage = {{ contents.total_page_count }};
+
+            const updateBtnLoad = () => {
+                currPage += 1;
+                if (currPage <= totalPage) {
+                    eventsUpcomingBtn.attr('href', `${window.location.origin}${window.location.pathname}/page/${currPage}`)
+                }
+                else {
+                    eventsUpcomingBtn.remove();
+                }
+            };
+
+            updateBtnLoad();
+            eventsUpcomingBtn.on('click', function (e) {
+                e.preventDefault();
+                let ajaxURL = $(this).attr('href');
+                $.get(ajaxURL, function (data) {
+                    let page = $(data);
+                    let events = page.find('.event-listing__upcoming-list .event__card');
+                    if(events.length == 0) {
+                        blogOutOfPosts = true;
+                        return;
+                    }
+                    events.each(function() {
+                        let eventPost = $(this);
+                        gsap.set(eventPost, { y: 30, autoAlpha: 0 });
+                        eventsUpcoming.append(eventPost);
+                    });
+
+                    gsap.to(events, { y: 0, autoAlpha: 1, ease: 'power2.out', stagger: .08, duration: 1 });
+                    setTimeout(function(){
+                        updateBtnLoad();
+                    }, 100);
+                });
+            })
+        }
+
+        if (window.location.pathname.includes('tag')) {
+            handleTagEventUpcoming();
+        }
+        else {
+            handleUpcomingEvent();
+        }
+    </script>
+{%end_require_js %}

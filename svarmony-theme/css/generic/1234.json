@@ -1,0 +1,55 @@
+{
+  "name": "ABCFavoritVariable",
+  "default": "Regular",
+  "fallback": "arial, sans-serif",
+  "variants": [
+    {
+      "name": "Regular",
+      "files": [
+        {
+          "file": "./abcfavorit/ABCFavoritVariable.ttf",
+          "format": "truetype-variations"
+        }
+      ],
+      "styles": {
+        "font-weight": 400
+      }
+    },
+    {
+      "name": "Bold",
+      "files": [
+        {
+          "file": "./abcfavorit/ABCFavoritVariable.ttf",
+          "format": "truetype-variations"
+        }
+      ],
+      "styles": {
+        "font-weight": "bold"
+      }
+    },
+    {
+      "name": "Book",
+      "files": [
+        {
+          "file": "./abcfavorit/ABCFavoritVariable.ttf",
+          "format": "truetype-variations"
+        }
+      ],
+      "styles": {
+        "font-style": "book"
+      }
+      },
+		{
+      "name": "Normal",
+      "files": [
+        {
+          "file": "./abcfavorit/ABCFavoritVariable.ttf",
+          "format": "truetype-variations"
+        }
+      ],
+      "styles": {
+        "font-style": "normal"
+      }
+    }
+  ]
+}

@@ -1,0 +1,170 @@
+
+.vps-solution{
+    padding: 12rem 0 8rem 0;
+}
+h2.h2.vps-solution-title{
+font-weight: 200 !important;
+/* line-height: 1.1em÷; */
+text-align: center;
+color: #000;
+margin:0 auto 8rem auto ;
+max-width: 84.6rem;
+}
+
+.vps-solution-card-img-wrap{
+    grid-column: 2/8;
+    margin-right: -2rem;
+}
+.vps-solution-card-content{
+    background-color: rgba(242, 242, 242, 1);
+    grid-column: 8/12;
+    padding: 4.8rem 4.8rem 12.8rem 4.8rem;
+    position: relative;
+}
+p.vps-solution-card-content-name.h4{
+font-weight: 200!important;
+}
+.vps-solution-card-content{
+    display: flex;
+    flex-direction: column;
+    row-gap: 4rem;
+    /* justify-content: center; */
+}
+.vps-solution-card-content-box{
+    width: calc(50% - 1rem);
+}
+.vps-solution-card-content-desc{
+    font-size: 1.6rem;
+    line-height: 1.4em;
+    color: #737373;
+    margin-bottom: 1.6rem;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 4;
+    overflow: hidden;
+}
+.vps-solution-card-content-box-wrap{
+    display: flex;
+    flex-wrap: wrap;
+    row-gap: 1.6rem;
+    column-gap: 2rem;
+}
+.vps-solution-card-content-read{
+    font-size: 1.6rem;
+    line-height: 1.4em;
+    color: #000;
+    font-weight: 400;
+}
+.vps-solution-control-txt{
+    display: flex;
+    font-size: 1.6rem;
+    line-height: 1.4rem;
+    color: #000;
+}
+.vps-solution-control-txt-number-total{
+
+    color: #BBBCBE;
+}
+.vps-solution-control-main{
+    display: flex;
+    gap: .8rem;
+}
+.vps-solution-control-icon{
+    display: flex;
+    width: 4rem;
+    cursor: pointer;
+}
+.vps-solution-control{
+    display: flex;
+    justify-content:space-between;
+    align-items:center;
+    position: absolute;
+    bottom: 4.8rem;
+    right: 0;
+    width: 100%;
+    z-index: 4;
+    padding: 0 4.8rem;
+}
+.vps-solution-card{
+    height: 100%;
+}
+span.vps-solution-card-content-box-label{
+    font-size:1.4rem;
+    color:#303030;
+}
+p.vps-solution-card-content-box-title{
+    font-size:1.6rem;
+    color:#000;
+}
+.vps-solution-card-img-wrap img{
+    object-fit: cover;
+}
+@media only screen and (max-width:991px) {
+    h2.h2.vps-solution-title{
+        max-width: 100% ;
+    }
+    .vps-solution-card-img-wrap{
+        grid-column: 1/7;
+        margin-right: -2rem;
+    }
+    .vps-solution-card-content{
+        grid-column: 7/13;
+        padding: 3.8rem 3.8rem 9.8rem;
+    }
+    .vps-solution-card-content {
+        row-gap: 2rem;
+    }
+    .vps-solution-control {
+        bottom: 2.8rem;
+    }
+    .vps-solution{
+        padding: 8rem 0 8rem 0;
+    }
+}
+
+@media only screen and (max-width:767px) {
+    .vps-solution-card-content-desc{
+        font-size:1.8rem;
+        line-height:1.4em;
+    }
+    .vps-solution{
+        padding: 4rem 0 3.2rem 0;
+    }
+    h2.h2.vps-solution-title {
+        max-width: 28rem;
+        margin-bottom:3.2rem;
+    }
+    .vps-solution-card-img-wrap{
+        margin-right: 0rem;
+        margin-bottom: 2rem;
+        grid-column:1/-1;
+        grid-row:1/1;
+    }
+    .vps-solution-card-img-wrap img{
+        aspect-ratio: 1.8;
+        min-height: unset !important;
+    }
+    .vps-solution-card-content{
+        grid-column:1/-1;
+        grid-row:2/2;
+        padding:0 0 7.2rem 0;
+        height: 100%;
+        justify-content: start;
+    }
+    .vps-solution-card-content{
+        row-gap: 3.2rem;
+        background-color:#fff;
+    }
+    p.vps-solution-card-content-name.h4{
+        font-size:2.8rem
+    }
+    .vps-solution-control{
+        bottom:0;
+        padding:0;
+    }
+    .vps-solution-card.grid{
+        display: flex;
+        flex-direction: column;
+
+    }
+}

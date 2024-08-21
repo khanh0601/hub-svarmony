@@ -1,0 +1,137 @@
+.vps-aplication{
+    padding: 12rem 0;
+    background-color: #F2F2F2;
+}
+.vps-aplication-head{
+    margin:0 auto 8rem auto;
+    display: flex;
+    justify-content:center;
+    align-items:center;
+    flex-direction:column;
+    row-gap:2.8rem;
+    max-width:51rem;
+    
+}
+.vps-aplication-head-description{
+text-align:center;
+color:#303030;
+font-size:2rem;
+line-height:1.4em;
+}
+h2.vps-aplication-head-title.h2{
+  font-weight: 200  !important;
+color:#000;
+  /* line-height: ;  */
+}
+.vps-aplication-body{
+  display: flex;
+  flex-direction: column;
+  row-gap:8rem;
+}
+.vps-aplication-item-title{
+  font-size: 2.8rem;
+  line-height: 1.2em;
+  font-weight: 200;
+  color: #000;
+  margin-bottom: 2.8rem;
+}
+.vps-aplication-item-description{
+  font-size: 1.6rem;
+  line-height: 1.4em;
+  font-weight: 200;
+  color: #303030;
+  margin-bottom: 2rem;
+}
+.vps-aplication-item-description strong{
+  color: #000;
+}
+.vps-aplication-item{
+  align-items: center;
+}
+.vps-aplication-item-img{
+  grid-column: 1/7;
+}
+.vps-aplication-item-content{
+  grid-column: 8/12;
+}
+.vps-aplication-item-img.revert{
+  grid-column: 7/13;
+}
+.vps-aplication-item-content.revert{
+  grid-column: 2/6;
+}
+.vps-aplication-btn{
+  font-size: 1.8rem;
+  font-weight: 400;
+  line-height: 1.4em;
+  color: rgba(0, 255, 120, 1);
+  padding: 1rem 2rem .8rem 2rem;
+  background-color: rgba(0, 0, 0, 1);
+  border-radius: 4.1rem;
+}
+.vps-aplication-item-img-mb{
+  display: none;
+}
+@media only screen and (max-width:991px){
+  .vps-aplication{
+    padding:9rem 0
+  }
+  .vps-aplication-item-content{
+    grid-column: 7/13;
+    padding-left: 2rem;
+  }
+  .vps-aplication-item-content.revert{
+    grid-column: 2/7;
+    padding-right: 2rem;
+    padding-left: 0;
+  }
+}
+@media only screen and (max-width:767px){
+  .vps-aplication-item-img{
+    display: none;
+  }
+  .vps-aplication-item-img-mb{
+    display: block;
+    margin-bottom:1.6rem
+  }
+  .vps-aplication{
+    padding:4rem 0;
+    background: #fff;
+  }
+  .vps-aplication-head{
+    align-items:start;
+    row-gap:.8rem;
+    margin-bottom:3.2rem;
+  }
+  .vps-aplication-head-description{
+    text-align:left;
+    font-size:1.8rem;
+  }
+  .vps-aplication-item-content {
+    grid-column: 1 / -1;
+    padding-left: 0;
+}
+
+  .vps-aplication-item-content.revert{
+    grid-column:1/-1;
+    padding-right: 0rem;
+    padding-left: 0;
+  }
+  .vps-aplication-item-title{
+    margin-bottom:1.8rem;
+    font-size:2.4rem
+  }
+  .vps-aplication-item-description{
+    font-size:1.8rem;
+    margin-bottom:1.6rem;
+  }
+  .vps-aplication-btn{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+  .vps-aplication-body{
+    row-gap:4rem;
+    
+  }
+}

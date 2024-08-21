@@ -1,0 +1,300 @@
+[ {
+  "id" : "24c47de2-363b-7b6a-f498-158fa66fc567",
+  "name" : "is_show",
+  "display_width" : null,
+  "label" : "Is show",
+  "required" : false,
+  "locked" : false,
+  "display" : "toggle",
+  "type" : "boolean",
+  "default" : true
+}, {
+  "id" : "be352252-03f5-f115-b761-7f48330a75cc",
+  "name" : "button",
+  "display_width" : null,
+  "label" : "Button",
+  "required" : false,
+  "locked" : false,
+  "visibility" : {
+    "controlling_field" : null,
+    "controlling_field_path" : "is_show",
+    "controlling_value_regex" : "true",
+    "property" : null,
+    "operator" : "EQUAL",
+    "access" : null
+  },
+  "children" : [ {
+    "id" : "ea1b5af8-6cc1-8616-464d-cd55b1761a99",
+    "name" : "action",
+    "display_width" : null,
+    "label" : "Action",
+    "required" : false,
+    "locked" : false,
+    "display" : "select",
+    "choices" : [ [ "popup", "Show popup" ], [ "link", "Link redirect" ] ],
+    "multiple" : false,
+    "reordering_enabled" : true,
+    "preset" : null,
+    "type" : "choice",
+    "default" : "popup"
+  }, {
+    "id" : "12c72855-35f6-1c5e-e297-ab25d9d5a6ac",
+    "name" : "link",
+    "display_width" : null,
+    "label" : "Link",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : null,
+      "controlling_field_path" : "button.action",
+      "controlling_value_regex" : "link",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "supported_types" : [ "EXTERNAL", "CONTENT", "FILE" ],
+    "show_advanced_rel_options" : false,
+    "type" : "link",
+    "default" : {
+      "url" : {
+        "content_id" : null,
+        "type" : "EXTERNAL",
+        "href" : ""
+      },
+      "open_in_new_tab" : false,
+      "no_follow" : false
+    }
+  }, {
+    "id" : "5114d4e5-82c2-4959-fdd7-1534a3f5e510",
+    "name" : "text",
+    "display_width" : null,
+    "label" : "Text",
+    "required" : false,
+    "locked" : false,
+    "validation_regex" : "",
+    "allow_new_line" : false,
+    "show_emoji_picker" : false,
+    "type" : "text",
+    "default" : "View agenda"
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "default" : {
+    "action" : "popup",
+    "link" : {
+      "url" : {
+        "content_id" : null,
+        "type" : "EXTERNAL",
+        "href" : ""
+      },
+      "open_in_new_tab" : false,
+      "no_follow" : false
+    },
+    "text" : "View agenda"
+  }
+}, {
+  "id" : "421a8b0a-494b-5feb-fceb-bef195b3a989",
+  "name" : "popup",
+  "display_width" : null,
+  "label" : "Popup",
+  "required" : false,
+  "locked" : false,
+  "visibility" : {
+    "controlling_field" : null,
+    "controlling_field_path" : "is_show",
+    "controlling_value_regex" : "true",
+    "property" : null,
+    "operator" : "EQUAL",
+    "access" : null
+  },
+  "children" : [ {
+    "id" : "65f75b8e-91a3-270d-d9f1-013d34ee3088",
+    "name" : "title",
+    "display_width" : null,
+    "label" : "Title",
+    "required" : false,
+    "locked" : false,
+    "validation_regex" : "",
+    "allow_new_line" : false,
+    "show_emoji_picker" : false,
+    "type" : "text",
+    "default" : "Program agenda"
+  }, {
+    "id" : "522a26a3-a001-fdb3-c7d8-8830cabb86e5",
+    "name" : "timeline",
+    "display_width" : null,
+    "label" : "Timeline",
+    "required" : false,
+    "locked" : false,
+    "occurrence" : {
+      "min" : null,
+      "max" : null,
+      "sorting_label_field" : "d3e4a44c-53a3-f2eb-4fa0-fcb88ec533bc",
+      "default" : null
+    },
+    "children" : [ {
+      "id" : "eac7ce60-82ed-cdf2-430b-9d62864e75ee",
+      "name" : "day",
+      "display_width" : null,
+      "label" : "Day number",
+      "required" : false,
+      "locked" : false,
+      "display" : "text",
+      "min" : 1,
+      "step" : 1,
+      "prefix" : "Day ",
+      "suffix" : "",
+      "type" : "number"
+    }, {
+      "id" : "d3e4a44c-53a3-f2eb-4fa0-fcb88ec533bc",
+      "name" : "date",
+      "display_width" : null,
+      "label" : "Date",
+      "required" : false,
+      "locked" : false,
+      "type" : "date"
+    }, {
+      "id" : "94214702-d4b1-f8d3-addf-87c4c5afa884",
+      "name" : "agenda",
+      "display_width" : null,
+      "label" : "Agenda",
+      "required" : false,
+      "locked" : false,
+      "occurrence" : {
+        "min" : null,
+        "max" : null,
+        "sorting_label_field" : null,
+        "default" : null
+      },
+      "children" : [ {
+        "id" : "b969ddc7-1bbe-bd29-78a9-6bb3051c4424",
+        "name" : "time",
+        "display_width" : null,
+        "label" : "Time",
+        "required" : false,
+        "locked" : false,
+        "children" : [ {
+          "id" : "0693fe30-199d-d49e-ca0b-305b4850edd4",
+          "name" : "hour",
+          "display_width" : null,
+          "label" : "Hour",
+          "required" : false,
+          "locked" : false,
+          "validation_regex" : "",
+          "allow_new_line" : false,
+          "show_emoji_picker" : false,
+          "type" : "text"
+        }, {
+          "id" : "4ebd6122-4021-c104-8be2-2857d9126770",
+          "name" : "period",
+          "display_width" : null,
+          "label" : "Period",
+          "required" : false,
+          "locked" : false,
+          "display" : "select",
+          "choices" : [ [ "am", "Morning" ], [ "pm", "Afternoon/Evening" ] ],
+          "multiple" : false,
+          "reordering_enabled" : true,
+          "preset" : null,
+          "type" : "choice",
+          "default" : "am"
+        } ],
+        "tab" : "CONTENT",
+        "expanded" : false,
+        "group_occurrence_meta" : null,
+        "type" : "group",
+        "default" : {
+          "period" : "am"
+        }
+      }, {
+        "id" : "df9726d2-550c-c887-1785-3037655b612a",
+        "name" : "title",
+        "display_width" : null,
+        "label" : "Title",
+        "required" : false,
+        "locked" : false,
+        "validation_regex" : "",
+        "allow_new_line" : false,
+        "show_emoji_picker" : false,
+        "type" : "text"
+      }, {
+        "id" : "39e5d9f3-0fe6-ef09-eab1-2c7ad61ef145",
+        "name" : "content",
+        "display_width" : null,
+        "label" : "Content",
+        "required" : false,
+        "locked" : false,
+        "type" : "richtext",
+        "default" : "<span>Start your XR journey with a touch of luxury and exclusivity. As soon as you land at Vienna Airport, a first-class VIP transfer awaits you, which will take you directly to the majestic Belvedere Palace. During the ride, the first XR topics will be presented to you in the form of exciting use cases that offer a foretaste of what awaits you on the tour. Our way also leads us to Vienna Central Station, where we make a short stop to let the remaining participants of our exclusive tour. Here you will be received by our moderator, who will guide you through the rest of the tour. Sit back and enjoy a comfortable and eventful ride.</span>"
+      }, {
+        "id" : "fa28b883-fbfb-96c2-3833-9f62a6bdda14",
+        "name" : "sub_image",
+        "display_width" : null,
+        "label" : "Sub image",
+        "required" : false,
+        "locked" : false,
+        "children" : [ {
+          "id" : "44037cb8-191b-1ced-0845-7611241dc76b",
+          "name" : "image",
+          "display_width" : null,
+          "label" : "Image",
+          "required" : false,
+          "locked" : false,
+          "responsive" : true,
+          "resizable" : true,
+          "show_loading" : false,
+          "type" : "image",
+          "default" : {
+            "size_type" : "auto",
+            "src" : "",
+            "alt" : null,
+            "loading" : "lazy"
+          }
+        }, {
+          "id" : "c96432e2-f068-81a6-c297-24600bf61414",
+          "name" : "desc",
+          "display_width" : null,
+          "label" : "Description",
+          "required" : false,
+          "locked" : false,
+          "validation_regex" : "",
+          "allow_new_line" : false,
+          "show_emoji_picker" : false,
+          "type" : "text"
+        } ],
+        "tab" : "CONTENT",
+        "expanded" : false,
+        "group_occurrence_meta" : null,
+        "type" : "group",
+        "default" : {
+          "image" : {
+            "size_type" : "auto",
+            "src" : "",
+            "alt" : null,
+            "loading" : "lazy"
+          }
+        }
+      } ],
+      "tab" : "CONTENT",
+      "expanded" : false,
+      "group_occurrence_meta" : null,
+      "type" : "group",
+      "default" : [ ]
+    } ],
+    "tab" : "CONTENT",
+    "expanded" : false,
+    "group_occurrence_meta" : null,
+    "type" : "group",
+    "default" : [ ]
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "default" : {
+    "title" : "Program agenda",
+    "timeline" : [ ]
+  }
+} ]

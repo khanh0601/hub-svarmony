@@ -1,0 +1,44 @@
+{% macro PrimaryLinkListing(data) %}
+    <ul class="footer__infor-primary-links">
+        {% for link in data %}
+            <li class="footer__infor-primary-link">
+                <a href="{{ link.url.url.href }}" class="primary-cl hover-line" target="_blank">{{ link.text }}</a>
+            </li>
+        {% endfor %}
+    </ul>
+{% endmacro %}
+<div class="grid">
+    <div class="footer__content">
+        <div class="h2 footer__content-cta">
+            <h2>Interested?</h2>
+            <a href="{{ module.contact_us.url.href }}" class="hover-line primary-cl">Contact us</a>
+        </div>
+        <div class="footer__infor">
+            <div class="footer__infor-col1">
+                <div class="footer__infor-lang">
+                    <span class="fs-20">Language:</span>
+                    <div class="footer__infor-lang-list">
+                        <a href="#" class="fs-20 hover-un footer__infor-lang-item active">English</a>
+                        {# <a href="#" class="fs-20 hover-un footer__infor-lang-item">Deutsch</a> #}
+                    </div>
+                </div>
+                <div class="fs-20 footer__content-copyright">
+                    ©svarmony Technologies GmbH, {{ year }}
+                </div>
+                {{ PrimaryLinkListing(module.socials.link) }}
+            </div>
+            <ul class="footer__infor-links">
+                {% for link in module.sub_infor.link %}
+                    <li class="footer__infor-link"><a href={{ link.url.url.href }} class="fs-16 hover-un">{{ link.text }}</a></li>
+                {% endfor %}
+            </ul>
+            <div class="footer__infor-locations">
+                <span class="fs-20">We're base in:</span>
+                {{ PrimaryLinkListing(module.headwaters.link) }}
+            </div>
+            <a href="https://svarmony.com/" class="footer__logo">
+                <img src="{{ get_asset_url('../../images/svarmony_keyvisual_gradient.svg') }}" class="img-default"/>
+            </a>
+        </div>
+    </div>
+</div>

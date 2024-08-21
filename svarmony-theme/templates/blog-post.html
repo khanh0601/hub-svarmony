@@ -1,0 +1,73 @@
+<!--
+  templateType: blog_post
+  isAvailableForNewContent: true
+  label: Svarmony - Event detail
+  screenshotPath: ../images/template-previews/blog-post.png
+-->
+{% set template_css = "../../css/templates/event.css" %}
+{% extends "./layouts/base.html" %}
+
+{% set page_theme = "light" %}
+{% block body %}
+<div class="body-container body-container--event-post">
+  {# Blog post #}
+  <section class="sc--hero">
+    <div class="container grid">
+      <a href="{{ group.absolute_url }}" class="event__hero-back-btn">
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M0.862004 7.52863L5.52867 2.86196C5.78898 2.60165 6.21103 2.60165 6.47134 2.86196V2.86196C6.73165 3.12227 6.73165 3.54431 6.47134 3.80462L2.94267 7.33329H14.6667C15.0353 7.33329 15.3333 7.63196 15.3333 7.99996C15.3333 8.36796 15.0353 8.66662 14.6667 8.66662H2.94267L6.47134 12.1953C6.73165 12.4556 6.73165 12.8776 6.47134 13.138V13.138C6.21103 13.3983 5.78898 13.3983 5.52867 13.138L0.862004 8.47129C0.601337 8.21063 0.601337 7.78929 0.862004 7.52863Z" fill="currentColor"/>
+          </svg>
+        <p class="fs-20 hover-un fw-medium">Back to All Events</p>
+      </a>
+      <h1 class="h1 event__hero-title">
+        {{ content.name }}
+      </h1>
+      <div class="fs-20 event__hero-sub">
+        {% module "event-description" path="../modules/event-desc", label="event-description" %}
+      </div>
+      <div class="event__hero-thumbnail">
+        {% module "event-thumbnail" path="../modules/event-thumbnail", label="event-thumbnail" %}
+      </div>
+    </div>
+  </section>
+  <div class="event__content container grid">
+    <section class="sc--information event-container">
+      {% module "event-information" path="../modules/event-information", label="event-information" %}
+      <div class="event-container event-grid">
+        <div class="event__right-content event-btn--wrap">
+              {% module "event-button" path="../modules/event-button", label="event-button" %}
+              {% module "event-view-agenda" path="../modules/event-view-agenda", label="event-view-agenda" %}
+        </div>
+      </div>
+    </section>
+    <section class="sc--expect event-container">
+      {% module "event-expect" path="../modules/event-expect", label="event-expect" %}
+      {# <div class="event-container event-grid">
+        <div class="event__right-content event-btn--wrap">
+              {% module "event-button" path="../modules/event-button", label="event-button" %}
+              {% module "event-view-agenda" path="../modules/event-view-agenda", label="event-view-agenda" %}
+        </div>
+      </div> #}
+    </section>
+    <section class="sc--activity">
+      {% module "event-activity" path="../modules/event-activity", label="event-activity" %}
+    </section>
+    <section class="sc--additional">
+      {% module "event-additional-info" path="../modules/event-additional-info", label="event-additional-info" %}
+    </section>
+    <section class="sc--about event-container">
+      {% module "event-about-svarmony" path="../modules/event-about-svarmony", label="event-about-svarmony" %}
+    </section>
+  </div>
+  <section class="sc--last-call">
+    <div class="container">
+        {# <div class="event__last-call-bg">
+          <img src="{{ get_asset_url('../images/footer-decor.svg') }}"/>
+        </div> #}
+        <div class="event__last-call-content">
+          {% module "event-last-call" path="../modules/event-last-call", label="event-last-call" %}
+          {% module "event-button" path="../modules/event-button", label="event-button" %}
+        </div>
+    </div>
+  </section>
+{% endblock body %}

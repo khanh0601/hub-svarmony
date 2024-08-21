@@ -1,0 +1,333 @@
+[ {
+  "id" : "18e0db65-a1a0-2e0a-c3cc-16765efd621b",
+  "name" : "is_show",
+  "display_width" : null,
+  "label" : "Is show",
+  "required" : false,
+  "locked" : false,
+  "display" : "toggle",
+  "type" : "boolean",
+  "default" : true
+}, {
+  "id" : "6ce13786-a513-a44f-ce24-54620460fa8a",
+  "name" : "title",
+  "display_width" : null,
+  "label" : "Title",
+  "required" : false,
+  "locked" : false,
+  "validation_regex" : "",
+  "allow_new_line" : false,
+  "show_emoji_picker" : false,
+  "type" : "text",
+  "default" : "Related activities"
+}, {
+  "id" : "1a2e8c21-e0e4-de0e-bf04-3b3fe891511d",
+  "name" : "activities_listing",
+  "display_width" : null,
+  "label" : "Activities listing",
+  "required" : false,
+  "locked" : false,
+  "visibility" : {
+    "controlling_field" : null,
+    "controlling_field_path" : "is_show",
+    "controlling_value_regex" : "true",
+    "property" : null,
+    "operator" : "EQUAL",
+    "access" : null
+  },
+  "children" : [ {
+    "id" : "6e5eb485-34c0-0c27-bf84-399a6f37953b",
+    "name" : "activity",
+    "display_width" : null,
+    "label" : "Activity",
+    "required" : false,
+    "locked" : false,
+    "occurrence" : {
+      "min" : null,
+      "max" : null,
+      "sorting_label_field" : null,
+      "default" : null
+    },
+    "children" : [ {
+      "id" : "1fdb648a-7ce6-3ea1-946a-de512568ac40",
+      "name" : "title",
+      "display_width" : null,
+      "label" : "Title",
+      "required" : false,
+      "locked" : false,
+      "validation_regex" : "",
+      "allow_new_line" : false,
+      "show_emoji_picker" : false,
+      "type" : "text",
+      "default" : "Fair: Demo Slot - Booth #2711"
+    }, {
+      "id" : "a7b56ba8-ccec-8934-95f8-dd1303edac66",
+      "name" : "desc",
+      "display_width" : null,
+      "label" : "Description",
+      "required" : false,
+      "locked" : false,
+      "validation_regex" : "",
+      "allow_new_line" : false,
+      "show_emoji_picker" : false,
+      "type" : "text",
+      "default" : "We invite you to visit our booth on January 14-16, 2024, to explore our latest advancements in XR technology  tailored for retail and hospitality industry. Connect with our team, exchange ideas, and see firsthand how svarmony is shaping the future of hospitality. "
+    }, {
+      "id" : "87327bcf-0091-4a2a-b3bc-2a3a23c10caa",
+      "name" : "button",
+      "display_width" : null,
+      "label" : "Button",
+      "required" : false,
+      "locked" : false,
+      "children" : [ {
+        "id" : "5afda212-ab69-c3d3-a941-d9a3e3a02ce8",
+        "name" : "is_show",
+        "display_width" : null,
+        "label" : "Is show",
+        "required" : false,
+        "locked" : false,
+        "display" : "toggle",
+        "type" : "boolean",
+        "default" : true
+      }, {
+        "id" : "ebc1988b-3c0b-cf0f-024c-41f4ff399ef0",
+        "name" : "text",
+        "display_width" : null,
+        "label" : "Text",
+        "required" : false,
+        "locked" : false,
+        "validation_regex" : "",
+        "visibility" : {
+          "controlling_field" : null,
+          "controlling_field_path" : "activities_listing.activity.button.is_show",
+          "controlling_value_regex" : "true",
+          "property" : null,
+          "operator" : "EQUAL",
+          "access" : null
+        },
+        "allow_new_line" : false,
+        "show_emoji_picker" : false,
+        "type" : "text",
+        "default" : "Book now"
+      }, {
+        "id" : "e4a47a2c-d158-0364-7f1c-49423b9d2b22",
+        "name" : "link",
+        "display_width" : null,
+        "label" : "Link",
+        "required" : false,
+        "locked" : false,
+        "visibility" : {
+          "controlling_field" : null,
+          "controlling_field_path" : "activities_listing.activity.button.is_show",
+          "controlling_value_regex" : "true",
+          "property" : null,
+          "operator" : "EQUAL",
+          "access" : null
+        },
+        "supported_types" : [ "EXTERNAL", "CONTENT", "FILE", "EMAIL_ADDRESS" ],
+        "show_advanced_rel_options" : false,
+        "type" : "link",
+        "default" : {
+          "url" : {
+            "content_id" : null,
+            "href" : "",
+            "type" : "EXTERNAL"
+          },
+          "open_in_new_tab" : false,
+          "no_follow" : false
+        }
+      }, {
+        "id" : "0044fd25-f623-69d8-1f4a-a87c1e867477",
+        "name" : "styles",
+        "display_width" : null,
+        "label" : "Button styles",
+        "required" : false,
+        "locked" : false,
+        "visibility" : {
+          "controlling_field" : null,
+          "controlling_field_path" : "activities_listing.activity.button.is_show",
+          "controlling_value_regex" : "true",
+          "property" : null,
+          "operator" : "EQUAL",
+          "access" : null
+        },
+        "display" : "select",
+        "choices" : [ [ "gradient", "Gradient" ], [ "primary", "Primary" ], [ "white", "White" ] ],
+        "multiple" : false,
+        "reordering_enabled" : true,
+        "preset" : null,
+        "type" : "choice",
+        "default" : "primary"
+      } ],
+      "tab" : "CONTENT",
+      "expanded" : false,
+      "group_occurrence_meta" : null,
+      "type" : "group",
+      "default" : {
+        "is_show" : true,
+        "text" : "Book now",
+        "link" : {
+          "url" : {
+            "content_id" : null,
+            "href" : "",
+            "type" : "EXTERNAL"
+          },
+          "open_in_new_tab" : false,
+          "no_follow" : false
+        },
+        "styles" : "primary"
+      }
+    }, {
+      "id" : "3d797feb-9611-380d-9c54-f2a5a9213507",
+      "name" : "timeframe",
+      "display_width" : null,
+      "label" : "Timeframe",
+      "required" : false,
+      "locked" : false,
+      "children" : [ {
+        "id" : "a44b3f29-2448-5a03-c2e5-669a87b59e70",
+        "name" : "start_date",
+        "display_width" : null,
+        "label" : "Start date",
+        "required" : false,
+        "locked" : false,
+        "type" : "date"
+      }, {
+        "id" : "9f880312-4e91-ecdf-c4f0-24b214574564",
+        "name" : "end_date",
+        "display_width" : null,
+        "label" : "End date",
+        "required" : false,
+        "locked" : false,
+        "type" : "date"
+      }, {
+        "id" : "8e33915f-0813-c0f3-914a-7a8bc260c5b1",
+        "name" : "start_time",
+        "display_width" : null,
+        "label" : "Start time",
+        "required" : false,
+        "locked" : false,
+        "children" : [ {
+          "id" : "737ed863-70b5-45f8-48c6-7a9b38d79b8c",
+          "name" : "hour",
+          "display_width" : null,
+          "label" : "Hour",
+          "required" : false,
+          "locked" : false,
+          "display" : "text",
+          "min" : 1,
+          "max" : 12,
+          "step" : 1,
+          "type" : "number"
+        }, {
+          "id" : "f7465334-999b-5a36-9d84-66160e988af5",
+          "name" : "period",
+          "display_width" : null,
+          "label" : "Period",
+          "required" : false,
+          "locked" : false,
+          "display" : "select",
+          "choices" : [ [ "am", "Morning" ], [ "pm", "Afternoon/Evening" ] ],
+          "multiple" : false,
+          "reordering_enabled" : true,
+          "preset" : null,
+          "type" : "choice",
+          "default" : "am"
+        } ],
+        "tab" : "CONTENT",
+        "expanded" : false,
+        "group_occurrence_meta" : null,
+        "type" : "group",
+        "default" : {
+          "period" : "am"
+        }
+      }, {
+        "id" : "40d0dd4e-c0d1-744e-999e-9eddb332b733",
+        "name" : "end_time",
+        "display_width" : null,
+        "label" : "End time",
+        "required" : false,
+        "locked" : false,
+        "children" : [ {
+          "id" : "19081fda-141f-34cf-4c4d-7cc259827a9f",
+          "name" : "hour",
+          "display_width" : null,
+          "label" : "Hour",
+          "required" : false,
+          "locked" : false,
+          "display" : "text",
+          "min" : 1,
+          "max" : 12,
+          "step" : 1,
+          "type" : "number"
+        }, {
+          "id" : "e10810f7-2263-564f-9806-f9be9fe46bf1",
+          "name" : "period",
+          "display_width" : null,
+          "label" : "Period",
+          "required" : false,
+          "locked" : false,
+          "display" : "select",
+          "choices" : [ [ "am", "Morning" ], [ "pm", "Afternoon/Evening" ] ],
+          "multiple" : false,
+          "reordering_enabled" : true,
+          "preset" : null,
+          "type" : "choice",
+          "default" : "am"
+        } ],
+        "tab" : "CONTENT",
+        "expanded" : false,
+        "group_occurrence_meta" : null,
+        "type" : "group",
+        "default" : {
+          "period" : "am"
+        }
+      } ],
+      "tab" : "CONTENT",
+      "expanded" : false,
+      "group_occurrence_meta" : null,
+      "type" : "group",
+      "default" : {
+        "start_time" : {
+          "period" : "am"
+        },
+        "end_time" : {
+          "period" : "am"
+        }
+      }
+    }, {
+      "id" : "953009cd-b4b9-9160-1590-69b55895722c",
+      "name" : "image",
+      "display_width" : null,
+      "label" : "Image",
+      "required" : false,
+      "locked" : false,
+      "responsive" : true,
+      "resizable" : true,
+      "show_loading" : false,
+      "type" : "image",
+      "default" : {
+        "size_type" : "auto",
+        "src" : "https://25147791.fs1.hubspotusercontent-eu1.net/hubfs/25147791/Rectangle%205.jpg",
+        "alt" : "Rectangle 5",
+        "loading" : "lazy",
+        "width" : 952,
+        "height" : 952,
+        "max_width" : 952,
+        "max_height" : 952
+      }
+    } ],
+    "tab" : "CONTENT",
+    "expanded" : false,
+    "group_occurrence_meta" : null,
+    "type" : "group",
+    "default" : [ ]
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "default" : {
+    "activity" : [ ]
+  }
+} ]

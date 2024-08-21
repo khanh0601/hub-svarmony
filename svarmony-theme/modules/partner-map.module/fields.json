@@ -1,0 +1,355 @@
+[ {
+  "id" : "fda8994f-9e4a-41b2-47e5-da7d48b1e4de",
+  "name" : "title",
+  "display_width" : null,
+  "label" : "Title",
+  "required" : false,
+  "locked" : false,
+  "validation_regex" : "",
+  "allow_new_line" : false,
+  "show_emoji_picker" : false,
+  "type" : "text",
+  "default" : "Our global partners"
+}, {
+  "id" : "9a06e16c-697c-623b-8d74-70f20c306641",
+  "name" : "subtitle",
+  "display_width" : null,
+  "label" : "Subtitle",
+  "required" : false,
+  "locked" : false,
+  "validation_regex" : "",
+  "allow_new_line" : false,
+  "show_emoji_picker" : false,
+  "type" : "text",
+  "default" : "We're excited to share with you our network of amazing partners from all around the world. Our partners play a crucial role in helping us deliver exceptional services and products. They are our extended family, and together, we work towards providing you with the best experiences possible."
+}, {
+  "id" : "88226e6e-573e-6a0d-6c6c-8a9a3c1939c7",
+  "name" : "company",
+  "display_width" : null,
+  "label" : "Company",
+  "required" : false,
+  "locked" : false,
+  "occurrence" : {
+    "min" : null,
+    "max" : null,
+    "sorting_label_field" : "2dcd3078-38a4-2a11-67da-7e5fa065a634",
+    "default" : null
+  },
+  "children" : [ {
+    "id" : "049f457e-bf7d-bf04-dad3-6c68217242c2",
+    "name" : "company_logo",
+    "display_width" : null,
+    "label" : "Logo",
+    "required" : false,
+    "locked" : false,
+    "responsive" : true,
+    "resizable" : true,
+    "show_loading" : false,
+    "type" : "image",
+    "default" : {
+      "size_type" : "auto",
+      "src" : "https://25147791.fs1.hubspotusercontent-eu1.net/hubfs/25147791/O2-1.jpg",
+      "alt" : "O2-1",
+      "loading" : "lazy",
+      "width" : 320,
+      "height" : 320,
+      "max_width" : 320,
+      "max_height" : 320
+    }
+  }, {
+    "id" : "2dcd3078-38a4-2a11-67da-7e5fa065a634",
+    "name" : "company_name",
+    "display_width" : null,
+    "label" : "Name",
+    "required" : false,
+    "locked" : false,
+    "validation_regex" : "",
+    "allow_new_line" : false,
+    "show_emoji_picker" : false,
+    "type" : "text",
+    "default" : "o2 Telephonica"
+  }, {
+    "id" : "6466de7b-83bf-2dae-f421-cd0ac2492ba4",
+    "name" : "company_intro",
+    "display_width" : null,
+    "label" : "Introduction",
+    "required" : false,
+    "locked" : false,
+    "validation_regex" : "",
+    "allow_new_line" : false,
+    "show_emoji_picker" : false,
+    "type" : "text",
+    "default" : "O2 Telefónica provides mobile and broadband services in multiple countries, including the UK, Germany, and Spain."
+  }, {
+    "id" : "62527624-60fe-5c7c-e3d7-0befa96e7319",
+    "name" : "company_website",
+    "display_width" : null,
+    "label" : "Website",
+    "required" : false,
+    "locked" : false,
+    "supported_types" : [ "EXTERNAL", "CONTENT", "FILE", "EMAIL_ADDRESS", "BLOG", "CALL_TO_ACTION", "PHONE_NUMBER", "WHATSAPP_NUMBER" ],
+    "show_advanced_rel_options" : false,
+    "type" : "link",
+    "default" : {
+      "url" : {
+        "content_id" : null,
+        "type" : "EXTERNAL",
+        "href" : ""
+      },
+      "open_in_new_tab" : true,
+      "no_follow" : false
+    }
+  }, {
+    "id" : "43636848-9822-c778-ae2a-0a0eff2b46c5",
+    "name" : "company_location",
+    "display_width" : null,
+    "label" : "Location",
+    "required" : false,
+    "locked" : false,
+    "children" : [ {
+      "id" : "925cc75b-c22b-89cd-227e-697a982291eb",
+      "name" : "location_name",
+      "display_width" : null,
+      "label" : "Name",
+      "required" : false,
+      "locked" : false,
+      "validation_regex" : "",
+      "allow_new_line" : false,
+      "show_emoji_picker" : false,
+      "type" : "text"
+    }, {
+      "id" : "3a888976-6d45-9696-0941-4ffa213e0fd1",
+      "name" : "location_x",
+      "display_width" : null,
+      "label" : "X",
+      "required" : false,
+      "locked" : false,
+      "display" : "slider",
+      "min" : 0,
+      "max" : 1364,
+      "step" : 1,
+      "suffix" : "",
+      "type" : "number"
+    }, {
+      "id" : "28c9fb09-88a1-2676-5f20-489f8276c570",
+      "name" : "location_y",
+      "display_width" : null,
+      "label" : "Y",
+      "required" : false,
+      "locked" : false,
+      "display" : "slider",
+      "min" : 0,
+      "max" : 740,
+      "step" : 1,
+      "type" : "number"
+    } ],
+    "tab" : "CONTENT",
+    "expanded" : false,
+    "group_occurrence_meta" : null,
+    "type" : "group",
+    "default" : { }
+  }, {
+    "id" : "12189e3a-2f92-6fb4-9184-4c331704bd37",
+    "name" : "about",
+    "display_width" : null,
+    "label" : "ABOUT",
+    "required" : false,
+    "locked" : false,
+    "children" : [ {
+      "id" : "cdf962aa-1935-b0a2-4be2-881612e380b5",
+      "name" : "title",
+      "display_width" : null,
+      "label" : "Title",
+      "required" : false,
+      "locked" : false,
+      "validation_regex" : "",
+      "allow_new_line" : false,
+      "show_emoji_picker" : false,
+      "type" : "text",
+      "default" : "O2 Telefónica provides mobile and broadband services in multiple countries, including the UK, Germany, and Spain."
+    }, {
+      "id" : "d9d174ae-4dca-58be-a3d3-1f3ea5330c67",
+      "name" : "desc",
+      "display_width" : null,
+      "label" : "Description",
+      "required" : false,
+      "locked" : false,
+      "type" : "richtext",
+      "default" : "At a time when technology is more present than ever in our lives, we cannot forget that the most important connections are human connections. Because in today’s society, people’s quality of life, mostly depends on that connection.<br>And this is where we come in. Offering connections that bring people together, rather than isolate them; connections that invite people to be themselves, to express themselves, to share."
+    }, {
+      "id" : "88544f05-b0f3-c026-65a1-c6e62aa1d67d",
+      "name" : "thumbnail",
+      "display_width" : null,
+      "label" : "Thumbnail",
+      "required" : false,
+      "locked" : false,
+      "responsive" : true,
+      "resizable" : true,
+      "show_loading" : false,
+      "type" : "image",
+      "default" : {
+        "size_type" : "auto",
+        "src" : "https://25147791.fs1.hubspotusercontent-eu1.net/hubfs/25147791/Rectangle%202.jpg",
+        "alt" : "Rectangle 2",
+        "loading" : "lazy",
+        "width" : 1566,
+        "height" : 976,
+        "max_width" : 1566,
+        "max_height" : 976
+      }
+    } ],
+    "tab" : "CONTENT",
+    "expanded" : false,
+    "group_occurrence_meta" : null,
+    "type" : "group",
+    "default" : {
+      "title" : "O2 Telefónica provides mobile and broadband services in multiple countries, including the UK, Germany, and Spain.",
+      "desc" : "At a time when technology is more present than ever in our lives, we cannot forget that the most important connections are human connections. Because in today’s society, people’s quality of life, mostly depends on that connection.<br>And this is where we come in. Offering connections that bring people together, rather than isolate them; connections that invite people to be themselves, to express themselves, to share.",
+      "thumbnail" : {
+        "size_type" : "auto",
+        "src" : "https://25147791.fs1.hubspotusercontent-eu1.net/hubfs/25147791/Rectangle%202.jpg",
+        "alt" : "Rectangle 2",
+        "loading" : "lazy",
+        "width" : 1566,
+        "height" : 976,
+        "max_width" : 1566,
+        "max_height" : 976
+      }
+    }
+  }, {
+    "id" : "2a541460-dba4-762c-908d-ef8e65ed63ca",
+    "name" : "service",
+    "display_width" : null,
+    "label" : "SERVICE",
+    "required" : false,
+    "locked" : false,
+    "children" : [ {
+      "id" : "519cd8da-1bd2-8338-a516-07792ad81947",
+      "name" : "listing",
+      "display_width" : null,
+      "label" : "Listing",
+      "required" : false,
+      "locked" : false,
+      "occurrence" : {
+        "min" : null,
+        "max" : null,
+        "sorting_label_field" : "6ec453fb-5001-fc63-f072-28c156a44025",
+        "default" : null
+      },
+      "children" : [ {
+        "id" : "6ec453fb-5001-fc63-f072-28c156a44025",
+        "name" : "title",
+        "display_width" : null,
+        "label" : "Title",
+        "required" : false,
+        "locked" : false,
+        "validation_regex" : "",
+        "allow_new_line" : false,
+        "show_emoji_picker" : false,
+        "type" : "text"
+      }, {
+        "id" : "fdb6b777-b6c2-d1a3-4553-590961be7b9c",
+        "name" : "desc",
+        "display_width" : null,
+        "label" : "Description",
+        "required" : false,
+        "locked" : false,
+        "validation_regex" : "",
+        "allow_new_line" : false,
+        "show_emoji_picker" : false,
+        "type" : "text"
+      } ],
+      "tab" : "CONTENT",
+      "expanded" : false,
+      "group_occurrence_meta" : null,
+      "type" : "group",
+      "default" : [ ]
+    }, {
+      "id" : "d2e1e199-3916-833f-4b83-eb3560d02989",
+      "name" : "thumbnail",
+      "display_width" : null,
+      "label" : "Thumbnail",
+      "required" : false,
+      "locked" : false,
+      "responsive" : true,
+      "resizable" : true,
+      "show_loading" : false,
+      "type" : "image",
+      "default" : {
+        "size_type" : "auto",
+        "src" : "https://25147791.fs1.hubspotusercontent-eu1.net/hubfs/25147791/Rectangle%202.jpg",
+        "alt" : "Rectangle 2",
+        "loading" : "lazy",
+        "width" : 1566,
+        "height" : 976,
+        "max_width" : 1566,
+        "max_height" : 976
+      }
+    } ],
+    "tab" : "CONTENT",
+    "expanded" : false,
+    "group_occurrence_meta" : null,
+    "type" : "group",
+    "default" : {
+      "listing" : [ ],
+      "thumbnail" : {
+        "size_type" : "auto",
+        "src" : "https://25147791.fs1.hubspotusercontent-eu1.net/hubfs/25147791/Rectangle%202.jpg",
+        "alt" : "Rectangle 2",
+        "loading" : "lazy",
+        "width" : 1566,
+        "height" : 976,
+        "max_width" : 1566,
+        "max_height" : 976
+      }
+    }
+  }, {
+    "id" : "0c603d4c-d3fc-a1b7-3949-5cef211cc490",
+    "name" : "contact",
+    "display_width" : null,
+    "label" : "CONTACT",
+    "required" : false,
+    "locked" : false,
+    "occurrence" : {
+      "min" : null,
+      "max" : null,
+      "sorting_label_field" : null,
+      "default" : null
+    },
+    "children" : [ {
+      "id" : "188d49d6-ecfa-d642-f654-6f68741b9074",
+      "name" : "type",
+      "display_width" : null,
+      "label" : "Type",
+      "required" : false,
+      "locked" : false,
+      "validation_regex" : "",
+      "placeholder" : "",
+      "allow_new_line" : false,
+      "show_emoji_picker" : false,
+      "type" : "text",
+      "default" : "Address"
+    }, {
+      "id" : "82172606-2aee-31e4-88b8-a4b8da182e0e",
+      "name" : "value",
+      "display_width" : null,
+      "label" : "Value",
+      "required" : false,
+      "locked" : false,
+      "validation_regex" : "",
+      "allow_new_line" : false,
+      "show_emoji_picker" : false,
+      "type" : "text"
+    } ],
+    "tab" : "CONTENT",
+    "expanded" : false,
+    "group_occurrence_meta" : null,
+    "type" : "group",
+    "default" : [ ]
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "default" : [ ]
+} ]

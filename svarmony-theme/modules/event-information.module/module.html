@@ -1,0 +1,64 @@
+{% require_css %}
+    <style>
+        {% scope_css %}
+            @media only screen and (max-width: 767px) {
+                .event__right-content,
+                .event__left-content {
+                    grid-column: span 2;
+                }
+                .event__left-content {
+                    margin-bottom: 2rem;
+                }
+            }
+        {% end_scope_css %}
+    </style>
+{% end_require_css %}
+
+{% macro render_default_info(info_type) %}
+    {% set infor_data = module.information_listing[info_type] %}
+    {% if infor_data %}
+        {% if infor_data.is_show %}
+            <div class="event__information-item">
+                <div class="event__information-item-ic">
+                    <img class="img-default" src="{{ infor_data.icon.src }}" alt="{{ infor_data.icon.alt }}">
+                </div>
+                <div class="event__information-item-info">
+                    <div class="fs-20 fw-reg event__information-item-title">{{ infor_data.title }}</div>
+                    <div class="fs-20 event__information-item-subtitle">{{ infor_data.subtitle }}</div>
+                </div>
+            </div>
+        {% endif %}
+    {% endif %}
+{% endmacro %}
+
+<div class="{{ name }} event-grid">
+    <div class="event__left-content">
+        <h2 class="h3 fw-reg event__h2-title">{{ module.title }}</h2>
+    </div>
+    <div class="event__right-content">
+        <div class="event__information-content">
+            <div class="event__information-listing">
+                {{ render_default_info('infor_date') }}
+                {{ render_default_info('infor_location') }}
+                {{ render_default_info('infor_price') }}
+                {% for another_info in module.information_listing.another_info %}
+                    <div class="event__information-item">
+                        <div class="event__information-item-ic">
+                            <img src="{{ another_info.icon.src }}" alt="{{ another_info.icon.alt }}">
+                        </div>
+                        <div class="event__information-item-info">
+                            <div class="fs-20 fw-reg event__information-item-title">{{ another_info.title }}</div>
+                            <div class="fs-20 event__information-item-subtitle">{{ another_info.subtitle }}</div>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+

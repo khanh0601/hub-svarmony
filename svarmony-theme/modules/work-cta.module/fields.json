@@ -1,0 +1,43 @@
+[ {
+  "id" : "519db37b-0dbe-d52a-3ba2-6f0a2130c1f2",
+  "name" : "is_show",
+  "display_width" : null,
+  "label" : "Is Show",
+  "required" : false,
+  "locked" : false,
+  "display" : "toggle",
+  "type" : "boolean",
+  "default" : false
+}, {
+  "id" : "00f3b2c1-be80-2dac-a0d2-a639737a1320",
+  "name" : "cta_title",
+  "display_width" : null,
+  "label" : "CTA title",
+  "required" : false,
+  "locked" : false,
+  "validation_regex" : "",
+  "allow_new_line" : false,
+  "show_emoji_picker" : false,
+  "type" : "text",
+  "default" : "Power up your business with svarmony’s avatar"
+}, {
+  "id" : "5b839f28-1a7f-cec9-c089-bc8999588e22",
+  "name" : "description",
+  "display_width" : null,
+  "label" : "Description",
+  "required" : false,
+  "locked" : false,
+  "validation_regex" : "",
+  "allow_new_line" : false,
+  "show_emoji_picker" : false,
+  "type" : "text",
+  "default" : "Experience the difference that uncompromising performance, unwavering reliability, and unbeatable value can make for your business. Take the first step towards accelerating your online success – contact svarmony today."
+}, {
+  "id" : "109a4ab9-09b8-5acd-9af8-9b0dbe90c5f8",
+  "name" : "cta_button",
+  "display_width" : null,
+  "label" : "CTA button",
+  "required" : false,
+  "locked" : false,
+  "type" : "richtext"
+} ]

@@ -1,0 +1,172 @@
+[ {
+  "id" : "927f7184-919e-a8a2-528f-c180339b69cb",
+  "name" : "heading",
+  "display_width" : null,
+  "label" : "Heading",
+  "required" : false,
+  "locked" : false,
+  "children" : [ {
+    "id" : "811edefb-6b68-36b7-c3eb-91a2c982729a",
+    "name" : "title",
+    "display_width" : null,
+    "label" : "Title",
+    "required" : false,
+    "locked" : false,
+    "validation_regex" : "",
+    "allow_new_line" : false,
+    "show_emoji_picker" : false,
+    "type" : "text",
+    "default" : "Applications"
+  }, {
+    "id" : "bbe02580-699e-df75-8755-6bb88eb325d8",
+    "name" : "description",
+    "display_width" : null,
+    "label" : "Description",
+    "required" : false,
+    "locked" : false,
+    "validation_regex" : "",
+    "allow_new_line" : false,
+    "show_emoji_picker" : false,
+    "type" : "text",
+    "default" : "VPS empowers a wide range of devices, from smartphones to robots, to determine their location and orientation with precision. This opens doors to a vast array of potential applications, such as:"
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "default" : {
+    "title" : "Applications",
+    "description" : "VPS empowers a wide range of devices, from smartphones to robots, to determine their location and orientation with precision. This opens doors to a vast array of potential applications, such as:"
+  }
+}, {
+  "id" : "b97c8ed5-0d3b-831b-7377-388fe4f0af5e",
+  "name" : "aplication_body",
+  "display_width" : null,
+  "label" : "Aplication Detail",
+  "required" : false,
+  "locked" : false,
+  "occurrence" : {
+    "min" : null,
+    "max" : null,
+    "sorting_label_field" : "b108d33b-e6cb-cc32-cee9-664a2b7cc33a",
+    "default" : null
+  },
+  "children" : [ {
+    "id" : "477e1c61-6bc2-d9c6-d7fa-2ec5aaeff172",
+    "name" : "image_field",
+    "display_width" : null,
+    "label" : "Image",
+    "required" : false,
+    "locked" : false,
+    "responsive" : true,
+    "resizable" : true,
+    "show_loading" : false,
+    "type" : "image",
+    "default" : {
+      "size_type" : "auto",
+      "src" : "https://25147791.fs1.hubspotusercontent-eu1.net/hubfs/25147791/img-Jul-17-2024-10-17-55-8840-AM.jpg",
+      "alt" : "img-Jul-17-2024-10-17-55-8840-AM",
+      "loading" : "lazy",
+      "width" : 630,
+      "height" : 400,
+      "max_width" : 630,
+      "max_height" : 400
+    }
+  }, {
+    "id" : "b108d33b-e6cb-cc32-cee9-664a2b7cc33a",
+    "name" : "content",
+    "display_width" : null,
+    "label" : "Content",
+    "required" : false,
+    "locked" : false,
+    "children" : [ {
+      "id" : "10f65257-c9f2-1789-f1c8-a4649a662878",
+      "name" : "title",
+      "display_width" : null,
+      "label" : "Title",
+      "required" : false,
+      "locked" : false,
+      "validation_regex" : "",
+      "allow_new_line" : false,
+      "show_emoji_picker" : false,
+      "type" : "text",
+      "default" : "Indoor Navigation"
+    }, {
+      "id" : "text",
+      "name" : "description",
+      "display_width" : null,
+      "label" : "Description",
+      "required" : false,
+      "locked" : false,
+      "type" : "richtext",
+      "default" : "<p>Unlike GPS, VPS is a more superb solution for precise indoor navigation. VPS technology analyzes what your camera sees, pinpointing your location indoors (malls, airports, etc.) with ease.<br><br>Learn more about how <strong>svarmony's aryve VPS</strong> redefines your indoor navigation experience:</p>"
+    }, {
+      "id" : "d4afced5-3764-ed87-a0f7-3d5c70d8e2c8",
+      "name" : "button",
+      "display_width" : null,
+      "label" : "Button",
+      "required" : false,
+      "locked" : false,
+      "children" : [ {
+        "id" : "afc097ac-3251-bcd7-344a-9f5468d470df",
+        "name" : "text_button",
+        "display_width" : null,
+        "label" : "Text Button",
+        "required" : false,
+        "locked" : false,
+        "validation_regex" : "",
+        "allow_new_line" : false,
+        "show_emoji_picker" : false,
+        "type" : "text",
+        "default" : "Discover aryve VPS"
+      }, {
+        "id" : "7de51a32-b66a-c55f-3d06-544cd2ff813c",
+        "name" : "link_button",
+        "display_width" : null,
+        "label" : "Link Button",
+        "required" : false,
+        "locked" : false,
+        "supported_types" : [ "EXTERNAL", "CONTENT", "FILE", "EMAIL_ADDRESS", "BLOG", "CALL_TO_ACTION", "PHONE_NUMBER", "WHATSAPP_NUMBER", "PAYMENT" ],
+        "type" : "url",
+        "default" : {
+          "content_id" : null,
+          "href" : "/#",
+          "type" : "EXTERNAL"
+        }
+      } ],
+      "tab" : "CONTENT",
+      "expanded" : false,
+      "group_occurrence_meta" : null,
+      "type" : "group",
+      "default" : {
+        "text_button" : "Discover aryve VPS",
+        "link_button" : {
+          "content_id" : null,
+          "href" : "/#",
+          "type" : "EXTERNAL"
+        }
+      }
+    } ],
+    "tab" : "CONTENT",
+    "expanded" : false,
+    "group_occurrence_meta" : null,
+    "type" : "group",
+    "default" : {
+      "title" : "Indoor Navigation",
+      "description" : "<p>Unlike GPS, VPS is a more superb solution for precise indoor navigation. VPS technology analyzes what your camera sees, pinpointing your location indoors (malls, airports, etc.) with ease.<br><br>Learn more about how <strong>svarmony's aryve VPS</strong> redefines your indoor navigation experience:</p>",
+      "button" : {
+        "text_button" : "Discover aryve VPS",
+        "link_button" : {
+          "content_id" : null,
+          "href" : "/#",
+          "type" : "EXTERNAL"
+        }
+      }
+    }
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "default" : [ ]
+} ]

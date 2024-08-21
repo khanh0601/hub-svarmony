@@ -1,0 +1,9 @@
+{
+  "global" : true,
+  "content_types" : [ "LANDING_PAGE", "SITE_PAGE", "BLOG_POST" ],
+  "smart_type" : "NOT_SMART",
+  "host_template_types" : [ "PAGE", "BLOG_POST" ],
+  "module_id" : 96741719021,
+  "label" : "Work Last Call",
+  "is_available_for_new_content" : false
+}

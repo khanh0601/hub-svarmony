@@ -1,0 +1,16 @@
+<!-- module html  -->
+ {%if module.is_show%}
+<section class="work-cta">
+  <div class="container grid">
+    <div class="work-cta-wrap">
+      <div class="work-cta-title-wrap">
+        <p class="work-cta-title h2">{{module.cta_title}}</p>
+      </div>
+      <div class="work-cta-dec-wrap">
+        <div class="work-cta-dec">{{module.description}}</div>
+        <div>{{module.cta_button}}</div>
+      </div>
+    </div>
+  </div>
+</section>
+{%endif%}

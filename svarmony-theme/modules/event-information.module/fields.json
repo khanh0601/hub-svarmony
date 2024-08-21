@@ -1,0 +1,382 @@
+[ {
+  "id" : "dab6dc1c-98f0-a8e1-632d-edf9e7520e9d",
+  "name" : "title",
+  "display_width" : null,
+  "label" : "Title",
+  "required" : false,
+  "locked" : false,
+  "validation_regex" : "",
+  "allow_new_line" : false,
+  "show_emoji_picker" : false,
+  "type" : "text",
+  "default" : "Event information"
+}, {
+  "id" : "07df3382-161c-4ea6-4cc9-df679d773b9d",
+  "name" : "information_listing",
+  "display_width" : null,
+  "label" : "Information Listing",
+  "required" : false,
+  "locked" : false,
+  "children" : [ {
+    "id" : "b30af283-3e3e-0aea-93f4-fccabf77efa5",
+    "name" : "infor_date",
+    "display_width" : null,
+    "label" : "Infor date",
+    "required" : false,
+    "locked" : false,
+    "children" : [ {
+      "id" : "00b00e82-03cc-7a35-6d84-52970fbe6a0f",
+      "name" : "is_show",
+      "display_width" : null,
+      "label" : "Is show",
+      "required" : false,
+      "locked" : false,
+      "display" : "toggle",
+      "type" : "boolean",
+      "default" : true
+    }, {
+      "id" : "558b0537-8ae4-33e4-f65d-d1248a4c0662",
+      "name" : "title",
+      "display_width" : null,
+      "label" : "Title",
+      "required" : false,
+      "locked" : false,
+      "validation_regex" : "",
+      "allow_new_line" : false,
+      "show_emoji_picker" : false,
+      "type" : "text",
+      "default" : "January 14 - 16, 2024"
+    }, {
+      "id" : "cc5a563c-5a28-9418-d972-f34825d5a8e2",
+      "name" : "subtitle",
+      "display_width" : null,
+      "label" : "Subtitle",
+      "required" : false,
+      "locked" : false,
+      "validation_regex" : "",
+      "allow_new_line" : false,
+      "show_emoji_picker" : false,
+      "type" : "text"
+    }, {
+      "id" : "742bde08-cc17-30de-7097-78258784a33b",
+      "name" : "icon",
+      "display_width" : null,
+      "label" : "Icon",
+      "required" : false,
+      "locked" : false,
+      "responsive" : true,
+      "resizable" : true,
+      "show_loading" : false,
+      "type" : "image",
+      "default" : {
+        "size_type" : "auto",
+        "src" : "https://25147791.fs1.hubspotusercontent-eu1.net/hubfs/25147791/calendar-2%202.svg",
+        "alt" : "calendar-2 2",
+        "loading" : "lazy",
+        "width" : 24,
+        "height" : 24,
+        "max_width" : 24,
+        "max_height" : 24
+      }
+    } ],
+    "tab" : "CONTENT",
+    "expanded" : false,
+    "group_occurrence_meta" : null,
+    "type" : "group",
+    "default" : {
+      "is_show" : true,
+      "title" : "January 14 - 16, 2024",
+      "icon" : {
+        "size_type" : "auto",
+        "src" : "https://25147791.fs1.hubspotusercontent-eu1.net/hubfs/25147791/calendar-2%202.svg",
+        "alt" : "calendar-2 2",
+        "loading" : "lazy",
+        "width" : 24,
+        "height" : 24,
+        "max_width" : 24,
+        "max_height" : 24
+      }
+    }
+  }, {
+    "id" : "b114c5d6-3af4-8d67-4843-d9ca171e5a91",
+    "name" : "infor_location",
+    "display_width" : null,
+    "label" : "Infor location",
+    "required" : false,
+    "locked" : false,
+    "children" : [ {
+      "id" : "2d196ca6-d5ac-b756-d954-f2b87faf5202",
+      "name" : "is_show",
+      "display_width" : null,
+      "label" : "Is show",
+      "required" : false,
+      "locked" : false,
+      "display" : "toggle",
+      "type" : "boolean",
+      "default" : true
+    }, {
+      "id" : "78410f70-45dc-1914-55eb-cf3a8ff821c7",
+      "name" : "title",
+      "display_width" : null,
+      "label" : "Title",
+      "required" : false,
+      "locked" : false,
+      "validation_regex" : "",
+      "allow_new_line" : false,
+      "show_emoji_picker" : false,
+      "type" : "text",
+      "default" : "NRF Big Show, New York, NY, US"
+    }, {
+      "id" : "ef22689c-bcfd-86f8-4e42-0c9021d8b9a0",
+      "name" : "subtitle",
+      "display_width" : null,
+      "label" : "Subtitle",
+      "required" : false,
+      "locked" : false,
+      "validation_regex" : "",
+      "allow_new_line" : false,
+      "show_emoji_picker" : false,
+      "type" : "text",
+      "default" : "Booth 2711"
+    }, {
+      "id" : "6adf89ca-e4df-72fb-f1d6-3c2594cf855e",
+      "name" : "icon",
+      "display_width" : null,
+      "label" : "Icon",
+      "required" : false,
+      "locked" : false,
+      "responsive" : true,
+      "resizable" : true,
+      "show_loading" : false,
+      "type" : "image",
+      "default" : {
+        "size_type" : "auto",
+        "src" : "https://25147791.fs1.hubspotusercontent-eu1.net/hubfs/25147791/position-pin%202.svg",
+        "alt" : "position-pin 2",
+        "loading" : "lazy",
+        "width" : 24,
+        "height" : 24,
+        "max_width" : 24,
+        "max_height" : 24
+      }
+    } ],
+    "tab" : "CONTENT",
+    "expanded" : false,
+    "group_occurrence_meta" : null,
+    "type" : "group",
+    "default" : {
+      "is_show" : true,
+      "title" : "NRF Big Show, New York, NY, US",
+      "subtitle" : "Booth 2711",
+      "icon" : {
+        "size_type" : "auto",
+        "src" : "https://25147791.fs1.hubspotusercontent-eu1.net/hubfs/25147791/position-pin%202.svg",
+        "alt" : "position-pin 2",
+        "loading" : "lazy",
+        "width" : 24,
+        "height" : 24,
+        "max_width" : 24,
+        "max_height" : 24
+      }
+    }
+  }, {
+    "id" : "846c892b-471d-50dc-3d49-e23343a0d7c4",
+    "name" : "infor_price",
+    "display_width" : null,
+    "label" : "Infor price",
+    "required" : false,
+    "locked" : false,
+    "children" : [ {
+      "id" : "36d63350-cbf2-61d5-f109-b1a9f5d2ce54",
+      "name" : "is_show",
+      "display_width" : null,
+      "label" : "Is show",
+      "required" : false,
+      "locked" : false,
+      "display" : "toggle",
+      "type" : "boolean",
+      "default" : true
+    }, {
+      "id" : "1e3a81f6-24cc-3d67-faa2-3d8b0d1ffd9d",
+      "name" : "title",
+      "display_width" : null,
+      "label" : "Title",
+      "required" : false,
+      "locked" : false,
+      "validation_regex" : "",
+      "allow_new_line" : false,
+      "show_emoji_picker" : false,
+      "type" : "text",
+      "default" : "$100 per person"
+    }, {
+      "id" : "f0abf09b-ca48-c6c6-784e-d1f6d80f0aa3",
+      "name" : "subtitle",
+      "display_width" : null,
+      "label" : "Subtitle",
+      "required" : false,
+      "locked" : false,
+      "validation_regex" : "",
+      "allow_new_line" : false,
+      "show_emoji_picker" : false,
+      "type" : "text",
+      "default" : "Free for booking made before Jan 10, 2024"
+    }, {
+      "id" : "2fe02515-310b-7d2a-b065-93e22c448cd9",
+      "name" : "icon",
+      "display_width" : null,
+      "label" : "Icon",
+      "required" : false,
+      "locked" : false,
+      "responsive" : true,
+      "resizable" : true,
+      "show_loading" : false,
+      "type" : "image",
+      "default" : {
+        "size_type" : "auto",
+        "src" : "https://25147791.fs1.hubspotusercontent-eu1.net/hubfs/25147791/event-ticket%201.svg",
+        "alt" : "event-ticket 1",
+        "loading" : "lazy",
+        "width" : 24,
+        "height" : 24,
+        "max_width" : 24,
+        "max_height" : 24
+      }
+    } ],
+    "tab" : "CONTENT",
+    "expanded" : false,
+    "group_occurrence_meta" : null,
+    "type" : "group",
+    "default" : {
+      "is_show" : true,
+      "title" : "$100 per person",
+      "subtitle" : "Free for booking made before Jan 10, 2024",
+      "icon" : {
+        "size_type" : "auto",
+        "src" : "https://25147791.fs1.hubspotusercontent-eu1.net/hubfs/25147791/event-ticket%201.svg",
+        "alt" : "event-ticket 1",
+        "loading" : "lazy",
+        "width" : 24,
+        "height" : 24,
+        "max_width" : 24,
+        "max_height" : 24
+      }
+    }
+  }, {
+    "id" : "91643ac8-403c-1010-258c-2b1e0e8c2d7d",
+    "name" : "another_info",
+    "display_width" : null,
+    "label" : "Another infor",
+    "required" : false,
+    "locked" : false,
+    "occurrence" : {
+      "min" : null,
+      "max" : null,
+      "sorting_label_field" : null,
+      "default" : null
+    },
+    "children" : [ {
+      "id" : "f5d2967a-216a-cbbd-a163-221dd96a99c8",
+      "name" : "title",
+      "display_width" : null,
+      "label" : "Title",
+      "required" : false,
+      "locked" : false,
+      "validation_regex" : "",
+      "placeholder" : "Event information title",
+      "allow_new_line" : false,
+      "show_emoji_picker" : false,
+      "type" : "text",
+      "default" : "NRF Big Show, New York, NY, US"
+    }, {
+      "id" : "bffde11e-56eb-72c2-241d-25cb00b5d934",
+      "name" : "subtitle",
+      "display_width" : null,
+      "label" : "Subtitle",
+      "required" : false,
+      "locked" : false,
+      "validation_regex" : "",
+      "placeholder" : "Event information subtitle",
+      "allow_new_line" : false,
+      "show_emoji_picker" : false,
+      "type" : "text",
+      "default" : "Booth 2711"
+    }, {
+      "id" : "773f8c22-d449-deae-14a9-e381ba58f936",
+      "name" : "icon",
+      "display_width" : null,
+      "label" : "Icon",
+      "required" : false,
+      "locked" : false,
+      "responsive" : true,
+      "resizable" : true,
+      "show_loading" : false,
+      "type" : "image",
+      "default" : {
+        "size_type" : "auto",
+        "src" : "https://25147791.fs1.hubspotusercontent-eu1.net/hubfs/25147791/calendar-2%202.svg",
+        "alt" : "calendar-2 2",
+        "loading" : "lazy",
+        "width" : 24,
+        "height" : 24,
+        "max_width" : 24,
+        "max_height" : 24
+      }
+    } ],
+    "tab" : "CONTENT",
+    "expanded" : false,
+    "group_occurrence_meta" : null,
+    "type" : "group",
+    "default" : [ ]
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "default" : {
+    "infor_date" : {
+      "is_show" : true,
+      "title" : "January 14 - 16, 2024",
+      "icon" : {
+        "size_type" : "auto",
+        "src" : "https://25147791.fs1.hubspotusercontent-eu1.net/hubfs/25147791/calendar-2%202.svg",
+        "alt" : "calendar-2 2",
+        "loading" : "lazy",
+        "width" : 24,
+        "height" : 24,
+        "max_width" : 24,
+        "max_height" : 24
+      }
+    },
+    "infor_location" : {
+      "is_show" : true,
+      "title" : "NRF Big Show, New York, NY, US",
+      "subtitle" : "Booth 2711",
+      "icon" : {
+        "size_type" : "auto",
+        "src" : "https://25147791.fs1.hubspotusercontent-eu1.net/hubfs/25147791/position-pin%202.svg",
+        "alt" : "position-pin 2",
+        "loading" : "lazy",
+        "width" : 24,
+        "height" : 24,
+        "max_width" : 24,
+        "max_height" : 24
+      }
+    },
+    "infor_price" : {
+      "is_show" : true,
+      "title" : "$100 per person",
+      "subtitle" : "Free for booking made before Jan 10, 2024",
+      "icon" : {
+        "size_type" : "auto",
+        "src" : "https://25147791.fs1.hubspotusercontent-eu1.net/hubfs/25147791/event-ticket%201.svg",
+        "alt" : "event-ticket 1",
+        "loading" : "lazy",
+        "width" : 24,
+        "height" : 24,
+        "max_width" : 24,
+        "max_height" : 24
+      }
+    },
+    "another_info" : [ ]
+  }
+} ]

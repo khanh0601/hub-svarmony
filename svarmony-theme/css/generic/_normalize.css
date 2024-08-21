@@ -1,0 +1,41 @@
+/*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
+
+/* Document
+   ========================================================================== */
+
+/**
+ * 1. Correct the line height in all browsers.
+ * 2. Prevent adjustments of font size after orientation changes in iOS.
+ */
+ * {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+html {
+	--fs-global: 0.5787037037vw;
+	font-size: var(--fs-global);
+}
+
+@media only screen and (min-width: 1440px) {
+	html { --fs-global: 10px; }
+}
+@media only screen and (max-width: 991px) {
+	html { --fs-global: 1vw; }
+}
+@media only screen and (max-width: 767px) {
+	html { --fs-global: 1.3vw; }
+}
+@media only screen and (max-width: 476px) {
+	html { --fs-global: 2.5641025641vw; }
+}
+
+.body-wrapper {
+	min-height: 100vh;
+	display: flex;
+	flex-direction: column;
+}
+main {
+	flex-grow: 1;
+}

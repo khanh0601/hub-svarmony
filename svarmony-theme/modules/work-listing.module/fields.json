@@ -1,0 +1,24 @@
+[ {
+  "id" : "29b4e352-34d3-d78a-e9d1-3280046abf65",
+  "name" : "hubdbtable",
+  "display_width" : null,
+  "label" : "HubDB table",
+  "required" : false,
+  "locked" : false,
+  "type" : "hubdbtable",
+  "default" : 42932464
+}, {
+  "id" : "4c7c151a-8760-2825-afc3-d61dd11ebeb6",
+  "name" : "post_per_page",
+  "display_width" : null,
+  "label" : "Post per page",
+  "required" : false,
+  "locked" : false,
+  "display" : "text",
+  "min" : 0,
+  "step" : 1,
+  "prefix" : "",
+  "suffix" : " posts",
+  "type" : "number",
+  "default" : 10
+} ]

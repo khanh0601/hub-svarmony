@@ -1,0 +1,29 @@
+<!-- module html  -->
+{% import '../../templates/marco/card.html' as card %}
+
+{% set dataItem = hubdb_table_rows("works", "hs_path=" ~ page_slug) %}
+{% set dataTable = hubdb_table_rows("works", "hs_path__ne=" ~ page_slug) %}
+
+{% set explore_arr = [] %}
+{% for item in dataItem %}
+    {% for row in dataTable %}
+        {% unless explore_arr|length >= 4 %}
+            {% if item["solution"].id == row["solution"].id %}
+                {% do explore_arr.append(row) %}
+            {% endif %}
+        {% endunless %}
+    {% endfor %}
+{% endfor %}
+
+{% if explore_arr|length > 0 %}
+    <section class="work-explore">
+        <div class="container grid">
+            <h2 class="h2 work-explore-title">Explore more</h2>
+            <div class="work-explore-listing">
+                {% for item in explore_arr %}
+                    {{ card.work(item) }}
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+{% endif %}

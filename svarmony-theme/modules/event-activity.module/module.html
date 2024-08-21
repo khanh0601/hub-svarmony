@@ -1,0 +1,69 @@
+{% require_css %}
+    <style>
+        {% scope_css %}
+            @media only screen and (max-width: 767px) {
+                .event__left-content {
+                    grid-column: span 2;
+                }
+            }
+        {% end_scope_css %}
+    </style>
+{% end_require_css %}
+{% if module.is_show %}
+    <div class="{{ name }} event-container event-grid">
+        <div class="event__left-content">
+            <h2 class="h3 event__h2-title">{{ module.title }}</h2>
+        </div>
+        <div class="event__activity-content">
+            <div class="event__activity-content--wrap">
+                <div class="event__activity-listing-img--wrap">
+                    {% for item in module.activities_listing.activity %}
+                        <div class="event__activity-listing-img">
+                            <img class="img-default" src="{{ item.image.src }}" alt="{{ item.image.alt }}">
+                        </div>
+                    {% endfor %}
+                </div>
+                <div class="event__activity-listing-content--wrap">
+                    {% for item in module.activities_listing.activity %}
+                        <div class="event__activity-item">
+                            <div class="event__activity-item-img">
+                                <img class="img-default" src="{{ item.image.src }}" alt="{{ item.image.alt }}">
+                            </div>
+                            <div class="h4 fw-reg event__activity-item-title">{{ item.title }}</div>
+                            <div class="fs-20 event__activity-item-timeframe">
+                                {% if item.timeframe.start_date %}
+                                    <div>
+                                        {% if item.timeframe.end_date %}
+                                            {% if item.timeframe.start_date|datetimeformat("%b") ==  item.timeframe.end_date|datetimeformat("%b")%}
+                                                <span>{{ item.timeframe.start_date|datetimeformat("%b %e") }}</span> - <span>{{ item.timeframe.end_date|datetimeformat("%e") }}</span>
+                                            {% else %}
+                                                <span>{{ item.timeframe.start_date|datetimeformat("%b %e") }}</span> - <span>{{ item.timeframe.end_date|datetimeformat("%b %e") }}</span>
+                                            {% endif %}
+                                        {% else %}
+                                            <span>{{ item.timeframe.start_date|datetimeformat("%b %e") }}</span>
+                                        {% endif %}
+                                    </div>
+                                    {% if item.timeframe.start_time.hour %}
+                                        <span class="event__activity-item-timeframe-box"></span>
+                                        <div>
+                                            <span>{{ item.timeframe.start_time.hour }} {{ item.timeframe.start_time.period }}</span>{% if item.timeframe.end_time %} - <span>{{ item.timeframe.end_time.hour }} {{ item.timeframe.end_time.period }}</span>{%endif%}
+                                        </div>
+                                    {% endif %}
+                                {% endif %}
+                            </div>
+                            <div class="fs-20 event__activity-item-desc">{{ item.desc }}</div>
+                            {% if item.button.is_show %}
+                                <a class="event-btn event__activity-item-btn {{ item.button.styles }}" href="{{ item.button.link.url.href }}"
+                                    {% if item.button.link.no_follow %} rel="nofollow" {% endif %}
+                                    {% if item.button.link.open_in_new_tab %} target="_blank" {% endif %}
+                                    >
+                                    {{ item.button.text }}
+                                </a>
+                            {% endif %}
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+{% endif %}

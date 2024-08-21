@@ -1,0 +1,118 @@
+[ {
+  "id" : "2544d06c-6100-e445-4694-3cf15f26272d",
+  "name" : "honor",
+  "display_width" : null,
+  "label" : "Honor",
+  "required" : false,
+  "locked" : false,
+  "occurrence" : {
+    "min" : null,
+    "max" : null,
+    "sorting_label_field" : "96c78f4a-117c-9ee5-b869-b827bb449d65",
+    "default" : null
+  },
+  "children" : [ {
+    "id" : "96c78f4a-117c-9ee5-b869-b827bb449d65",
+    "name" : "name_honor",
+    "display_width" : null,
+    "label" : "Name",
+    "required" : false,
+    "locked" : false,
+    "validation_regex" : "",
+    "allow_new_line" : false,
+    "show_emoji_picker" : false,
+    "type" : "text"
+  }, {
+    "id" : "a70992bf-0d3e-a553-a392-841fa3a9472b",
+    "name" : "image",
+    "display_width" : null,
+    "label" : "Image",
+    "required" : false,
+    "locked" : false,
+    "responsive" : true,
+    "resizable" : true,
+    "show_loading" : false,
+    "type" : "image",
+    "default" : {
+      "size_type" : "auto",
+      "src" : "",
+      "alt" : null,
+      "loading" : "lazy"
+    }
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "default" : [ ]
+}, {
+  "id" : "a3afef21-aa7c-895b-6485-71e17daa4e1c",
+  "name" : "download",
+  "display_width" : null,
+  "label" : "Download",
+  "required" : false,
+  "locked" : false,
+  "children" : [ {
+    "id" : "a9b18a3c-13eb-31f7-f3cc-d4d881053d20",
+    "name" : "app_store",
+    "display_width" : null,
+    "label" : "App store",
+    "required" : false,
+    "locked" : false,
+    "supported_types" : [ "EXTERNAL", "CONTENT", "FILE", "EMAIL_ADDRESS", "CALL_TO_ACTION" ],
+    "show_advanced_rel_options" : false,
+    "type" : "link",
+    "default" : {
+      "url" : {
+        "content_id" : null,
+        "type" : "EXTERNAL",
+        "href" : ""
+      },
+      "open_in_new_tab" : true,
+      "no_follow" : false
+    }
+  }, {
+    "id" : "2b2afddd-4666-c583-b26b-9ec61333e9c9",
+    "name" : "google_play",
+    "display_width" : null,
+    "label" : "Google play",
+    "required" : false,
+    "locked" : false,
+    "supported_types" : [ "EXTERNAL", "CONTENT", "FILE", "CALL_TO_ACTION", "EMAIL_ADDRESS" ],
+    "show_advanced_rel_options" : false,
+    "type" : "link",
+    "default" : {
+      "url" : {
+        "content_id" : null,
+        "type" : "EXTERNAL",
+        "href" : ""
+      },
+      "open_in_new_tab" : true,
+      "no_follow" : false
+    }
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "default" : {
+    "app_store" : {
+      "url" : {
+        "content_id" : null,
+        "type" : "EXTERNAL",
+        "href" : ""
+      },
+      "open_in_new_tab" : true,
+      "no_follow" : false
+    },
+    "google_play" : {
+      "url" : {
+        "content_id" : null,
+        "type" : "EXTERNAL",
+        "href" : ""
+      },
+      "open_in_new_tab" : true,
+      "no_follow" : false
+    }
+  }
+} ]

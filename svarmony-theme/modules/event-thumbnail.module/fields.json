@@ -1,0 +1,232 @@
+[ {
+  "id" : "c3d3ca88-5c56-ae5d-83e7-f73da82c27a1",
+  "name" : "feature_thumbnail_type",
+  "display_width" : null,
+  "label" : "Feature Thumbnail Type",
+  "required" : false,
+  "locked" : false,
+  "display" : "radio",
+  "choices" : [ [ "image", "Image" ], [ "video", "Video" ] ],
+  "multiple" : false,
+  "reordering_enabled" : true,
+  "preset" : null,
+  "type" : "choice",
+  "default" : "image"
+}, {
+  "id" : "a950b8e4-bc68-a4f8-0fc5-345d1ef18775",
+  "name" : "thumbnail",
+  "display_width" : null,
+  "label" : "Image",
+  "required" : false,
+  "locked" : false,
+  "visibility" : {
+    "controlling_field" : null,
+    "controlling_field_path" : "feature_thumbnail_type",
+    "controlling_value_regex" : "image",
+    "property" : null,
+    "operator" : "EQUAL",
+    "access" : null
+  },
+  "children" : [ {
+    "id" : "c039ef09-0705-768a-dcdf-e44ca7cee203",
+    "name" : "desktop",
+    "display_width" : null,
+    "label" : "Desktop",
+    "required" : false,
+    "locked" : false,
+    "responsive" : true,
+    "resizable" : true,
+    "show_loading" : false,
+    "type" : "image",
+    "default" : {
+      "size_type" : "auto_custom_max",
+      "src" : "https://25147791.fs1.hubspotusercontent-eu1.net/hubfs/25147791/event-hero.jpg",
+      "alt" : "event-hero",
+      "loading" : "eager",
+      "width" : 3296,
+      "height" : 1080,
+      "max_width" : 2000,
+      "max_height" : 655.3398058252427
+    }
+  }, {
+    "id" : "091abc5d-8401-9214-16ea-e79630ecb708",
+    "name" : "mobile",
+    "display_width" : null,
+    "label" : "Mobile",
+    "required" : false,
+    "locked" : false,
+    "responsive" : true,
+    "resizable" : true,
+    "show_loading" : false,
+    "type" : "image",
+    "default" : {
+      "src" : ""
+    }
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "default" : {
+    "desktop" : {
+      "size_type" : "auto_custom_max",
+      "src" : "https://25147791.fs1.hubspotusercontent-eu1.net/hubfs/25147791/event-hero.jpg",
+      "alt" : "event-hero",
+      "loading" : "eager",
+      "width" : 3296,
+      "height" : 1080,
+      "max_width" : 2000,
+      "max_height" : 655.3398058252427
+    },
+    "mobile" : {
+      "src" : ""
+    }
+  }
+}, {
+  "id" : "4da47c9f-f223-a609-056a-dff87ea08093",
+  "name" : "video",
+  "display_width" : null,
+  "label" : "Video",
+  "required" : false,
+  "locked" : false,
+  "visibility" : {
+    "controlling_field" : null,
+    "controlling_field_path" : "feature_thumbnail_type",
+    "controlling_value_regex" : "video",
+    "property" : null,
+    "operator" : "EQUAL",
+    "access" : null
+  },
+  "children" : [ {
+    "id" : "54dcc2bb-9dfc-9f01-2504-8a567ac949a7",
+    "name" : "video_type",
+    "display_width" : null,
+    "label" : "Video Type",
+    "required" : false,
+    "locked" : false,
+    "display" : "radio",
+    "choices" : [ [ "embed", "Embed" ], [ "hubspot_video", "HubSpot video" ] ],
+    "multiple" : false,
+    "reordering_enabled" : true,
+    "preset" : null,
+    "type" : "choice",
+    "default" : "embed"
+  }, {
+    "id" : "af640860-0e1f-7bfe-5126-f373c28e1b5a",
+    "name" : "hubspot_video",
+    "display_width" : null,
+    "label" : "Hubspot video",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : null,
+      "controlling_field_path" : "video.video_type",
+      "controlling_value_regex" : "hubspot_video",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "resizable" : true,
+    "show_preview" : true,
+    "show_advanced_options" : false,
+    "type" : "videoplayer"
+  }, {
+    "id" : "dd07a1b2-9c5d-bed6-59ea-0134804938bf",
+    "name" : "embed_field",
+    "display_width" : null,
+    "label" : "Embed",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : null,
+      "controlling_field_path" : "video.video_type",
+      "controlling_value_regex" : "embed",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "supported_source_types" : [ "oembed", "html" ],
+    "supported_oembed_types" : [ "video" ],
+    "resizable" : true,
+    "show_preview" : true,
+    "supported_media_bridge_providers" : [ ],
+    "type" : "embed",
+    "default" : {
+      "source_type" : "oembed"
+    }
+  }, {
+    "id" : "7f42405c-cc7e-7aa6-8323-a8534ca23c68",
+    "name" : "oembed_thumbnail",
+    "display_width" : null,
+    "label" : "Custom thumbnail",
+    "required" : false,
+    "locked" : false,
+    "responsive" : true,
+    "resizable" : false,
+    "show_loading" : false,
+    "type" : "image",
+    "default" : {
+      "size_type" : "auto",
+      "src" : "",
+      "alt" : null,
+      "loading" : "eager"
+    }
+  }, {
+    "id" : "b641785e-c4b4-e32f-ef06-00f31263fc5a",
+    "name" : "placeholder_fields",
+    "display_width" : null,
+    "label" : "Placeholder text",
+    "required" : false,
+    "locked" : false,
+    "children" : [ {
+      "id" : "caa43f27-7b17-ab5d-4fd5-57515d671e97",
+      "name" : "placeholder_title",
+      "display_width" : null,
+      "label" : "Video placeholder title",
+      "required" : false,
+      "locked" : false,
+      "validation_regex" : "",
+      "allow_new_line" : false,
+      "show_emoji_picker" : false,
+      "type" : "text"
+    }, {
+      "id" : "8b13e81c-1bd0-0922-df63-95362ae69272",
+      "name" : "placeholder_description",
+      "display_width" : null,
+      "label" : "Video placeholder description",
+      "required" : false,
+      "locked" : false,
+      "validation_regex" : "",
+      "allow_new_line" : false,
+      "show_emoji_picker" : false,
+      "type" : "text",
+      "default" : "Select a video type in the sidebar."
+    } ],
+    "tab" : "CONTENT",
+    "expanded" : false,
+    "group_occurrence_meta" : null,
+    "type" : "group",
+    "default" : {
+      "placeholder_description" : "Select a video type in the sidebar."
+    }
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "default" : {
+    "video_type" : "embed",
+    "embed_field" : {
+      "source_type" : "oembed"
+    },
+    "oembed_thumbnail" : {
+      "size_type" : "auto",
+      "src" : "",
+      "alt" : null,
+      "loading" : "eager"
+    },
+    "placeholder_fields" : {
+      "placeholder_description" : "Select a video type in the sidebar."
+    }
+  }
+} ]
